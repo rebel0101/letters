@@ -1,0 +1,4687 @@
+/* =========================================================
+   LETTER 5 — PROMISES
+   STEP 2 — WARM GOLDEN ATMOSPHERE
+========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap'
+);
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --cream:
+        #fff8ef;
+
+    --warm-white:
+        #fffdf9;
+
+    --gold:
+        #c99a45;
+
+    --soft-gold:
+        #e7c77b;
+
+    --deep-gold:
+        #9d7128;
+
+    --rose:
+        #c95b72;
+
+    --soft-rose:
+        #ed9aaa;
+
+    --brown:
+        #594438;
+
+    --muted-brown:
+        #816e61;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf3 0%,
+            #fff4e8 45%,
+            #fff8f1 100%
+        );
+
+    color:
+        var(--brown);
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.letter5-container {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding:
+        0 30px;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================================
+   WARM BACKGROUND GLOW
+========================================================= */
+
+.warm-glow {
+
+    position: fixed;
+
+    width: 650px;
+
+    height: 650px;
+
+    top: -260px;
+
+    right: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(231,199,123,.30)
+            0%,
+            rgba(231,199,123,.12)
+            35%,
+            transparent 72%
+        );
+
+    filter:
+        blur(20px);
+
+    pointer-events:
+        none;
+
+    z-index: 0;
+
+    animation:
+        warmGlow 8s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes warmGlow {
+
+    from {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .65;
+
+    }
+
+    to {
+
+        transform:
+            scale(1.12);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECOND WARM GLOW
+========================================================= */
+
+.warm-glow::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    left: -750px;
+
+    top: 550px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,91,114,.14),
+            transparent 70%
+        );
+
+    filter:
+        blur(30px);
+
+}
+
+
+/* =========================================================
+   GOLDEN PARTICLES CONTAINER
+========================================================= */
+
+#goldenParticles {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events:
+        none;
+
+    z-index: 1;
+
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+#floatingHearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events:
+        none;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.promise-hero {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    padding:
+        100px 20px 80px;
+
+}
+
+
+/* =========================================================
+   HERO SYMBOL
+========================================================= */
+
+.hero-symbol {
+
+    width:
+        110px;
+
+    height:
+        110px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    font-size:
+        46px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    border:
+        1px solid
+        rgba(201,154,69,.35);
+
+    box-shadow:
+        0 15px 45px
+        rgba(157,113,40,.15),
+
+        0 0 50px
+        rgba(231,199,123,.25);
+
+    backdrop-filter:
+        blur(10px);
+
+    margin-bottom:
+        35px;
+
+    animation:
+        symbolFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes symbolFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+/* =========================================================
+   HERO SMALL TEXT
+========================================================= */
+
+.hero-small {
+
+    color:
+        var(--gold);
+
+    font-size:
+        14px;
+
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.promise-hero h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            82px
+        );
+
+    font-weight:
+        600;
+
+    line-height:
+        1.1;
+
+    color:
+        var(--brown);
+
+    margin-bottom:
+        28px;
+
+}
+
+
+.promise-hero h1::after {
+
+    content: "";
+
+    display:
+        block;
+
+    width:
+        75px;
+
+    height:
+        2px;
+
+    margin:
+        24px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-text {
+
+    max-width:
+        620px;
+
+    color:
+        var(--muted-brown);
+
+    font-size:
+        18px;
+
+    line-height:
+        1.9;
+
+    font-weight:
+        300;
+
+}
+
+
+/* =========================================================
+   SCROLL HINT
+========================================================= */
+
+.scroll-hint {
+
+    margin-top:
+        70px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    animation:
+        scrollHint 2s ease-in-out infinite;
+
+}
+
+
+.scroll-hint span {
+
+    font-size:
+        25px;
+
+}
+
+
+@keyframes scrollHint {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+        opacity:
+            .55;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(8px);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.section-label {
+
+    display:
+        inline-block;
+
+    color:
+        var(--gold);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+/* =========================================================
+   PROMISE LETTER
+========================================================= */
+
+.promise-letter {
+
+    position:
+        relative;
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto;
+
+    padding:
+        100px 80px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,.72);
+
+    border:
+        1px solid
+        rgba(201,154,69,.22);
+
+    border-radius:
+        28px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(90,60,30,.08);
+
+    backdrop-filter:
+        blur(12px);
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =========================================================
+   LETTER DECORATION
+========================================================= */
+
+.promise-letter::before {
+
+    content: "✦";
+
+    position:
+        absolute;
+
+    top:
+        28px;
+
+    left:
+        35px;
+
+    color:
+        var(--soft-gold);
+
+    font-size:
+        22px;
+
+    opacity:
+        .7;
+
+}
+
+
+.promise-letter::after {
+
+    content: "✦";
+
+    position:
+        absolute;
+
+    bottom:
+        28px;
+
+    right:
+        35px;
+
+    color:
+        var(--soft-gold);
+
+    font-size:
+        22px;
+
+    opacity:
+        .7;
+
+}
+
+
+/* =========================================================
+   LETTER HEADING
+========================================================= */
+
+.promise-letter h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            32px,
+            5vw,
+            52px
+        );
+
+    font-weight:
+        500;
+
+    line-height:
+        1.35;
+
+    color:
+        var(--brown);
+
+}
+
+
+/* =========================================================
+   GOLD DIVIDER
+========================================================= */
+
+.gold-divider {
+
+    width:
+        110px;
+
+    height:
+        2px;
+
+    margin:
+        35px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+
+    position:
+        relative;
+
+}
+
+
+.gold-divider::after {
+
+    content:
+        "✦";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    background:
+        #fffaf3;
+
+    padding:
+        0 10px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================================================
+   PROMISE TEXT
+========================================================= */
+
+.promise-text {
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto;
+
+}
+
+
+.promise-text p {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        20px;
+
+    line-height:
+        2;
+
+    color:
+        var(--muted-brown);
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* =========================================================
+   HIGHLIGHT PROMISE
+========================================================= */
+
+.promise-text .highlight {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            62px
+        );
+
+    color:
+        var(--rose);
+
+    margin-top:
+        35px;
+
+}
+
+
+/* =========================================================
+   PROMISE HEART
+========================================================= */
+
+.promise-heart {
+
+    margin-top:
+        35px;
+
+    font-size:
+        32px;
+
+    animation:
+        heartPulse 2s ease-in-out infinite;
+
+}
+
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+
+    }
+
+}
+
+
+/* =========================================================
+   PROMISE CARDS SECTION
+========================================================= */
+
+.promise-cards-section {
+
+    padding:
+        150px 0;
+
+    text-align:
+        center;
+
+}
+
+
+.promise-cards-section h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            58px
+        );
+
+    line-height:
+        1.25;
+
+    font-weight:
+        500;
+
+    margin-bottom:
+        70px;
+
+}
+
+
+/* =========================================================
+   PROMISE GRID
+========================================================= */
+
+.promise-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap:
+        30px;
+
+    max-width:
+        950px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   PROMISE CARD
+========================================================= */
+
+.promise-card {
+
+    position:
+        relative;
+
+    text-align:
+        left;
+
+    padding:
+        42px;
+
+    min-height:
+        270px;
+
+    border-radius:
+        24px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    border:
+        1px solid
+        rgba(201,154,69,.20);
+
+    box-shadow:
+        0 20px 50px
+        rgba(90,60,30,.06);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+
+    overflow:
+        hidden;
+
+}
+
+
+.promise-card::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    top:
+        -100px;
+
+    right:
+        -80px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(231,199,123,.18),
+            transparent 70%
+        );
+
+}
+
+
+.promise-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(201,154,69,.45);
+
+    box-shadow:
+        0 30px 65px
+        rgba(90,60,30,.12),
+
+        0 0 30px
+        rgba(231,199,123,.12);
+
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.promise-icon {
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.promise-number {
+
+    position:
+        absolute;
+
+    top:
+        28px;
+
+    right:
+        30px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        15px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        var(--soft-gold);
+
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.promise-card h3 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        28px;
+
+    font-weight:
+        500;
+
+    margin-bottom:
+        14px;
+
+    color:
+        var(--brown);
+
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.promise-card p {
+
+    font-size:
+        15px;
+
+    line-height:
+        1.9;
+
+    color:
+        var(--muted-brown);
+
+    font-weight:
+        300;
+
+}
+
+
+/* =========================================================
+   GOLDEN PROMISE
+========================================================= */
+
+.golden-promise {
+
+    min-height:
+        90vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        130px 20px;
+
+}
+
+
+/* =========================================================
+   PROMISE RING
+========================================================= */
+
+.promise-ring {
+
+    position:
+        relative;
+
+    width:
+        190px;
+
+    height:
+        190px;
+
+    border-radius:
+        50%;
+
+    border:
+        2px solid
+        rgba(201,154,69,.65);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        45px;
+
+    box-shadow:
+        0 0 40px
+        rgba(201,154,69,.14);
+
+    animation:
+        ringFloat 5s ease-in-out infinite;
+
+}
+
+
+@keyframes ringFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+/* =========================================================
+   RING GLOW
+========================================================= */
+
+.ring-glow {
+
+    position:
+        absolute;
+
+    inset:
+        -25px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(231,199,123,.20),
+            transparent 68%
+        );
+
+    filter:
+        blur(8px);
+
+    animation:
+        ringGlow 3s ease-in-out infinite;
+
+}
+
+
+@keyframes ringGlow {
+
+    0%,
+    100% {
+
+        transform:
+            scale(.85);
+
+        opacity:
+            .45;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+.promise-ring span {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    font-size:
+        45px;
+
+}
+
+
+/* =========================================================
+   GOLDEN PROMISE HEADING
+========================================================= */
+
+.golden-promise h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            68px
+        );
+
+    font-weight:
+        500;
+
+    line-height:
+        1.2;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.golden-promise h2 span {
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =========================================================
+   GOLDEN PROMISE TEXT
+========================================================= */
+
+.golden-promise p {
+
+    max-width:
+        650px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        19px;
+
+    line-height:
+        1.9;
+
+    color:
+        var(--muted-brown);
+
+    margin:
+        8px auto;
+
+}
+
+
+/* =========================================================
+   PROMISE JOURNEY
+========================================================= */
+
+.promise-journey {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    padding:
+        120px 0;
+
+    text-align:
+        center;
+
+}
+
+
+.promise-journey h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            58px
+        );
+
+    font-weight:
+        500;
+
+    margin-bottom:
+        70px;
+
+}
+
+
+/* =========================================================
+   PROMISE LIST
+========================================================= */
+
+.promise-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        20px;
+
+}
+
+
+.promise-step {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        30px;
+
+    text-align:
+        left;
+
+    padding:
+        30px 35px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,.62);
+
+    border:
+        1px solid
+        rgba(201,154,69,.16);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.promise-step:hover {
+
+    transform:
+        translateX(8px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(90,60,30,.08);
+
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.step-number {
+
+    flex-shrink:
+        0;
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        var(--gold);
+
+    border:
+        1px solid
+        rgba(201,154,69,.45);
+
+    background:
+        rgba(255,255,255,.65);
+
+}
+
+
+/* =========================================================
+   STEP HEADING
+========================================================= */
+
+.promise-step h3 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        24px;
+
+    font-weight:
+        500;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+/* =========================================================
+   STEP TEXT
+========================================================= */
+
+.promise-step p {
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+
+    color:
+        var(--muted-brown);
+
+    font-weight:
+        300;
+
+}
+
+
+/* =========================================================
+   FINAL PROMISE
+========================================================= */
+
+.final-promise {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        130px 20px;
+
+}
+
+
+/* =========================================================
+   FINAL HEART
+========================================================= */
+
+.final-heart {
+
+    font-size:
+        42px;
+
+    margin-bottom:
+        25px;
+
+    animation:
+        heartPulse 2s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   FINAL HEADING
+========================================================= */
+
+.final-promise h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            70px
+        );
+
+    font-weight:
+        500;
+
+    line-height:
+        1.25;
+
+}
+
+
+/* =========================================================
+   FINAL TEXT
+========================================================= */
+
+.final-promise > p {
+
+    max-width:
+        600px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        20px;
+
+    line-height:
+        1.9;
+
+    color:
+        var(--muted-brown);
+
+    margin:
+        10px auto;
+
+}
+
+
+/* =========================================================
+   FOREVER LINE
+========================================================= */
+
+.forever-line {
+
+    margin-top:
+        35px !important;
+
+    font-family:
+        'Great Vibes',
+        cursive !important;
+
+    font-size:
+        38px !important;
+
+    color:
+        var(--brown) !important;
+
+}
+
+
+.forever-line span {
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.signature {
+
+    margin-top:
+        60px;
+
+    color:
+        var(--muted-brown);
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        18px;
+
+}
+
+
+.signature span {
+
+    display:
+        block;
+
+    margin-top:
+        12px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        48px;
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+#nextLetterBtn {
+
+    margin-top:
+        55px;
+
+    padding:
+        15px 34px;
+
+    border:
+        1px solid
+        rgba(157,113,40,.5);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    color:
+        var(--brown);
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size:
+        14px;
+
+    letter-spacing:
+        1px;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+#nextLetterBtn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        #fff;
+
+    box-shadow:
+        0 12px 30px
+        rgba(90,60,30,.12);
+
+}
+
+
+#nextLetterBtn:disabled {
+
+    cursor:
+        not-allowed;
+
+    opacity:
+        .6;
+
+}
+
+
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
+
+#pageTransition {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        #fff8ef;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        99999;
+
+    transition:
+        opacity .6s ease;
+
+}
+
+
+#pageTransition.active {
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .letter5-container {
+
+        padding:
+            0 22px;
+
+    }
+
+
+    .promise-letter {
+
+        padding:
+            75px 45px;
+
+    }
+
+
+    .promise-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            650px;
+
+    }
+
+
+    .golden-promise {
+
+        min-height:
+            auto;
+
+        padding:
+            140px 20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .letter5-container {
+
+        padding:
+            0 14px;
+
+    }
+
+
+    .promise-hero {
+
+        min-height:
+            100svh;
+
+        padding:
+            80px 15px 60px;
+
+    }
+
+
+    .hero-symbol {
+
+        width:
+            85px;
+
+        height:
+            85px;
+
+        font-size:
+            36px;
+
+        margin-bottom:
+            28px;
+
+    }
+
+
+    .hero-small {
+
+        font-size:
+            11px;
+
+        letter-spacing:
+            2.5px;
+
+    }
+
+
+    .promise-hero h1 {
+
+        font-size:
+            45px;
+
+    }
+
+
+    .hero-text {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.8;
+
+    }
+
+
+    .scroll-hint {
+
+        margin-top:
+            50px;
+
+    }
+
+
+    .promise-letter {
+
+        padding:
+            60px 22px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    .promise-letter h2 {
+
+        font-size:
+            31px;
+
+    }
+
+
+    .promise-text p {
+
+        font-size:
+            17px;
+
+        line-height:
+            1.85;
+
+    }
+
+
+    .promise-text .highlight {
+
+        font-size:
+            43px;
+
+    }
+
+
+    .promise-cards-section {
+
+        padding:
+            100px 0;
+
+    }
+
+
+    .promise-cards-section h2 {
+
+        font-size:
+            38px;
+
+        margin-bottom:
+            45px;
+
+    }
+
+
+    .promise-card {
+
+        padding:
+            32px 25px;
+
+        min-height:
+            auto;
+
+    }
+
+
+    .promise-card h3 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .promise-card p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .promise-ring {
+
+        width:
+            145px;
+
+        height:
+            145px;
+
+    }
+
+
+    .promise-ring span {
+
+        font-size:
+            35px;
+
+    }
+
+
+    .golden-promise {
+
+        padding:
+            110px 10px;
+
+    }
+
+
+    .golden-promise h2 {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .golden-promise p {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .promise-journey {
+
+        padding:
+            90px 0;
+
+    }
+
+
+    .promise-journey h2 {
+
+        font-size:
+            38px;
+
+        margin-bottom:
+            45px;
+
+    }
+
+
+    .promise-step {
+
+        align-items:
+            flex-start;
+
+        gap:
+            18px;
+
+        padding:
+            24px 20px;
+
+    }
+
+
+    .step-number {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .promise-step h3 {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .promise-step p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .final-promise {
+
+        padding:
+            100px 10px;
+
+    }
+
+
+    .final-promise h2 {
+
+        font-size:
+            42px;
+
+    }
+
+
+    .final-promise > p {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .forever-line {
+
+        font-size:
+            34px !important;
+
+    }
+
+
+    .signature span {
+
+        font-size:
+            43px;
+
+    }
+
+
+    #nextLetterBtn {
+
+        margin-top:
+            45px;
+
+        padding:
+            14px 28px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+}
+
+/* =========================================================
+   STEP 3 — GOLDEN PARTICLES
+========================================================= */
+
+.golden-particle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff7d6 0%,
+            #e7c77b 45%,
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(231,199,123,.55);
+
+    pointer-events: none;
+
+    animation:
+        goldenFloat
+        linear forwards;
+
+}
+
+
+@keyframes goldenFloat {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(.7)
+            rotate(0deg);
+
+    }
+
+    30% {
+
+        transform:
+            translate3d(
+                var(--drift),
+                -30vh,
+                0
+            )
+            scale(1);
+
+    }
+
+    65% {
+
+        transform:
+            translate3d(
+                calc(
+                    var(--drift) * -0.4
+                ),
+                -65vh,
+                0
+            )
+            scale(.85)
+            rotate(180deg);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                var(--drift),
+                -120vh,
+                0
+            )
+            scale(.3)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   STEP 3 — FLOATING HEARTS
+========================================================= */
+
+.floating-heart {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    filter:
+        blur(.1px);
+
+    animation:
+        heartFloat
+        linear forwards;
+
+}
+
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            rotate(-8deg)
+            scale(.8);
+
+    }
+
+    25% {
+
+        transform:
+            translate3d(
+                var(--heart-drift),
+                -25vh,
+                0
+            )
+            rotate(8deg)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                calc(
+                    var(--heart-drift) * -0.5
+                ),
+                -50vh,
+                0
+            )
+            rotate(-5deg)
+            scale(.9);
+
+    }
+
+    75% {
+
+        transform:
+            translate3d(
+                var(--heart-drift),
+                -75vh,
+                0
+            )
+            rotate(7deg)
+            scale(1.05);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                0,
+                -120vh,
+                0
+            )
+            rotate(-10deg)
+            scale(.6);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PARTICLE OPTIMIZATION
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .golden-particle {
+
+        box-shadow:
+            0 0 5px
+            rgba(231,199,123,.45);
+
+    }
+
+    .floating-heart {
+
+        filter:
+            blur(.2px);
+
+    }
+
+}
+
+/* =========================================================
+   STEP 4 — CINEMATIC PROMISE CARDS
+========================================================= */
+
+.promise-card {
+    opacity: 0;
+    transform: translateY(45px);
+}
+
+.promise-card.promise-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.22,1,.36,1),
+        box-shadow .4s ease,
+        border-color .4s ease;
+}
+
+
+/* Staggered entrance */
+
+.promise-card:nth-child(1).promise-visible {
+    transition-delay: .05s;
+}
+
+.promise-card:nth-child(2).promise-visible {
+    transition-delay: .18s;
+}
+
+.promise-card:nth-child(3).promise-visible {
+    transition-delay: .31s;
+}
+
+.promise-card:nth-child(4).promise-visible {
+    transition-delay: .44s;
+}
+
+
+/* =========================================================
+   CARD ICON ANIMATION
+========================================================= */
+
+.promise-card .promise-icon {
+    transition:
+        transform .45s ease;
+}
+
+.promise-card:hover .promise-icon {
+    transform:
+        translateY(-5px)
+        scale(1.12);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.promise-card .promise-number {
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+}
+
+.promise-card:hover .promise-number {
+    opacity: .55;
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   ACTIVE CARD
+========================================================= */
+
+.promise-card.promise-active {
+    transform:
+        translateY(-10px)
+        scale(1.015);
+
+    border-color:
+        rgba(201,154,69,.55);
+
+    box-shadow:
+        0 30px 70px
+        rgba(90,60,30,.13),
+        0 0 45px
+        rgba(231,199,123,.20);
+}
+
+
+/* =========================================================
+   ACTIVE CARD GLOW
+========================================================= */
+
+.promise-card.promise-active::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(231,199,123,.13),
+            transparent 60%
+        );
+
+    animation:
+        promiseCardGlow
+        2.5s ease-in-out infinite;
+}
+
+
+@keyframes promiseCardGlow {
+
+    0%,
+    100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   ACTIVE CARD TEXT
+========================================================= */
+
+.promise-card.promise-active h3 {
+    color:
+        var(--gold);
+
+    transition:
+        color .4s ease;
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .promise-card:active {
+        transform:
+            scale(.985);
+    }
+
+}
+
+/* =========================================================
+   STEP 5 — CINEMATIC GOLDEN PROMISE RING
+========================================================= */
+
+.golden-promise {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   GOLDEN AURA
+========================================================= */
+
+.golden-promise::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(231,199,123,.16) 0%,
+            rgba(231,199,123,.07) 35%,
+            transparent 70%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+
+    opacity: .7;
+
+    animation:
+        promiseAura 5s ease-in-out infinite;
+}
+
+
+@keyframes promiseAura {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.88);
+
+        opacity: .45;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.12);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   RING
+========================================================= */
+
+.promise-ring {
+    position: relative;
+
+    z-index: 2;
+
+    isolation: isolate;
+
+    transition:
+        transform .5s ease;
+}
+
+
+.promise-ring::before,
+.promise-ring::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -14px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(201,154,69,.28);
+
+    pointer-events: none;
+}
+
+
+.promise-ring::before {
+    animation:
+        ringOrbit 7s linear infinite;
+}
+
+
+.promise-ring::after {
+    inset: -30px;
+
+    border-color:
+        rgba(231,199,123,.12);
+
+    animation:
+        ringOrbitReverse 10s linear infinite;
+}
+
+
+@keyframes ringOrbit {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes ringOrbitReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+/* =========================================================
+   RING GLOW
+========================================================= */
+
+.ring-glow {
+    z-index: -1;
+
+    animation:
+        cinematicRingGlow
+        3s ease-in-out infinite;
+}
+
+
+@keyframes cinematicRingGlow {
+
+    0%,
+    100% {
+        transform: scale(.8);
+
+        opacity: .3;
+
+        filter: blur(8px);
+    }
+
+    50% {
+        transform: scale(1.25);
+
+        opacity: 1;
+
+        filter: blur(16px);
+    }
+
+}
+
+
+/* =========================================================
+   RING SYMBOL
+========================================================= */
+
+.promise-ring > span {
+    position: relative;
+
+    z-index: 3;
+
+    transition:
+        transform .5s ease;
+}
+
+
+.promise-ring:hover {
+    transform:
+        translateY(-8px)
+        scale(1.04);
+}
+
+
+.promise-ring:hover > span {
+    transform:
+        scale(1.15);
+}
+
+
+/* =========================================================
+   CENTER SECTION REVEAL
+========================================================= */
+
+.golden-promise {
+    opacity: 0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s cubic-bezier(.22,1,.36,1);
+}
+
+
+.golden-promise.promise-center-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   GOLDEN HEADING REVEAL
+========================================================= */
+
+.golden-promise .section-label,
+.golden-promise h2,
+.golden-promise p {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .golden-promise::before {
+        width: 360px;
+        height: 360px;
+    }
+
+    .promise-ring::after {
+        inset: -20px;
+    }
+
+}
+
+/* =========================================================
+   LETTER 5 — STEP 6
+   CINEMATIC PROMISE JOURNEY
+========================================================= */
+
+.promise-journey {
+    position: relative;
+}
+
+
+/* =========================================================
+   JOURNEY INTRO
+========================================================= */
+
+.promise-journey .section-label,
+.promise-journey > h2 {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.22,1,.36,1);
+}
+
+
+.promise-journey.journey-visible
+.promise-journey .section-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Correct selector for intro elements */
+
+.promise-journey.journey-visible > .section-label,
+.promise-journey.journey-visible > h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.promise-journey.journey-visible > h2 {
+    transition-delay: .15s;
+}
+
+
+/* =========================================================
+   JOURNEY LINE
+========================================================= */
+
+.promise-list {
+    position: relative;
+}
+
+
+.promise-list::before {
+    content: "";
+
+    position: absolute;
+
+    left: 27px;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(201,154,69,.45),
+            rgba(201,154,69,.45),
+            transparent
+        );
+
+    transform:
+        scaleY(0);
+
+    transform-origin:
+        top;
+
+    transition:
+        transform 1.5s ease;
+}
+
+
+.promise-list.journey-line-visible::before {
+    transform:
+        scaleY(1);
+}
+
+
+/* =========================================================
+   PROMISE STEPS
+========================================================= */
+
+.promise-step {
+    position: relative;
+
+    opacity: 0;
+
+    transform:
+        translateX(-45px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22,1,.36,1),
+        box-shadow .35s ease;
+}
+
+
+.promise-step.step-visible {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================================================
+   STAGGERED REVEAL
+========================================================= */
+
+.promise-step:nth-child(1).step-visible {
+    transition-delay: .05s;
+}
+
+.promise-step:nth-child(2).step-visible {
+    transition-delay: .20s;
+}
+
+.promise-step:nth-child(3).step-visible {
+    transition-delay: .35s;
+}
+
+.promise-step:nth-child(4).step-visible {
+    transition-delay: .50s;
+}
+
+.promise-step:nth-child(5).step-visible {
+    transition-delay: .65s;
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.promise-step .step-number {
+    position: relative;
+
+    z-index: 2;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
+}
+
+
+.promise-step.step-visible .step-number {
+    animation:
+        stepNumberAppear
+        .7s ease forwards;
+}
+
+
+@keyframes stepNumberAppear {
+
+    0% {
+        transform:
+            scale(.65);
+
+        opacity: .3;
+    }
+
+    70% {
+        transform:
+            scale(1.12);
+    }
+
+    100% {
+        transform:
+            scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   ACTIVE / HOVER STEP
+========================================================= */
+
+.promise-step:hover {
+    transform:
+        translateX(10px);
+}
+
+
+.promise-step:hover .step-number {
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 0 25px
+        rgba(201,154,69,.20);
+}
+
+
+/* =========================================================
+   STEP CONTENT
+========================================================= */
+
+.promise-step h3 {
+    transition:
+        color .35s ease,
+        transform .35s ease;
+}
+
+
+.promise-step:hover h3 {
+    color:
+        var(--gold);
+
+    transform:
+        translateX(3px);
+}
+
+
+.promise-step p {
+    transition:
+        opacity .35s ease;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .promise-list::before {
+        left: 22px;
+    }
+
+    .promise-step:hover {
+        transform:
+            translateX(4px);
+    }
+
+}
+
+/* =========================================================
+   LETTER 5 — STEP 7
+   FINAL PROMISE CINEMATIC REVEAL
+========================================================= */
+
+.final-promise {
+    position: relative;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(.22,1,.36,1);
+}
+
+.final-promise.final-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FINAL WARM AURA
+========================================================= */
+
+.final-promise::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(231,199,123,.18),
+            rgba(237,154,170,.07) 35%,
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+
+    animation:
+        finalAura 6s ease-in-out infinite;
+}
+
+
+@keyframes finalAura {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.85);
+
+        opacity: .45;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL CONTENT
+========================================================= */
+
+.final-promise > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HEART
+========================================================= */
+
+.final-heart {
+    opacity: 0;
+    transform: scale(.5);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.final-visible .final-heart {
+    opacity: 1;
+    transform: scale(1);
+
+    transition-delay: .25s;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.final-promise .section-label {
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.final-visible .section-label {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: .4s;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.final-promise h2 {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.22,1,.36,1);
+}
+
+.final-visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: .55s;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.final-promise .gold-divider {
+    transform:
+        scaleX(0);
+
+    opacity: 0;
+
+    transition:
+        transform 1s ease,
+        opacity .8s ease;
+}
+
+.final-visible .gold-divider {
+    transform:
+        scaleX(1);
+
+    opacity: 1;
+
+    transition-delay: .8s;
+}
+
+
+/* =========================================================
+   FINAL PARAGRAPHS
+========================================================= */
+
+.final-promise > p {
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.final-visible > p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.final-visible > p:nth-of-type(1) {
+    transition-delay: 1s;
+}
+
+.final-visible > p:nth-of-type(2) {
+    transition-delay: 1.15s;
+}
+
+
+/* =========================================================
+   FOREVER
+========================================================= */
+
+.final-promise .forever-line {
+    opacity: 0;
+    transform: scale(.9);
+
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.22,1,.36,1);
+}
+
+.final-visible .forever-line {
+    opacity: 1;
+    transform: scale(1);
+
+    transition-delay: 1.35s;
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.final-promise .signature {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.final-visible .signature {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: 1.65s;
+}
+
+
+.final-promise .signature span {
+    animation:
+        signatureGlow 2.5s ease-in-out infinite;
+}
+
+
+@keyframes signatureGlow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 0
+            rgba(201,91,114,0);
+    }
+
+    50% {
+        text-shadow:
+            0 0 18px
+            rgba(201,91,114,.25);
+    }
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+.final-promise #nextLetterBtn {
+    opacity: 0;
+    transform:
+        translateY(20px)
+        scale(.95);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.final-visible #nextLetterBtn {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition-delay: 2s;
+}
+
+
+/* =========================================================
+   BUTTON GLOW
+========================================================= */
+
+.final-visible #nextLetterBtn {
+    animation:
+        nextButtonGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes nextButtonGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0
+            rgba(201,154,69,0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 24px
+            rgba(201,154,69,.16);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .final-promise::before {
+        width: 380px;
+        height: 380px;
+    }
+
+}
+
+/* =========================================================
+   STEP 8 — CINEMATIC PAGE EXIT
+========================================================= */
+
+body {
+    transition:
+        transform .9s ease,
+        opacity .9s ease;
+}
+
+
+body.leaving {
+    transform:
+        scale(1.025);
+
+    opacity:
+        0;
+}
+
+
+/* =========================================================
+   TRANSITION OVERLAY
+========================================================= */
+
+#pageTransition {
+    transition:
+        opacity .75s ease,
+        backdrop-filter .75s ease;
+}
+
+
+#pageTransition.active {
+
+    opacity:
+        1;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body.leaving {
+        transform:
+            scale(1.015);
+    }
+
+}
+
+/* =========================================================
+   LETTER 5 — CINEMATIC MUSIC PLAYER
+========================================================= */
+
+.music-player {
+
+    position: fixed;
+
+    right: 28px;
+    bottom: 28px;
+
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border:
+        1px solid
+        rgba(201, 154, 69, 0.45);
+
+    box-shadow:
+        0 12px 35px
+        rgba(90, 60, 30, 0.16),
+
+        0 0 30px
+        rgba(231, 199, 123, 0.20);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.music-player:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 16px 40px
+        rgba(90, 60, 30, 0.20),
+
+        0 0 40px
+        rgba(231, 199, 123, 0.30);
+
+}
+
+
+/* =========================================================
+   MUSIC DISC
+========================================================= */
+
+.music-disc {
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9,
+            #f6e6c5
+        );
+
+    border:
+        1px solid
+        rgba(201, 154, 69, 0.35);
+
+    font-size: 21px;
+
+    box-shadow:
+        inset 0 2px 8px
+        rgba(255, 255, 255, 0.8),
+
+        0 5px 15px
+        rgba(90, 60, 30, 0.12);
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+/* =========================================================
+   MUSIC RING
+========================================================= */
+
+.music-ring {
+
+    position: absolute;
+
+    inset: 4px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(201, 154, 69, 0.28);
+
+    pointer-events: none;
+
+    opacity: 0.7;
+
+}
+
+
+/* =========================================================
+   SOUND WAVES
+========================================================= */
+
+.wave {
+
+    position: absolute;
+
+    bottom: 17px;
+
+    width: 3px;
+
+    height: 10px;
+
+    border-radius: 5px;
+
+    background:
+        var(--gold);
+
+    opacity: 0;
+
+    transform-origin: bottom;
+
+}
+
+
+/* Wave positions */
+
+.wave1 {
+    left: 17px;
+}
+
+.wave2 {
+    left: 22px;
+}
+
+.wave3 {
+    left: 27px;
+}
+
+
+/* =========================================================
+   PLAYING STATE
+========================================================= */
+
+.music-player.playing
+.music-disc {
+
+    animation:
+        musicRotate 4s linear infinite;
+
+}
+
+
+.music-player.playing
+.music-ring {
+
+    animation:
+        musicPulse 1.8s ease-in-out infinite;
+
+}
+
+
+.music-player.playing
+.wave1 {
+
+    animation:
+        musicWave 0.8s ease-in-out infinite;
+
+}
+
+
+.music-player.playing
+.wave2 {
+
+    animation:
+        musicWave 0.65s ease-in-out infinite;
+
+    animation-delay:
+        0.15s;
+
+}
+
+
+.music-player.playing
+.wave3 {
+
+    animation:
+        musicWave 0.9s ease-in-out infinite;
+
+    animation-delay:
+        0.3s;
+
+}
+
+
+/* =========================================================
+   ROTATION
+========================================================= */
+
+@keyframes musicRotate {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   RING PULSE
+========================================================= */
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            0.45;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.12);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   SOUND WAVE ANIMATION
+========================================================= */
+
+@keyframes musicWave {
+
+    0%,
+    100% {
+
+        height:
+            7px;
+
+        opacity:
+            0.35;
+
+    }
+
+    50% {
+
+        height:
+            18px;
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .music-player {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        right:
+            18px;
+
+        bottom:
+            18px;
+
+    }
+
+
+    .music-disc {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        font-size:
+            18px;
+
+    }
+
+
+    .music-ring {
+
+        inset:
+            3px;
+
+    }
+
+}
+
+/* =========================================================
+   STEP 9A — MOBILE FOUNDATION
+   Safe mobile override
+========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .letter5-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 14px;
+        padding-right: 14px;
+        overflow-x: hidden;
+    }
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .promise-hero {
+        width: 100%;
+        min-height: 100svh;
+        padding: 70px 14px 55px;
+        overflow: hidden;
+    }
+
+    .promise-hero h1 {
+        max-width: 100%;
+        font-size: clamp(38px, 11vw, 45px);
+        line-height: 1.12;
+        overflow-wrap: break-word;
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    /* -------------------------
+       PROMISE LETTER
+    ------------------------- */
+
+    .promise-letter {
+        width: 100%;
+        max-width: 100%;
+        padding: 55px 20px;
+        border-radius: 22px;
+        overflow: hidden;
+    }
+
+    .promise-letter h2 {
+        font-size: clamp(28px, 8vw, 34px);
+        line-height: 1.2;
+    }
+
+    .promise-text p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .promise-text .highlight {
+        font-size: clamp(36px, 11vw, 43px);
+        line-height: 1.15;
+    }
+
+    /* -------------------------
+       PROMISE CARDS
+    ------------------------- */
+
+    .promise-cards-section {
+        width: 100%;
+        padding: 85px 0;
+        overflow: hidden;
+    }
+
+    .promise-cards-section h2 {
+        font-size: clamp(32px, 9vw, 38px);
+        line-height: 1.2;
+        margin-bottom: 40px;
+    }
+
+    .promise-grid {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .promise-card {
+        width: 100%;
+        min-height: auto;
+        padding: 30px 22px;
+    }
+
+    .promise-card h3 {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    .promise-card p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    /* -------------------------
+       GOLDEN PROMISE
+    ------------------------- */
+
+    .golden-promise {
+        width: 100%;
+        min-height: auto;
+        padding: 100px 10px;
+        overflow: hidden;
+    }
+
+    .golden-promise h2 {
+        max-width: 100%;
+        font-size: clamp(34px, 10vw, 42px);
+        line-height: 1.2;
+    }
+
+    .golden-promise p {
+        max-width: 350px;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promise-ring {
+        width: 140px;
+        height: 140px;
+    }
+
+    .golden-promise::before {
+        width: 330px;
+        height: 330px;
+    }
+
+    .promise-ring::after {
+        inset: -18px;
+    }
+
+    /* -------------------------
+       PROMISE JOURNEY
+    ------------------------- */
+
+    .promise-journey {
+        width: 100%;
+        padding: 80px 0;
+        overflow: hidden;
+    }
+
+    .promise-journey > h2 {
+        font-size: clamp(32px, 9vw, 38px);
+        line-height: 1.2;
+        margin-bottom: 40px;
+    }
+
+    .promise-list {
+        width: 100%;
+    }
+
+    .promise-list::before {
+        left: 22px;
+    }
+
+    .promise-step {
+        width: 100%;
+        max-width: 100%;
+        gap: 16px;
+        padding: 22px 16px;
+    }
+
+    .promise-step .step-number {
+        flex: 0 0 45px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .promise-step h3 {
+        font-size: 21px;
+        line-height: 1.3;
+    }
+
+    .promise-step p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* -------------------------
+       FINAL PROMISE
+    ------------------------- */
+
+    .final-promise {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 14px;
+        padding-right: 14px;
+        overflow: hidden;
+    }
+
+    .final-promise::before {
+        width: 360px;
+        height: 360px;
+    }
+
+    .final-promise h2 {
+        font-size: clamp(38px, 10vw, 48px);
+        line-height: 1.2;
+    }
+
+    .final-promise > p {
+        max-width: 340px;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .forever-line {
+        font-size: clamp(30px, 9vw, 38px) !important;
+        line-height: 1.25;
+    }
+
+    .signature {
+        margin-top: 45px;
+        font-size: 16px;
+    }
+
+    .signature span {
+        font-size: 42px;
+    }
+
+    /* -------------------------
+       NEXT BUTTON
+    ------------------------- */
+
+    #nextLetterBtn {
+        max-width: calc(100% - 20px);
+        padding: 14px 28px;
+        margin-top: 45px;
+        font-size: 14px;
+    }
+
+    /* -------------------------
+       MUSIC PLAYER
+    ------------------------- */
+
+    .music-player {
+        width: 58px;
+        height: 58px;
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .music-disc {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   STEP 9B — MOBILE CINEMATIC VISUAL POLISH
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =========================================
+       HERO — BETTER VERTICAL BALANCE
+    ========================================= */
+
+    .promise-hero {
+        justify-content: center;
+        padding-top: 60px;
+        padding-bottom: 45px;
+    }
+
+    .hero-symbol {
+        width: 78px;
+        height: 78px;
+        font-size: 33px;
+        margin-bottom: 24px;
+    }
+
+    .hero-small {
+        margin-bottom: 14px;
+        line-height: 1.5;
+    }
+
+    .promise-hero h1 {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 350px;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-top: 20px;
+        max-width: 330px;
+    }
+
+    .scroll-hint {
+        margin-top: 42px;
+    }
+
+
+    /* =========================================
+       PROMISE LETTER — CINEMATIC CARD
+    ========================================= */
+
+    .promise-letter {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 52px 20px 58px;
+    }
+
+    .promise-letter h2 {
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promise-text {
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promise-text p {
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+
+
+    /* =========================================
+       PROMISE CARDS
+    ========================================= */
+
+    .promise-cards-section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .promise-cards-section h2 {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promise-card {
+        border-radius: 20px;
+        padding: 28px 20px;
+    }
+
+    .promise-card h3 {
+        margin-bottom: 12px;
+    }
+
+
+    /* =========================================
+       GOLDEN PROMISE — RING POLISH
+    ========================================= */
+
+    .golden-promise {
+        padding-top: 90px;
+        padding-bottom: 95px;
+    }
+
+    .golden-promise h2 {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .golden-promise p {
+        max-width: 320px;
+        margin-top: 18px;
+    }
+
+    .promise-ring {
+        width: 125px;
+        height: 125px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+
+    /* =========================================
+       PROMISE JOURNEY
+    ========================================= */
+
+    .promise-journey {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .promise-journey > h2 {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promise-step {
+        align-items: flex-start;
+        padding: 20px 14px;
+    }
+
+    .promise-step .step-number {
+        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+    }
+
+    .promise-step h3 {
+        margin-top: 0;
+    }
+
+
+    /* =========================================
+       FINAL SECTION
+    ========================================= */
+
+    .final-promise {
+        padding-top: 85px;
+        padding-bottom: 90px;
+    }
+
+    .final-heart {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+
+    .final-promise h2 {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .final-promise > p {
+        max-width: 320px;
+    }
+
+    .forever-line {
+        margin-top: 28px !important;
+        font-size: 34px !important;
+    }
+
+    .signature {
+        margin-top: 42px;
+    }
+
+    .signature span {
+        font-size: 40px;
+    }
+
+
+    /* =========================================
+       NEXT LETTER BUTTON
+    ========================================= */
+
+    #nextLetterBtn {
+        min-height: 48px;
+        margin-top: 40px;
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+
+
+    /* =========================================
+       MUSIC BUTTON — SAFE TOUCH AREA
+    ========================================= */
+
+    .music-player {
+        right: 15px;
+        bottom: 15px;
+        width: 58px;
+        height: 58px;
+    }
+
+}
+
+/* =========================================================
+   STEP 9C — MOBILE FINAL QA / EDGE CASE POLISH
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =========================================
+       GLOBAL MOBILE SAFETY
+    ========================================= */
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body.letter5-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .letter5-container,
+    .promise-hero,
+    .promise-letter,
+    .promise-cards-section,
+    .golden-promise,
+    .promise-journey,
+    .final-promise {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+
+    /* =========================================
+       TEXT SAFETY
+    ========================================= */
+
+    h1,
+    h2,
+    h3,
+    p,
+    span {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+
+    /* =========================================
+       HERO FINAL BALANCE
+    ========================================= */
+
+    .promise-hero {
+        min-height: 100svh;
+        min-height: 100dvh;
+
+        padding-top: 55px;
+        padding-bottom: 50px;
+    }
+
+    .promise-hero h1 {
+        width: 100%;
+        max-width: 350px;
+
+        font-size:
+            clamp(36px, 10.5vw, 45px);
+
+        line-height: 1.12;
+    }
+
+
+    /* =========================================
+       PROMISE LETTER
+    ========================================= */
+
+    .promise-letter {
+        width: calc(100% - 4px);
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .promise-letter h2 {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .promise-text {
+        width: 100%;
+        max-width: 330px;
+    }
+
+
+    /* =========================================
+       CARDS
+    ========================================= */
+
+    .promise-grid {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .promise-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* =========================================
+       GOLDEN RING
+    ========================================= */
+
+    .golden-promise {
+        position: relative;
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .golden-promise h2,
+    .golden-promise p {
+        position: relative;
+        z-index: 2;
+    }
+
+    .promise-ring {
+        position: relative;
+        z-index: 2;
+
+        max-width: 125px;
+        max-height: 125px;
+    }
+
+
+    /* =========================================
+       JOURNEY
+    ========================================= */
+
+    .promise-list {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .promise-step {
+        width: 100%;
+        min-width: 0;
+
+        grid-template-columns:
+            42px minmax(0, 1fr);
+    }
+
+    .promise-step > * {
+        min-width: 0;
+    }
+
+
+    /* =========================================
+       FINAL PROMISE
+    ========================================= */
+
+    .final-promise {
+        width: 100%;
+        min-width: 0;
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .final-promise h2 {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .final-promise > p {
+        width: 100%;
+        max-width: 325px;
+    }
+
+    .forever-line {
+        width: 100%;
+        max-width: 340px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =========================================
+       SIGNATURE
+    ========================================= */
+
+    .signature {
+        width: 100%;
+        max-width: 330px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =========================================
+       NEXT LETTER BUTTON
+    ========================================= */
+
+    #nextLetterBtn {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: auto;
+        max-width: calc(100% - 30px);
+
+        min-height: 48px;
+
+        white-space: nowrap;
+    }
+
+
+    /* =========================================
+       MUSIC BUTTON
+    ========================================= */
+
+    .music-player {
+        position: fixed;
+
+        right: 15px;
+        bottom: 15px;
+
+        width: 58px;
+        height: 58px;
+
+        z-index: 9999;
+    }
+
+
+    /* =========================================
+       VERY SMALL PHONES
+       360px AND BELOW
+    ========================================= */
+
+    @media (max-width: 380px) {
+
+        .letter5-container {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .promise-hero {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .hero-symbol {
+            width: 72px;
+            height: 72px;
+            font-size: 30px;
+        }
+
+        .promise-hero h1 {
+            font-size: 36px;
+        }
+
+        .promise-letter {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .promise-letter h2 {
+            font-size: 28px;
+        }
+
+        .promise-text p {
+            font-size: 15px;
+        }
+
+        .promise-card {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+
+        .golden-promise h2 {
+            font-size: 34px;
+        }
+
+        .promise-ring {
+            width: 115px;
+            height: 115px;
+        }
+
+        .promise-step {
+            gap: 12px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .promise-step h3 {
+            font-size: 20px;
+        }
+
+        .final-promise h2 {
+            font-size: 36px;
+        }
+
+        .signature span {
+            font-size: 38px;
+        }
+
+        #nextLetterBtn {
+            max-width: calc(100% - 20px);
+            padding-left: 22px;
+            padding-right: 22px;
+        }
+
+    }
+
+}

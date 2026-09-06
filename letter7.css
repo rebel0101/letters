@@ -1,0 +1,8079 @@
+/* =========================================================
+   LETTER 7 — DREAMS TOGETHER
+   SPRING GARDEN / DAWN THEME
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --petal:
+        #e99ab4;
+
+    --rose:
+        #d87898;
+
+    --lavender:
+        #aa91cf;
+
+    --sage:
+        #9db69c;
+
+    --cream:
+        #fffaf6;
+
+    --paper:
+        #fffdf9;
+
+    --ink:
+        #55484c;
+
+    --muted:
+        #817377;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    min-height:
+        100vh;
+
+    overflow-x:
+        hidden;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    background:
+        #f7edf1;
+
+    color:
+        var(--ink);
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.garden-background {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -20;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 5%,
+            rgba(255,235,192,.95),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(233,154,180,.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(170,145,207,.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #f8e8dd 0%,
+            #f7e9ef 42%,
+            #eee5f3 72%,
+            #e5edf0 100%
+        );
+
+}
+
+
+/* =========================================================
+   SUN GLOW
+========================================================= */
+
+.sun-glow {
+
+    position:
+        fixed;
+
+    width:
+        420px;
+
+    height:
+        420px;
+
+    top:
+        -180px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,210,145,.35);
+
+    filter:
+        blur(70px);
+
+    pointer-events:
+        none;
+
+    z-index:
+        -10;
+
+}
+
+
+/* =========================================================
+   HAZE
+========================================================= */
+
+.garden-haze {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        -5;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.08),
+            transparent 35%,
+            rgba(255,255,255,.12)
+        );
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#gardenParticles,
+#dreamFireflies,
+#floatingHearts {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+}
+
+
+#gardenParticles {
+
+    z-index:
+        2;
+
+}
+
+
+#dreamFireflies {
+
+    z-index:
+        3;
+
+}
+
+
+#floatingHearts {
+
+    z-index:
+        4;
+
+}
+
+
+/* =========================================================
+   PETAL
+========================================================= */
+
+.garden-particle {
+
+    position:
+        absolute;
+
+    top:
+        -40px;
+
+    animation:
+        gardenFall
+        var(--duration)
+        linear
+        forwards;
+
+}
+
+
+@keyframes gardenFall {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                -30px,
+                0
+            )
+            rotate(0deg);
+
+        opacity:
+            0;
+
+    }
+
+    15% {
+
+        opacity:
+            var(--opacity);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                var(--drift),
+                55vh,
+                0
+            )
+            rotate(180deg);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                calc(var(--drift) * -1),
+                115vh,
+                0
+            )
+            rotate(360deg);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   FIREFLY
+========================================================= */
+
+.firefly {
+
+    position:
+        absolute;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #fff6c8;
+
+    box-shadow:
+        0 0 14px
+        rgba(255,220,145,.9);
+
+    animation:
+        fireflyFloat
+        var(--duration)
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes fireflyFloat {
+
+    0%,
+    100% {
+
+        opacity:
+            .15;
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        opacity:
+            .9;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+.garden-heart {
+
+    position:
+        absolute;
+
+    bottom:
+        -40px;
+
+    animation:
+        heartRise
+        var(--duration)
+        linear
+        forwards;
+
+}
+
+
+@keyframes heartRise {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(0)
+            scale(.7);
+
+    }
+
+    15% {
+
+        opacity:
+            .35;
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                var(--drift),
+                -110vh
+            )
+            scale(1.15);
+
+    }
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.letter7-container {
+
+    width:
+        min(92%, 1050px);
+
+    margin:
+        0 auto;
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.reveal.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.dream-hero {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        80px 20px;
+
+}
+
+
+.hero-flower {
+
+    width:
+        105px;
+
+    height:
+        105px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    font-size:
+        48px;
+
+    background:
+        rgba(255,255,255,.35);
+
+    border:
+        1px solid
+        rgba(255,255,255,.55);
+
+    box-shadow:
+        0 20px 55px
+        rgba(190,130,150,.18);
+
+    backdrop-filter:
+        blur(12px);
+
+    animation:
+        flowerFloat
+        4s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(4deg);
+
+    }
+
+}
+
+
+.hero-small {
+
+    margin-top:
+        34px;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(85,72,76,.62);
+
+}
+
+
+.dream-hero h1 {
+
+    margin-top:
+        18px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(72px, 11vw, 125px);
+
+    font-weight:
+        400;
+
+    line-height:
+        .9;
+
+    color:
+        var(--rose);
+
+    text-shadow:
+        0 12px 30px
+        rgba(216,120,152,.18);
+
+}
+
+
+.hero-text {
+
+    margin-top:
+        28px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(19px, 3vw, 27px);
+
+    line-height:
+        1.8;
+
+    color:
+        rgba(85,72,76,.75);
+
+}
+
+
+.scroll-hint {
+
+    margin-top:
+        65px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        rgba(85,72,76,.55);
+
+}
+
+
+.scroll-hint span {
+
+    font-size:
+        26px;
+
+    animation:
+        scrollArrow
+        1.8s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(8px);
+
+    }
+
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.dream-letter,
+.dream-shayari,
+.little-dreams,
+.dream-places,
+.dream-quote,
+.future-life,
+.final-dream {
+
+    margin-bottom:
+        120px;
+
+}
+
+
+.section-label {
+
+    display:
+        inline-block;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+    font-weight:
+        600;
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.dream-letter {
+
+    padding:
+        75px;
+
+    border-radius:
+        34px;
+
+    background:
+        rgba(255,253,249,.91);
+
+    box-shadow:
+        0 35px 90px
+        rgba(116,80,95,.16);
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.dream-letter::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        350px;
+
+    height:
+        350px;
+
+    right:
+        -170px;
+
+    top:
+        -170px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(233,154,180,.20),
+            transparent 70%
+        );
+
+}
+
+
+.dream-letter h2,
+.little-dreams h2,
+.dream-places h2,
+.future-life h2 {
+
+    margin-top:
+        20px;
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size:
+        clamp(38px, 6vw, 65px);
+
+    line-height:
+        1.2;
+
+    font-weight:
+        400;
+
+}
+
+
+.garden-divider {
+
+    width:
+        85px;
+
+    height:
+        2px;
+
+    margin:
+        30px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rose),
+            var(--lavender)
+        );
+
+}
+
+
+.dream-text {
+
+    max-width:
+        760px;
+
+}
+
+
+.dream-text p {
+
+    margin-bottom:
+        21px;
+
+    font-size:
+        18px;
+
+    line-height:
+        2;
+
+    color:
+        #675b5e;
+
+}
+
+
+.dream-text .highlight {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        28px;
+
+    font-style:
+        italic;
+
+    color:
+        var(--rose);
+
+}
+
+
+.letter-flower {
+
+    margin-top:
+        30px;
+
+    text-align:
+        center;
+
+    font-size:
+        40px;
+
+}
+
+
+/* =========================================================
+   SHAYARI
+========================================================= */
+
+.dream-shayari {
+
+    min-height:
+        570px;
+
+    padding:
+        80px 40px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border-radius:
+        34px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.38),
+            rgba(237,220,240,.32)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    box-shadow:
+        0 30px 70px
+        rgba(130,100,140,.10);
+
+}
+
+
+.shayari-glow {
+
+    position:
+        absolute;
+
+    width:
+        400px;
+
+    height:
+        400px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(233,154,180,.13);
+
+    filter:
+        blur(80px);
+
+}
+
+
+.urdu-line {
+
+    margin-top:
+        28px;
+
+    direction:
+        rtl;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        20px;
+
+    color:
+        rgba(85,72,76,.65);
+
+}
+
+
+.shayari {
+
+    margin-top:
+        25px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(22px, 3vw, 31px);
+
+    line-height:
+        1.8;
+
+    font-style:
+        italic;
+
+    color:
+        #63565a;
+
+}
+
+
+.shayari-heart {
+
+    margin-top:
+        28px;
+
+    font-size:
+        32px;
+
+    animation:
+        softHeart
+        2s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes softHeart {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.16);
+
+    }
+
+}
+
+
+/* =========================================================
+   LITTLE DREAMS
+========================================================= */
+
+.little-dreams {
+
+    padding:
+        10px 0;
+
+}
+
+
+.little-dreams h2 {
+
+    color:
+        #56494e;
+
+}
+
+
+.dream-grid {
+
+    margin-top:
+        45px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        22px;
+
+}
+
+
+.dream-card {
+
+    position:
+        relative;
+
+    min-height:
+        280px;
+
+    padding:
+        35px;
+
+    border-radius:
+        28px;
+
+    background:
+        rgba(255,255,255,.52);
+
+    border:
+        1px solid
+        rgba(255,255,255,.72);
+
+    box-shadow:
+        0 18px 50px
+        rgba(112,85,95,.09);
+
+    backdrop-filter:
+        blur(15px);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.dream-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(112,85,95,.15);
+
+}
+
+
+.dream-number {
+
+    position:
+        absolute;
+
+    top:
+        28px;
+
+    right:
+        30px;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        rgba(85,72,76,.32);
+
+}
+
+
+.dream-icon {
+
+    font-size:
+        40px;
+
+}
+
+
+.dream-card h3 {
+
+    margin-top:
+        22px;
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size:
+        29px;
+
+    font-weight:
+        400;
+
+}
+
+
+.dream-card p {
+
+    margin-top:
+        14px;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.9;
+
+    color:
+        #75686c;
+
+}
+
+
+/* =========================================================
+   PLACES
+========================================================= */
+
+.dream-places {
+
+    text-align:
+        center;
+
+}
+
+
+.dream-places h2 {
+
+    color:
+        #56494e;
+
+}
+
+
+.places-row {
+
+    margin-top:
+        45px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.place-card {
+
+    min-height:
+        210px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    padding:
+        25px;
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(255,255,255,.46);
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.place-card:hover {
+
+    transform:
+        translateY(-6px);
+
+}
+
+
+.place-card span {
+
+    font-size:
+        46px;
+
+}
+
+
+.place-card p {
+
+    margin-top:
+        16px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        20px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.places-text {
+
+    max-width:
+        650px;
+
+    margin:
+        35px auto 0;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        22px;
+
+    line-height:
+        1.8;
+
+    color:
+        #776b70;
+
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.dream-quote {
+
+    min-height:
+        470px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        70px 30px;
+
+    border-radius:
+        34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(216,120,152,.12),
+            rgba(170,145,207,.13)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.50);
+
+}
+
+
+.quote-mark {
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size:
+        100px;
+
+    line-height:
+        .5;
+
+    color:
+        rgba(216,120,152,.28);
+
+}
+
+
+.dream-quote p {
+
+    max-width:
+        750px;
+
+    margin-top:
+        25px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(48px, 7vw, 78px);
+
+    line-height:
+        1.15;
+
+    color:
+        var(--rose);
+
+}
+
+
+.quote-flower {
+
+    margin-top:
+        30px;
+
+    font-size:
+        30px;
+
+}
+
+
+/* =========================================================
+   FUTURE LIFE
+========================================================= */
+
+.future-life {
+
+    padding:
+        65px;
+
+    border-radius:
+        34px;
+
+    background:
+        rgba(255,253,249,.72);
+
+    box-shadow:
+        0 25px 70px
+        rgba(110,80,95,.10);
+
+}
+
+
+.future-content {
+
+    max-width:
+        720px;
+
+    margin-top:
+        35px;
+
+}
+
+
+.future-content p {
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        18px;
+
+    line-height:
+        1.95;
+
+    color:
+        #6d6064;
+
+}
+
+
+.future-highlight {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        27px !important;
+
+    font-style:
+        italic;
+
+    color:
+        var(--rose) !important;
+
+}
+
+
+/* =========================================================
+   FINAL DREAM
+========================================================= */
+
+.final-dream {
+
+    min-height:
+        850px;
+
+    padding:
+        80px 45px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf7,
+            #f8eef4
+        );
+
+    box-shadow:
+        0 35px 100px
+        rgba(105,75,90,.16);
+
+}
+
+
+.final-dream::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        600px;
+
+    height:
+        600px;
+
+    border-radius:
+        50%;
+
+    top:
+        -360px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(233,154,180,.20),
+            transparent 70%
+        );
+
+}
+
+
+.dream-orbit {
+
+    position:
+        relative;
+
+    width:
+        175px;
+
+    height:
+        175px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+}
+
+
+.orbit {
+
+    position:
+        absolute;
+
+    inset:
+        8px;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(216,120,152,.25);
+
+    animation:
+        orbitSpin
+        12s linear
+        infinite;
+
+}
+
+
+.orbit-two {
+
+    inset:
+        28px;
+
+    border-color:
+        rgba(170,145,207,.28);
+
+    animation-direction:
+        reverse;
+
+    animation-duration:
+        8s;
+
+}
+
+
+@keyframes orbitSpin {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.orbit-flower {
+
+    font-size:
+        55px;
+
+    animation:
+        flowerPulse
+        2.5s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes flowerPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.13);
+
+    }
+
+}
+
+
+.final-dream .section-label {
+
+    margin-top:
+        35px;
+
+}
+
+
+.final-dream h2 {
+
+    margin-top:
+        20px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(62px, 9vw, 100px);
+
+    font-weight:
+        400;
+
+    line-height:
+        1.05;
+
+    color:
+        var(--rose);
+
+}
+
+
+.final-dream .garden-divider {
+
+    margin:
+        30px auto;
+
+}
+
+
+.final-dream-text {
+
+    max-width:
+        680px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(19px, 3vw, 27px);
+
+    line-height:
+        1.8;
+
+    color:
+        #665a5f;
+
+}
+
+
+.final-dream-line {
+
+    margin-top:
+        40px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(30px, 5vw, 45px);
+
+    line-height:
+        1.5;
+
+    color:
+        #796b71;
+
+}
+
+
+.signature {
+
+    margin-top:
+        50px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        16px;
+
+    color:
+        #806f73;
+
+}
+
+
+.signature span {
+
+    display:
+        block;
+
+    margin-top:
+        7px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        43px;
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+#nextLetterBtn {
+
+    margin-top:
+        45px;
+
+    padding:
+        15px 42px;
+
+    border:
+        none;
+
+    border-radius:
+        50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rose),
+            var(--lavender)
+        );
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 15px 35px
+        rgba(216,120,152,.24);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+#nextLetterBtn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 45px
+        rgba(216,120,152,.32);
+
+}
+
+
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.music-player {
+
+    position:
+        fixed;
+
+    right:
+        28px;
+
+    bottom:
+        28px;
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.82);
+
+    border:
+        1px solid
+        rgba(216,120,152,.30);
+
+    box-shadow:
+        0 12px 35px
+        rgba(100,75,90,.16);
+
+    backdrop-filter:
+        blur(12px);
+
+    cursor:
+        pointer;
+
+    z-index:
+        9999;
+
+}
+
+
+.music-disc {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #f3dce6
+        );
+
+    font-size:
+        21px;
+
+}
+
+
+.music-player.playing
+.music-disc {
+
+    animation:
+        musicSpin
+        3s linear
+        infinite;
+
+}
+
+
+@keyframes musicSpin {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
+
+#pageTransition {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        10000;
+
+    background:
+        rgba(245,225,234,.62);
+
+    backdrop-filter:
+        blur(0);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity .8s ease,
+        backdrop-filter .8s ease;
+
+}
+
+
+#pageTransition.active {
+
+    opacity:
+        1;
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+body {
+
+    transition:
+        opacity .85s ease,
+        transform .85s ease;
+
+}
+
+
+body.leaving {
+
+    opacity:
+        0;
+
+    transform:
+        scale(1.025);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .letter7-container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .dream-hero {
+
+        min-height:
+            100svh;
+
+        padding:
+            65px 12px;
+
+    }
+
+
+    .hero-flower {
+
+        width:
+            82px;
+
+        height:
+            82px;
+
+        font-size:
+            38px;
+
+    }
+
+
+    .hero-small {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    .dream-hero h1 {
+
+        font-size:
+            70px;
+
+    }
+
+
+    .hero-text {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .dream-letter {
+
+        padding:
+            38px 24px;
+
+        border-radius:
+            25px;
+
+    }
+
+
+    .dream-letter h2,
+    .little-dreams h2,
+    .dream-places h2,
+    .future-life h2 {
+
+        font-size:
+            39px;
+
+    }
+
+
+    .dream-text p {
+
+        font-size:
+            16px;
+
+        line-height:
+            1.9;
+
+    }
+
+
+    .dream-text .highlight {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .dream-shayari {
+
+        min-height:
+            520px;
+
+        padding:
+            55px 20px;
+
+        border-radius:
+            26px;
+
+    }
+
+
+    .urdu-line {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .shayari {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .dream-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            16px;
+
+    }
+
+
+    .dream-card {
+
+        min-height:
+            auto;
+
+        padding:
+            28px;
+
+    }
+
+
+    .places-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+
+    }
+
+
+    .place-card {
+
+        min-height:
+            160px;
+
+    }
+
+
+    .dream-quote {
+
+        min-height:
+            400px;
+
+        padding:
+            55px 20px;
+
+    }
+
+
+    .dream-quote p {
+
+        font-size:
+            48px;
+
+    }
+
+
+    .future-life {
+
+        padding:
+            40px 24px;
+
+        border-radius:
+            25px;
+
+    }
+
+
+    .future-content p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .future-highlight {
+
+        font-size:
+            23px !important;
+
+    }
+
+
+    .final-dream {
+
+        min-height:
+            720px;
+
+        padding:
+            60px 22px;
+
+        border-radius:
+            27px;
+
+    }
+
+
+    .final-dream h2 {
+
+        font-size:
+            67px;
+
+    }
+
+
+    .final-dream-text {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .final-dream-line {
+
+        font-size:
+            32px;
+
+    }
+
+
+    .signature span {
+
+        font-size:
+            38px;
+
+    }
+
+
+    #nextLetterBtn {
+
+        width:
+            min(100%, 280px);
+
+    }
+
+
+    .music-player {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        right:
+            16px;
+
+        bottom:
+            16px;
+
+    }
+
+
+    .music-disc {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        font-size:
+            18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 2
+   CINEMATIC GARDEN POLISH
+========================================================= */
+
+
+/* =========================================================
+   CINEMATIC FILM GRAIN
+========================================================= */
+
+.letter7-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    pointer-events: none;
+
+    z-index: 9990;
+
+    opacity: .035;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.65'/%3E%3C/svg%3E");
+
+    animation:
+        gardenGrain
+        .18s
+        steps(2)
+        infinite;
+
+}
+
+
+@keyframes gardenGrain {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(1.5%, -1%);
+    }
+
+    50% {
+        transform: translate(-1%, 1.5%);
+    }
+
+    75% {
+        transform: translate(1%, 1%);
+    }
+
+    100% {
+        transform: translate(-1%, -1%);
+    }
+
+}
+
+
+/* =========================================================
+   SOFT CINEMATIC VIGNETTE
+========================================================= */
+
+.letter7-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9989;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 48%,
+            rgba(83,58,69,.13) 100%
+        );
+
+}
+
+
+/* =========================================================
+   DAWN LIGHT BREATHING
+========================================================= */
+
+.sun-glow {
+
+    animation:
+        dawnBreath
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes dawnBreath {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(-50%)
+            scale(.88);
+
+        opacity:
+            .55;
+
+    }
+
+    50% {
+
+        transform:
+            translateX(-50%)
+            scale(1.12);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   GARDEN HAZE MOVEMENT
+========================================================= */
+
+.garden-haze {
+
+    animation:
+        hazeMove
+        12s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes hazeMove {
+
+    from {
+
+        transform:
+            translateX(-1%);
+
+        opacity:
+            .55;
+
+    }
+
+    to {
+
+        transform:
+            translateX(1%);
+
+        opacity:
+            .9;
+
+    }
+
+}
+
+
+/* =========================================================
+   HERO CINEMATIC REVEAL
+========================================================= */
+
+.dream-hero .hero-flower {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(35px)
+        scale(.72);
+
+}
+
+
+.dream-hero.show .hero-flower {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.3s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+
+.dream-hero .hero-small {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(18px);
+
+}
+
+
+.dream-hero.show .hero-small {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .9s ease .25s,
+        transform .9s
+        cubic-bezier(.22,1,.36,1) .25s;
+
+}
+
+
+.dream-hero h1 {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(30px)
+        scale(.96);
+
+}
+
+
+.dream-hero.show h1 {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        opacity 1.1s ease .45s,
+        transform 1.2s
+        cubic-bezier(.16,1,.3,1) .45s;
+
+}
+
+
+.dream-hero .hero-text {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.dream-hero.show .hero-text {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .75s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) .75s;
+
+}
+
+
+/* =========================================================
+   HERO FLOWER AURA
+========================================================= */
+
+.hero-flower {
+
+    position:
+        relative;
+
+}
+
+
+.hero-flower::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -18px;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(216,120,152,.20);
+
+    box-shadow:
+        0 0 35px
+        rgba(233,154,180,.18);
+
+    animation:
+        flowerAura
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes flowerAura {
+
+    0%,
+    100% {
+
+        transform:
+            scale(.88);
+
+        opacity:
+            .35;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.13);
+
+        opacity:
+            .85;
+
+    }
+
+}
+
+
+/* =========================================================
+   LETTER TEXT STAGGER
+========================================================= */
+
+.dream-text p {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(18px);
+
+}
+
+
+.dream-letter.show
+.dream-text p {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .9s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.dream-letter.show
+.dream-text p:nth-child(1) {
+
+    transition-delay:
+        .15s;
+
+}
+
+
+.dream-letter.show
+.dream-text p:nth-child(2) {
+
+    transition-delay:
+        .32s;
+
+}
+
+
+.dream-letter.show
+.dream-text p:nth-child(3) {
+
+    transition-delay:
+        .49s;
+
+}
+
+
+.dream-letter.show
+.dream-text p:nth-child(4) {
+
+    transition-delay:
+        .66s;
+
+}
+
+
+/* =========================================================
+   SHAYARI CINEMATIC REVEAL
+========================================================= */
+
+.dream-shayari .section-label,
+.dream-shayari .urdu-line,
+.dream-shayari .shayari,
+.dream-shayari .shayari-heart {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(22px);
+
+}
+
+
+.dream-shayari.show
+.section-label {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.dream-shayari.show
+.urdu-line {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .9s ease .2s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) .2s;
+
+}
+
+
+.dream-shayari.show
+.shayari {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .45s,
+        transform 1.1s
+        cubic-bezier(.16,1,.3,1) .45s;
+
+}
+
+
+.dream-shayari.show
+.shayari-heart {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .8s,
+        transform .8s ease .8s;
+
+}
+
+
+/* =========================================================
+   DREAM CARDS CINEMATIC REVEAL
+========================================================= */
+
+.dream-card {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(50px)
+        scale(.96);
+
+    transition:
+        opacity .85s ease,
+        transform 1s
+        cubic-bezier(.22,1,.36,1),
+        box-shadow .4s ease;
+
+}
+
+
+.little-dreams.show
+.dream-card {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.little-dreams.show
+.dream-card:nth-child(1) {
+
+    transition-delay:
+        .10s;
+
+}
+
+
+.little-dreams.show
+.dream-card:nth-child(2) {
+
+    transition-delay:
+        .28s;
+
+}
+
+
+.little-dreams.show
+.dream-card:nth-child(3) {
+
+    transition-delay:
+        .46s;
+
+}
+
+
+.little-dreams.show
+.dream-card:nth-child(4) {
+
+    transition-delay:
+        .64s;
+
+}
+
+
+/* =========================================================
+   DREAM CARD ICON
+========================================================= */
+
+.dream-card .dream-icon {
+
+    opacity:
+        0;
+
+    transform:
+        scale(.65)
+        rotate(-10deg);
+
+}
+
+
+.little-dreams.show
+.dream-card .dream-icon {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1)
+        rotate(0);
+
+    transition:
+        opacity .65s ease .45s,
+        transform .75s
+        cubic-bezier(.16,1,.3,1) .45s;
+
+}
+
+
+/* =========================================================
+   DREAM CARD TEXT
+========================================================= */
+
+.dream-card h3,
+.dream-card p {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(13px);
+
+}
+
+
+.little-dreams.show
+.dream-card h3 {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .7s ease .55s,
+        transform .8s
+        cubic-bezier(.22,1,.36,1) .55s;
+
+}
+
+
+.little-dreams.show
+.dream-card p {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .70s,
+        transform .9s
+        cubic-bezier(.22,1,.36,1) .70s;
+
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.dream-card {
+
+    --card-x:
+        50%;
+
+    --card-y:
+        50%;
+
+}
+
+
+.dream-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    background:
+        radial-gradient(
+            250px circle at
+            var(--card-x)
+            var(--card-y),
+            rgba(255,255,255,.25),
+            transparent 65%
+        );
+
+    transition:
+        opacity .35s ease;
+
+}
+
+
+.dream-card:hover::before {
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   PLACES REVEAL
+========================================================= */
+
+.place-card {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(35px)
+        scale(.97);
+
+}
+
+
+.dream-places.show
+.place-card {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        opacity .8s ease,
+        transform .9s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.dream-places.show
+.place-card:nth-child(1) {
+
+    transition-delay:
+        .12s;
+
+}
+
+
+.dream-places.show
+.place-card:nth-child(2) {
+
+    transition-delay:
+        .30s;
+
+}
+
+
+.dream-places.show
+.place-card:nth-child(3) {
+
+    transition-delay:
+        .48s;
+
+}
+
+
+/* =========================================================
+   QUOTE REVEAL
+========================================================= */
+
+.dream-quote .quote-mark,
+.dream-quote p,
+.dream-quote .quote-flower {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(22px);
+
+}
+
+
+.dream-quote.show
+.quote-mark {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .7s ease,
+        transform .8s ease;
+
+}
+
+
+.dream-quote.show
+p {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .35s,
+        transform 1.1s
+        cubic-bezier(.16,1,.3,1) .35s;
+
+}
+
+
+.dream-quote.show
+.quote-flower {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .85s,
+        transform .8s ease .85s;
+
+}
+
+
+/* =========================================================
+   FUTURE LIFE REVEAL
+========================================================= */
+
+.future-content p {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(17px);
+
+}
+
+
+.future-life.show
+.future-content p {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .9s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.future-life.show
+.future-content p:nth-child(1) {
+
+    transition-delay:
+        .15s;
+
+}
+
+
+.future-life.show
+.future-content p:nth-child(2) {
+
+    transition-delay:
+        .30s;
+
+}
+
+
+.future-life.show
+.future-content p:nth-child(3) {
+
+    transition-delay:
+        .45s;
+
+}
+
+
+.future-life.show
+.future-content p:nth-child(4) {
+
+    transition-delay:
+        .65s;
+
+}
+
+
+/* =========================================================
+   FINAL DREAM REVEAL
+========================================================= */
+
+.final-dream .dream-orbit {
+
+    opacity:
+        0;
+
+    transform:
+        scale(.65);
+
+}
+
+
+.final-dream.show
+.dream-orbit {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.3s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+
+.final-dream .section-label,
+.final-dream h2,
+.final-dream .garden-divider,
+.final-dream-text,
+.final-dream-line,
+.final-dream .signature,
+.final-dream #nextLetterBtn {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(22px);
+
+}
+
+
+.final-dream.show
+.section-label {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .35s,
+        transform .8s ease .35s;
+
+}
+
+
+.final-dream.show
+h2 {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .50s,
+        transform 1s
+        cubic-bezier(.16,1,.3,1) .50s;
+
+}
+
+
+.final-dream.show
+.garden-divider {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .72s,
+        transform .8s ease .72s;
+
+}
+
+
+.final-dream.show
+.final-dream-text {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .88s,
+        transform 1s ease .88s;
+
+}
+
+
+.final-dream.show
+.final-dream-line {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1.08s,
+        transform 1s ease 1.08s;
+
+}
+
+
+.final-dream.show
+.signature {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1.30s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) 1.30s;
+
+}
+
+
+.final-dream.show
+#nextLetterBtn {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1.55s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) 1.55s;
+
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+#l7ScrollProgress {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        0%;
+
+    height:
+        2px;
+
+    z-index:
+        10001;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d87898,
+            #aa91cf,
+            #f0b4c7
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(216,120,152,.40);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   MOBILE POLISH
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .letter7-page::before {
+
+        opacity:
+            .018;
+
+    }
+
+
+    .dream-card::before {
+
+        display:
+            none;
+
+    }
+
+
+    .dream-hero h1 {
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .letter7-page::before,
+    .sun-glow,
+    .garden-haze,
+    .hero-flower::before,
+    .dream-hero h1,
+    .final-heart {
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 3.2
+   INTERACTIVE DREAM CARDS
+========================================================= */
+
+
+/* =========================================================
+   DREAM CARD — INTERACTION BASE
+========================================================= */
+
+.dream-card {
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+
+    perspective: 1000px;
+
+    transition:
+        transform .45s cubic-bezier(.22,1,.36,1),
+        box-shadow .45s ease,
+        border-color .45s ease,
+        background .45s ease;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   DREAM CARD — SOFT INNER LIGHT
+========================================================= */
+
+.dream-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        radial-gradient(
+            circle at var(--card-x, 50%) var(--card-y, 50%),
+            rgba(255,255,255,.42),
+            transparent 42%
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .45s ease;
+
+    z-index: 0;
+
+}
+
+
+/* =========================================================
+   DREAM CARD — AMBIENT GLOW
+========================================================= */
+
+.dream-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    right: -90px;
+
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(233,154,180,.24),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    opacity: .55;
+
+    pointer-events: none;
+
+    transition:
+        transform .7s ease,
+        opacity .5s ease;
+
+    z-index: 0;
+
+}
+
+
+/* =========================================================
+   KEEP CARD CONTENT ABOVE EFFECTS
+========================================================= */
+
+.dream-card > * {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.dream-card:hover {
+
+    border-color:
+        rgba(216,120,152,.38);
+
+    box-shadow:
+        0 28px 70px
+        rgba(112,85,95,.18),
+        0 0 35px
+        rgba(233,154,180,.10);
+
+}
+
+
+.dream-card:hover::before {
+
+    opacity: 1;
+
+}
+
+
+.dream-card:hover::after {
+
+    transform:
+        scale(1.35);
+
+    opacity: .8;
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.dream-card .dream-icon {
+
+    display: inline-block;
+
+    transform:
+        translateZ(25px);
+
+    transition:
+        transform .5s cubic-bezier(.22,1,.36,1),
+        filter .4s ease;
+
+}
+
+
+.dream-card:hover .dream-icon {
+
+    transform:
+        translateZ(35px)
+        scale(1.12)
+        rotate(-4deg);
+
+    filter:
+        drop-shadow(
+            0 8px 14px
+            rgba(216,120,152,.18)
+        );
+
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.dream-card .dream-number {
+
+    transition:
+        color .4s ease,
+        transform .4s ease;
+
+}
+
+
+.dream-card:hover .dream-number {
+
+    color:
+        rgba(216,120,152,.62);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.dream-card h3 {
+
+    transition:
+        color .4s ease,
+        transform .45s ease;
+
+}
+
+
+.dream-card:hover h3 {
+
+    color:
+        var(--rose);
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* =========================================================
+   PREVIEW TEXT
+========================================================= */
+
+.dream-card .dream-preview {
+
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
+
+}
+
+
+/* =========================================================
+   CLICKABLE HINT
+========================================================= */
+
+.dream-card::marker {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   STORY CONTENT
+========================================================= */
+
+.dream-story {
+
+    margin-top: 24px;
+
+    padding-top: 22px;
+
+    border-top:
+        1px solid
+        rgba(216,120,152,.18);
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        opacity .5s ease,
+        transform .6s cubic-bezier(.22,1,.36,1),
+        max-height .7s ease;
+
+}
+
+
+/* =========================================================
+   STORY LABEL
+========================================================= */
+
+.dream-story-label {
+
+    display: block;
+
+    margin-bottom: 16px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   STORY PARAGRAPHS
+========================================================= */
+
+.dream-story p {
+
+    margin-top: 11px;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color:
+        #75686c;
+
+}
+
+
+/* =========================================================
+   EMOTIONAL LINE
+========================================================= */
+
+.dream-story .dream-emotional-line {
+
+    margin-top: 20px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   ACTIVE / OPEN CARD
+========================================================= */
+
+.dream-card.is-open {
+
+    background:
+        rgba(255,253,249,.78);
+
+    border-color:
+        rgba(216,120,152,.40);
+
+    box-shadow:
+        0 32px 85px
+        rgba(112,85,95,.20),
+        0 0 45px
+        rgba(233,154,180,.12);
+
+}
+
+
+.dream-card.is-open::before {
+
+    opacity: 1;
+
+}
+
+
+.dream-card.is-open::after {
+
+    transform:
+        scale(1.5);
+
+    opacity: .9;
+
+}
+
+
+/* =========================================================
+   OPEN CARD — PREVIEW
+========================================================= */
+
+.dream-card.is-open .dream-preview {
+
+    opacity: .55;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   OPEN CARD — STORY REVEAL
+========================================================= */
+
+.dream-card.is-open .dream-story {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    max-height: 1000px;
+
+}
+
+
+/* =========================================================
+   OPEN CARD — ICON
+========================================================= */
+
+.dream-card.is-open .dream-icon {
+
+    transform:
+        translateZ(35px)
+        scale(1.14);
+
+}
+
+
+/* =========================================================
+   OPEN CARD — TITLE
+========================================================= */
+
+.dream-card.is-open h3 {
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   OTHER CARDS — FOCUS MODE
+========================================================= */
+
+.dream-grid.has-active .dream-card:not(.is-open) {
+
+    opacity: .55;
+
+    transform:
+        scale(.985);
+
+    filter:
+        saturate(.78)
+        brightness(.97);
+
+}
+
+
+.dream-grid.has-active .dream-card:not(.is-open):hover {
+
+    opacity: .82;
+
+}
+
+
+/* =========================================================
+   FOCUS CARD
+========================================================= */
+
+.dream-grid.has-active .dream-card.is-open {
+
+    opacity: 1;
+
+    filter: none;
+
+    transform:
+        translateY(-5px)
+        scale(1.015);
+
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+========================================================= */
+
+.dream-card:focus-visible {
+
+    outline:
+        2px solid
+        rgba(216,120,152,.55);
+
+    outline-offset:
+        5px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .dream-card {
+
+        cursor: pointer;
+
+    }
+
+
+    .dream-card.is-open {
+
+        transform:
+            scale(1.01);
+
+    }
+
+
+    .dream-grid.has-active
+    .dream-card:not(.is-open) {
+
+        opacity: .68;
+
+    }
+
+
+    .dream-story {
+
+        margin-top: 20px;
+
+        padding-top: 18px;
+
+    }
+
+
+    .dream-story p {
+
+        font-size: 13.5px;
+
+        line-height: 1.85;
+
+    }
+
+
+    .dream-story
+    .dream-emotional-line {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dream-card,
+    .dream-card::before,
+    .dream-card::after,
+    .dream-card .dream-icon,
+    .dream-card h3,
+    .dream-card .dream-preview,
+    .dream-story {
+
+        transition:
+            opacity .2s ease,
+            color .2s ease;
+
+    }
+
+}
+
+/* =========================================================
+   STEP 3.3 — DREAM EMOTIONAL BURST
+========================================================= */
+
+.dream-burst {
+
+    position: fixed;
+
+    z-index: 10000;
+
+    pointer-events: none;
+
+    font-size: 16px;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.4);
+
+    animation:
+        dreamBurst
+        1.05s
+        cubic-bezier(.22,1,.36,1)
+        var(--burst-delay)
+        forwards;
+
+}
+
+
+@keyframes dreamBurst {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.35)
+            rotate(0deg);
+
+    }
+
+
+    15% {
+
+        opacity: .95;
+
+    }
+
+
+    65% {
+
+        opacity: .75;
+
+    }
+
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--burst-x)),
+                calc(-50% + var(--burst-y))
+            )
+            scale(1.15)
+            rotate(25deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   STORY CONTENT STAGGER
+========================================================= */
+
+.dream-card.is-open
+.dream-story-label {
+
+    animation:
+        dreamStoryReveal
+        .55s
+        cubic-bezier(.22,1,.36,1)
+        both;
+
+}
+
+
+.dream-card.is-open
+.dream-story p {
+
+    animation:
+        dreamStoryReveal
+        .65s
+        cubic-bezier(.22,1,.36,1)
+        both;
+
+}
+
+
+.dream-card.is-open
+.dream-story p:nth-of-type(2) {
+
+    animation-delay:
+        .08s;
+
+}
+
+
+.dream-card.is-open
+.dream-story p:nth-of-type(3) {
+
+    animation-delay:
+        .16s;
+
+}
+
+
+@keyframes dreamStoryReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE BURST
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .dream-burst {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dream-burst {
+
+        animation-duration:
+            .2s;
+
+    }
+
+
+    .dream-card.is-open
+    .dream-story-label,
+
+    .dream-card.is-open
+    .dream-story p {
+
+        animation: none;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 3.4 PART 2
+   PREMIUM MEMORY REVEAL
+========================================================= */
+
+.dream-memory-reveal {
+    width: 100%;
+    margin-top: 28px;
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity .65s ease,
+        transform .65s cubic-bezier(.22, 1, .36, 1);
+}
+
+.dream-card.is-open .dream-memory-reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .28s;
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY LABEL
+--------------------------------------------------------- */
+
+.dream-memory-label {
+    display: block;
+    margin-bottom: 12px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    opacity: .62;
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY FRAME
+--------------------------------------------------------- */
+
+.dream-memory-frame {
+    position: relative;
+
+    width: min(100%, 390px);
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .22);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, .22),
+
+        0 0 35px
+        rgba(255, 205, 180, .12);
+
+    transform:
+        translateZ(0);
+
+    isolation: isolate;
+
+    transition:
+        transform .6s
+        cubic-bezier(.22, 1, .36, 1),
+
+        box-shadow .6s ease,
+
+        border-color .6s ease;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE
+--------------------------------------------------------- */
+
+.dream-memory-frame img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transform: scale(1);
+
+    filter:
+        saturate(.92)
+        brightness(.88);
+
+    transition:
+        transform 1.4s
+        cubic-bezier(.22, 1, .36, 1),
+
+        filter 1s ease;
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC IMAGE OVERLAY
+--------------------------------------------------------- */
+
+.dream-memory-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(20, 12, 18, .04) 0%,
+            rgba(20, 12, 18, .08) 42%,
+            rgba(12, 8, 15, .72) 100%
+        );
+
+    opacity: .9;
+
+    transition:
+        opacity .8s ease;
+}
+
+
+/* ---------------------------------------------------------
+   SOFT LIGHT
+--------------------------------------------------------- */
+
+.dream-memory-frame::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(255, 235, 220, .20),
+            transparent 42%
+        );
+
+    opacity: .7;
+
+    mix-blend-mode:
+        screen;
+
+    transition:
+        opacity .7s ease;
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC EDGE
+--------------------------------------------------------- */
+
+.dream-memory-frame::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255, 255, 255, .10),
+
+        inset 0 -70px 80px
+        rgba(0, 0, 0, .16);
+}
+
+
+/* ---------------------------------------------------------
+   CAPTION
+--------------------------------------------------------- */
+
+.dream-memory-caption {
+    position: absolute;
+
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+
+    z-index: 4;
+
+    color: #fff;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 14px;
+    line-height: 1.65;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 14px
+        rgba(0, 0, 0, .55);
+
+    opacity: 0;
+    transform:
+        translateY(12px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s
+        cubic-bezier(.22, 1, .36, 1);
+
+    transition-delay: .15s;
+}
+
+
+/* ---------------------------------------------------------
+   OPEN STATE
+--------------------------------------------------------- */
+
+.dream-card.is-open
+.dream-memory-frame img {
+    transform: scale(1);
+
+    filter:
+        saturate(1)
+        brightness(.94);
+}
+
+.dream-card.is-open
+.dream-memory-caption {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition-delay: .48s;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+--------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .dream-card.is-open
+    .dream-memory-frame:hover {
+
+        transform:
+            translateY(-4px)
+            scale(1.012);
+
+        box-shadow:
+            0 24px 55px
+            rgba(0, 0, 0, .26),
+
+            0 0 42px
+            rgba(255, 205, 180, .18);
+
+        border-color:
+            rgba(255, 255, 255, .32);
+    }
+
+    .dream-card.is-open
+    .dream-memory-frame:hover img {
+
+        transform:
+            scale(1);
+    }
+
+    .dream-card.is-open
+    .dream-memory-frame:hover
+    .dream-memory-overlay {
+
+        opacity: .76;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .dream-memory-reveal {
+        margin-top: 24px;
+    }
+
+    .dream-memory-frame {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .dream-memory-frame img {
+        height: auto;
+    }
+
+    .dream-memory-caption {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .dream-memory-label {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dream-memory-reveal,
+    .dream-memory-frame,
+    .dream-memory-frame img,
+    .dream-memory-caption,
+    .dream-memory-overlay,
+    .dream-memory-frame::before {
+
+        transition: none;
+    }
+
+    .dream-memory-frame img {
+        transform: none;
+    }
+
+    .dream-card.is-open
+    .dream-memory-frame img {
+        transform: none;
+    }
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4 PART 1
+   CINEMATIC IMAGE REVEAL
+========================================================= */
+
+.dream-memory-frame {
+    opacity: 0;
+    transform:
+        translateY(22px)
+        scale(.985);
+
+    transition:
+        opacity .8s ease,
+        transform 1s
+        cubic-bezier(.22, 1, .36, 1),
+        box-shadow .8s ease;
+}
+
+
+/* ---------------------------------------------------------
+   OPEN — MEMORY FRAME
+--------------------------------------------------------- */
+
+.dream-card.is-open
+.dream-memory-frame {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition-delay:
+        .38s;
+
+    box-shadow:
+        0 22px 55px
+        rgba(0, 0, 0, .24),
+
+        0 0 45px
+        rgba(255, 205, 180, .16);
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE CINEMATIC ENTRY
+--------------------------------------------------------- */
+
+.dream-memory-frame img {
+
+    opacity: 0;
+
+    transform:
+        scale(1.025);
+
+    transition:
+        opacity .9s ease,
+        transform 1.4s
+        cubic-bezier(.16, 1, .3, 1),
+        filter 1s ease;
+}
+
+
+.dream-card.is-open
+.dream-memory-frame img {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    transition-delay:
+        .52s;
+
+    filter:
+        saturate(1)
+        brightness(.94);
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY OVERLAY REVEAL
+--------------------------------------------------------- */
+
+.dream-memory-overlay {
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+}
+
+
+.dream-card.is-open
+.dream-memory-overlay {
+
+    opacity: .82;
+
+    transition-delay:
+        .62s;
+}
+
+
+/* ---------------------------------------------------------
+   SOFT LIGHT REVEAL
+--------------------------------------------------------- */
+
+.dream-memory-frame::before {
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+}
+
+
+.dream-card.is-open
+.dream-memory-frame::before {
+
+    opacity: .72;
+
+    transition-delay:
+        .68s;
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dream-memory-frame,
+    .dream-memory-frame img,
+    .dream-memory-overlay,
+    .dream-memory-frame::before {
+
+        transition:
+            none;
+    }
+
+    .dream-memory-frame,
+    .dream-card.is-open
+    .dream-memory-frame {
+
+        transform:
+            none;
+    }
+
+    .dream-memory-frame img,
+    .dream-card.is-open
+    .dream-memory-frame img {
+
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+/* =========================================================
+   STEP 4.2 — MEMORY PARALLAX LIGHT
+========================================================= */
+
+.dream-memory-frame {
+
+    --memory-x: 50%;
+    --memory-y: 50%;
+
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC LIGHT FOLLOWS MOUSE
+--------------------------------------------------------- */
+
+.dream-memory-frame::before {
+
+    background:
+        radial-gradient(
+            circle at
+            var(--memory-x)
+            var(--memory-y),
+
+            rgba(255, 240, 225, .24),
+
+            transparent 42%
+        );
+
+    transition:
+        background-position .25s ease,
+        opacity .7s ease;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE DEPTH
+--------------------------------------------------------- */
+
+.dream-memory-frame img {
+
+    will-change:
+        transform;
+
+    transform-origin:
+        center center;
+
+    transition:
+        transform 1.1s
+        cubic-bezier(.22, 1, .36, 1),
+        opacity .9s ease,
+        filter 1s ease;
+}
+
+
+/* ---------------------------------------------------------
+   OPEN STATE
+--------------------------------------------------------- */
+
+.dream-card.is-open
+.dream-memory-frame img {
+
+    will-change:
+        transform;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE — NO PARALLAX
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .dream-memory-frame img {
+
+        will-change:
+            auto;
+
+        transform:
+            none;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dream-memory-frame img {
+
+        will-change:
+            auto;
+
+        transform:
+            none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4.3
+   CINEMATIC MEMORY SPOTLIGHT
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT ROOT
+--------------------------------------------------------- */
+
+.memory-spotlight {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .55s ease,
+        visibility .55s ease;
+}
+
+
+/* ---------------------------------------------------------
+   VISIBLE STATE
+--------------------------------------------------------- */
+
+.memory-spotlight.is-visible {
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   BACKDROP
+--------------------------------------------------------- */
+
+.memory-spotlight-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255, 214, 225, .10),
+            transparent 32%
+        ),
+        rgba(12, 8, 14, .82);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    opacity: 0;
+
+    transition:
+        opacity .65s ease;
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE BACKDROP
+--------------------------------------------------------- */
+
+.memory-spotlight.is-active {
+
+    opacity: 1;
+
+}
+
+
+.memory-spotlight.is-active
+.memory-spotlight-backdrop {
+
+    opacity: 1;
+
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT
+--------------------------------------------------------- */
+
+.memory-spotlight-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        100%,
+        1050px
+    );
+
+    max-height: 92vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(25px)
+        scale(.94);
+
+    transition:
+        opacity .6s ease,
+        transform .75s
+        cubic-bezier(
+            .16,
+            1,
+            .3,
+            1
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT ACTIVE
+--------------------------------------------------------- */
+
+.memory-spotlight.is-active
+.memory-spotlight-content {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE BUTTON
+--------------------------------------------------------- */
+
+.memory-spotlight-close {
+
+    position: absolute;
+
+    top: -8px;
+
+    right: -8px;
+
+    z-index: 10;
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    background:
+        rgba(255,255,255,.08);
+
+    color: #fff;
+
+    font-size: 28px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.25);
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease;
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE HOVER
+--------------------------------------------------------- */
+
+@media (
+    hover: hover
+) and (
+    pointer: fine
+) {
+
+    .memory-spotlight-close:hover {
+
+        transform:
+            rotate(90deg)
+            scale(1.08);
+
+        background:
+            rgba(255,255,255,.16);
+
+        border-color:
+            rgba(255,255,255,.42);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY LABEL
+--------------------------------------------------------- */
+
+.memory-spotlight-label {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255,255,255,.68);
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity .6s ease,
+        transform .6s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+    transition-delay:
+        .18s;
+
+}
+
+
+/* ---------------------------------------------------------
+   LABEL ACTIVE
+--------------------------------------------------------- */
+
+.memory-spotlight.is-active
+.memory-spotlight-label {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE WRAPPER
+--------------------------------------------------------- */
+
+.memory-spotlight-image-wrap {
+
+    position: relative;
+
+    width: min(
+        100%,
+        900px
+    );
+
+    max-height: 78vh;
+
+    padding: 8px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.48),
+        0 0 70px
+        rgba(255,185,205,.10);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        scale(.90)
+        translateY(20px);
+
+    transition:
+        opacity .8s ease,
+        transform 1s
+        cubic-bezier(
+            .16,
+            1,
+            .3,
+            1
+        );
+
+    transition-delay:
+        .08s;
+
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE WRAPPER ACTIVE
+--------------------------------------------------------- */
+
+.memory-spotlight.is-active
+.memory-spotlight-image-wrap {
+
+    opacity: 1;
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT IMAGE
+--------------------------------------------------------- */
+
+.memory-spotlight-image {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 74vh;
+
+    object-fit: contain;
+
+    border-radius: 16px;
+
+    filter:
+        saturate(.92)
+        brightness(.92);
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.25);
+
+    opacity: 0;
+
+    transform:
+        scale(1.035);
+
+    transition:
+        opacity .8s ease,
+        transform 1.25s
+        cubic-bezier(
+            .16,
+            1,
+            .3,
+            1
+        ),
+        filter .8s ease;
+
+    transition-delay:
+        .22s;
+
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE ACTIVE
+--------------------------------------------------------- */
+
+.memory-spotlight.is-active
+.memory-spotlight-image {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    filter:
+        saturate(1)
+        brightness(1);
+
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC IMAGE LIGHT
+--------------------------------------------------------- */
+
+.memory-spotlight-image-wrap::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,240,230,.16),
+            transparent 42%
+        );
+
+    mix-blend-mode:
+        screen;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+
+    transition-delay:
+        .45s;
+
+}
+
+
+.memory-spotlight.is-active
+.memory-spotlight-image-wrap::before {
+
+    opacity: 1;
+
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE EDGE
+--------------------------------------------------------- */
+
+.memory-spotlight-image-wrap::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    border-radius: 16px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255,255,255,.10),
+        inset 0 -100px 100px
+        rgba(0,0,0,.18);
+
+}
+
+
+/* ---------------------------------------------------------
+   CAPTION
+--------------------------------------------------------- */
+
+.memory-spotlight-caption {
+
+    width: min(
+        100%,
+        700px
+    );
+
+    margin:
+        18px auto 0;
+
+    padding:
+        0 35px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    font-style: italic;
+
+    text-align: center;
+
+    color:
+        rgba(255,255,255,.88);
+
+    text-shadow:
+        0 3px 18px
+        rgba(0,0,0,.55);
+
+    opacity: 0;
+
+    transform:
+        translateY(12px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+    transition-delay:
+        .42s;
+
+}
+
+
+/* ---------------------------------------------------------
+   CAPTION ACTIVE
+--------------------------------------------------------- */
+
+.memory-spotlight.is-active
+.memory-spotlight-caption {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .memory-spotlight {
+
+        padding:
+            22px 16px;
+
+    }
+
+
+    .memory-spotlight-content {
+
+        width: 100%;
+
+        max-height:
+            90vh;
+
+    }
+
+
+    .memory-spotlight-close {
+
+        top: -12px;
+
+        right: -4px;
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 25px;
+
+    }
+
+
+    .memory-spotlight-label {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .memory-spotlight-image-wrap {
+
+        width: 100%;
+
+        max-height: 68vh;
+
+        padding: 5px;
+
+        border-radius: 17px;
+
+    }
+
+
+    .memory-spotlight-image {
+
+        max-height: 66vh;
+
+        border-radius: 13px;
+
+    }
+
+
+    .memory-spotlight-image-wrap::after {
+
+        inset: 5px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .memory-spotlight-caption {
+
+        padding:
+            0 12px;
+
+        margin-top: 14px;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    .memory-spotlight,
+    .memory-spotlight-backdrop,
+    .memory-spotlight-content,
+    .memory-spotlight-label,
+    .memory-spotlight-image-wrap,
+    .memory-spotlight-image,
+    .memory-spotlight-caption {
+
+        transition: none;
+
+    }
+
+
+    .memory-spotlight-content,
+    .memory-spotlight-image-wrap,
+    .memory-spotlight-image {
+
+        transform: none;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4.4
+   MEMORY FOCUS TRANSITION
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   MEMORY FOCUS
+--------------------------------------------------------- */
+
+.dream-memory-frame {
+
+    transition:
+        transform .6s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        ),
+        box-shadow .6s ease,
+        border-color .6s ease,
+        filter .6s ease,
+        opacity .6s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE MEMORY
+--------------------------------------------------------- */
+
+.dream-memory-frame.memory-focus-active {
+
+    transform:
+        translateY(-5px)
+        scale(1.018);
+
+    border-color:
+        rgba(255, 225, 215, .48);
+
+    box-shadow:
+        0 28px 70px
+        rgba(0,0,0,.30),
+        0 0 65px
+        rgba(255,205,180,.24);
+
+    filter:
+        brightness(1.04)
+        saturate(1.04);
+
+}
+
+
+/* ---------------------------------------------------------
+   FOCUS CARD
+--------------------------------------------------------- */
+
+.dream-card.memory-focus-card {
+
+    z-index: 20;
+
+}
+
+
+/* ---------------------------------------------------------
+   OTHER CARDS FADE
+--------------------------------------------------------- */
+
+.dream-grid.has-active
+.dream-card.memory-focus-card {
+
+    opacity: 1;
+
+}
+
+
+.dream-grid.has-active
+.dream-card:not(.memory-focus-card) {
+
+    transition:
+        opacity .55s ease,
+        filter .55s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY FOCUS LIGHT
+--------------------------------------------------------- */
+
+.dream-memory-frame.memory-focus-active::before {
+
+    opacity: 1;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,245,235,.34),
+            transparent 45%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .dream-memory-frame.memory-focus-active {
+
+        transform:
+            scale(1.008);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.28),
+            0 0 45px
+            rgba(255,205,180,.18);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dream-memory-frame.memory-focus-active {
+
+        transform:
+            none;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4.5
+   FINAL CINEMATIC POLISH
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   DREAM CARD — PREMIUM DEPTH
+--------------------------------------------------------- */
+
+.dream-card {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    will-change:
+        transform;
+
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY REVEAL — SMOOTHER COMPOSITION
+--------------------------------------------------------- */
+
+.dream-memory-reveal {
+
+    transform-origin:
+        center top;
+
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY FRAME — FINAL FINISH
+--------------------------------------------------------- */
+
+.dream-memory-frame {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    transform-origin:
+        center center;
+
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY IMAGE — CINEMATIC QUALITY
+--------------------------------------------------------- */
+
+.dream-memory-frame img {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    image-rendering:
+        auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   OPEN MEMORY — CONTROLLED LIGHT
+--------------------------------------------------------- */
+
+.dream-card.is-open
+.dream-memory-frame {
+
+    box-shadow:
+        0 22px 55px
+        rgba(0,0,0,.24),
+        0 0 48px
+        rgba(255,205,180,.16);
+
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE FOCUS — PREMIUM BALANCE
+--------------------------------------------------------- */
+
+.dream-memory-frame.memory-focus-active {
+
+    box-shadow:
+        0 28px 70px
+        rgba(0,0,0,.30),
+        0 0 62px
+        rgba(255,205,180,.22);
+
+}
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT — FINAL DEPTH
+--------------------------------------------------------- */
+
+.memory-spotlight {
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT CONTENT — CLEAN COMPOSITION
+--------------------------------------------------------- */
+
+.memory-spotlight-content {
+
+    transform-origin:
+        center center;
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT IMAGE — PREMIUM EDGE
+--------------------------------------------------------- */
+
+.memory-spotlight-image-wrap {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    transform-origin:
+        center center;
+
+}
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT IMAGE LIGHT BALANCE
+--------------------------------------------------------- */
+
+.memory-spotlight-image {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE BUTTON — SOFT PREMIUM FEEL
+--------------------------------------------------------- */
+
+.memory-spotlight-close {
+
+    transition:
+        transform .35s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        ),
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+@media (
+    hover: hover
+) and (
+    pointer: fine
+) {
+
+    .memory-spotlight-close:hover {
+
+        box-shadow:
+            0 0 24px
+            rgba(255,215,225,.16);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   DREAM MEMORY CAPTION — FINAL READABILITY
+--------------------------------------------------------- */
+
+.dream-memory-caption {
+
+    max-width:
+        92%;
+
+}
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT CAPTION — FINAL READABILITY
+--------------------------------------------------------- */
+
+.memory-spotlight-caption {
+
+    max-width:
+        760px;
+
+}
+
+
+/* ---------------------------------------------------------
+   PREVENT IMAGE SELECTION
+--------------------------------------------------------- */
+
+.dream-memory-frame img,
+.memory-spotlight-image {
+
+    user-select:
+        none;
+
+    -webkit-user-drag:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE POLISH
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .dream-card {
+
+        will-change:
+            auto;
+
+    }
+
+
+    .dream-memory-frame {
+
+        backface-visibility:
+            hidden;
+
+    }
+
+
+    .memory-spotlight-content {
+
+        width:
+            100%;
+
+    }
+
+
+    .memory-spotlight-caption {
+
+        max-width:
+            100%;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    .dream-card,
+    .dream-memory-frame,
+    .memory-spotlight-content,
+    .memory-spotlight-image-wrap {
+
+        will-change:
+            auto;
+
+        backface-visibility:
+            visible;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4.6
+   RESPONSIVE + PERFORMANCE OPTIMIZATION
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   GLOBAL OVERFLOW PROTECTION
+--------------------------------------------------------- */
+
+html,
+body {
+
+    max-width:
+        100%;
+
+    overflow-x:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   DREAM SECTION SAFETY
+--------------------------------------------------------- */
+
+.dream-section,
+.dream-grid,
+.dream-card {
+
+    max-width:
+        100%;
+
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY IMAGE PERFORMANCE
+--------------------------------------------------------- */
+
+.dream-memory-frame img,
+.memory-spotlight-image {
+
+    max-width:
+        100%;
+
+    height:
+        auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+    .dream-grid {
+
+        gap:
+            20px;
+
+    }
+
+
+    .dream-card {
+
+        padding:
+            24px;
+
+    }
+
+
+    .dream-memory-frame {
+
+        width:
+            min(100%, 360px);
+
+    }
+
+
+    .memory-spotlight {
+
+        padding:
+            28px;
+
+    }
+
+
+    .memory-spotlight-image-wrap {
+
+        width:
+            min(100%, 820px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL TABLET / LARGE MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 820px) {
+
+    .dream-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            620px;
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+
+    }
+
+
+    .dream-card {
+
+        width:
+            100%;
+
+    }
+
+
+    .dream-memory-frame {
+
+        width:
+            min(100%, 430px);
+
+    }
+
+
+    .memory-spotlight-content {
+
+        max-height:
+            90vh;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .dream-grid {
+
+        width:
+            calc(100% - 28px);
+
+        max-width:
+            100%;
+
+        gap:
+            16px;
+
+    }
+
+
+    .dream-card {
+
+        padding:
+            21px;
+
+        border-radius:
+            18px;
+
+    }
+
+
+    .dream-memory-reveal {
+
+        width:
+            100%;
+
+    }
+
+
+    .dream-memory-frame {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+    }
+
+
+    .dream-memory-frame img {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        object-fit:
+            contain;
+
+    }
+
+
+    .dream-memory-caption {
+
+        max-width:
+            calc(100% - 20px);
+
+    }
+
+
+    .memory-spotlight {
+
+        width:
+            100%;
+
+        height:
+            100%;
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .memory-spotlight-content {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+    }
+
+
+    .memory-spotlight-image-wrap {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+    }
+
+
+    .memory-spotlight-image {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+        height:
+            auto;
+
+        max-height:
+            65vh;
+
+        object-fit:
+            contain;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   VERY SMALL PHONES
+--------------------------------------------------------- */
+
+@media (max-width: 380px) {
+
+    .dream-grid {
+
+        width:
+            calc(100% - 20px);
+
+    }
+
+
+    .dream-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .dream-memory-label {
+
+        font-size:
+            7px;
+
+        letter-spacing:
+            1.7px;
+
+    }
+
+
+    .dream-memory-caption {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .memory-spotlight {
+
+        padding:
+            14px 10px;
+
+    }
+
+
+    .memory-spotlight-caption {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.55;
+
+        padding:
+            0 6px;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   LARGE DESKTOP
+--------------------------------------------------------- */
+
+@media (min-width: 1600px) {
+
+    .dream-grid {
+
+        max-width:
+            1180px;
+
+    }
+
+
+    .dream-memory-frame {
+
+        width:
+            min(100%, 420px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   PERFORMANCE — STATIC ELEMENTS
+--------------------------------------------------------- */
+
+.dream-memory-frame,
+.memory-spotlight-image-wrap {
+
+    contain:
+        layout
+        paint;
+
+}
+
+
+/* ---------------------------------------------------------
+   TOUCH DEVICES
+--------------------------------------------------------- */
+
+@media (
+    hover: none
+) and (
+    pointer: coarse
+) {
+
+    .dream-memory-frame {
+
+        transform:
+            none;
+
+    }
+
+
+    .dream-memory-frame:hover {
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+
+    .dream-memory-frame,
+    .dream-memory-frame img,
+    .memory-spotlight-content,
+    .memory-spotlight-image-wrap,
+    .memory-spotlight-image {
+
+        will-change:
+            auto !important;
+
+    }
+
+}
+
+/* =========================================================
+   STEP 4.6 — PAGE VISIBILITY OPTIMIZATION
+========================================================= */
+
+body.page-not-visible
+.dream-burst,
+body.page-not-visible
+.garden-firefly,
+body.page-not-visible
+.garden-particle {
+
+    animation-play-state:
+        paused;
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4.6
+   DREAM DESTINATIONS — CINEMATIC INTERACTION
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   DESTINATION CARD
+--------------------------------------------------------- */
+
+.place-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    cursor:
+        pointer;
+
+    transform-origin:
+        center center;
+
+    transition:
+        transform .5s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        ),
+        box-shadow .5s ease,
+        border-color .5s ease,
+        background .5s ease,
+        min-height .55s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   DESTINATION LIGHT
+--------------------------------------------------------- */
+
+.place-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    background:
+        radial-gradient(
+            circle at 50% 28%,
+            rgba(255,255,255,.38),
+            transparent 52%
+        );
+
+    transition:
+        opacity .6s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   DESTINATION SHIMMER
+--------------------------------------------------------- */
+
+.place-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    top:
+        -100px;
+
+    right:
+        -80px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.18);
+
+    filter:
+        blur(30px);
+
+    opacity:
+        0;
+
+    transition:
+        opacity .7s ease,
+        transform .9s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+--------------------------------------------------------- */
+
+@media (
+    hover: hover
+) and (
+    pointer: fine
+) {
+
+    .place-card:hover {
+
+        transform:
+            translateY(-9px)
+            scale(1.012);
+
+        box-shadow:
+            0 24px 55px
+            rgba(70,45,65,.13),
+            0 0 35px
+            rgba(255,190,210,.13);
+
+    }
+
+
+    .place-card:hover::before {
+
+        opacity:
+            1;
+
+    }
+
+
+    .place-card:hover::after {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                -20px,
+                20px
+            );
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   OPEN STATE
+--------------------------------------------------------- */
+
+.place-card.destination-open {
+
+    z-index:
+        10;
+
+    min-height:
+        350px;
+
+    transform:
+        translateY(-7px)
+        scale(1.018);
+
+    border-color:
+        rgba(255,255,255,.82);
+
+    box-shadow:
+        0 28px 70px
+        rgba(70,45,65,.17),
+        0 0 55px
+        rgba(255,190,210,.18);
+
+    background:
+        rgba(255,255,255,.62);
+
+}
+
+
+.place-card.destination-open::before {
+
+    opacity:
+        1;
+
+}
+
+
+.place-card.destination-open::after {
+
+    opacity:
+        1;
+
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE ROW
+--------------------------------------------------------- */
+
+.places-row.has-destination-active
+.place-card:not(.destination-open) {
+
+    opacity:
+        .55;
+
+    filter:
+        saturate(.82);
+
+    transform:
+        scale(.985);
+
+}
+
+
+.places-row.has-destination-active
+.place-card:not(.destination-open):hover {
+
+    opacity:
+        .8;
+
+}
+
+
+/* ---------------------------------------------------------
+   KEEP CARD CONTENT ABOVE LIGHT
+--------------------------------------------------------- */
+
+.place-card > span,
+.place-card > p,
+.place-card > .destination-story {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+/* ---------------------------------------------------------
+   ICON
+--------------------------------------------------------- */
+
+.place-card > span {
+
+    transition:
+        transform .55s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        ),
+        filter .55s ease;
+
+}
+
+
+.place-card.destination-open
+> span {
+
+    transform:
+        translateY(-5px)
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 8px 14px
+            rgba(120,80,100,.13)
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   TITLE
+--------------------------------------------------------- */
+
+.place-card > p {
+
+    transition:
+        transform .55s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+}
+
+
+.place-card.destination-open
+> p {
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* ---------------------------------------------------------
+   STORY CONTAINER
+--------------------------------------------------------- */
+
+.destination-story {
+
+    width:
+        min(100%, 480px);
+
+    margin:
+        18px auto 0;
+
+    padding:
+        22px 20px 4px;
+
+    text-align:
+        center;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity .5s ease,
+        transform .65s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+}
+
+
+.destination-story.is-visible {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   STORY LABEL
+--------------------------------------------------------- */
+
+.destination-story-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        12px;
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        var(--rose);
+
+}
+
+
+/* ---------------------------------------------------------
+   STORY TEXT
+--------------------------------------------------------- */
+
+.destination-story p {
+
+    margin:
+        0 auto 12px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.75;
+
+    color:
+        #75686c;
+
+}
+
+
+/* ---------------------------------------------------------
+   SECOND PARAGRAPH
+--------------------------------------------------------- */
+
+.destination-story-second {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity .6s ease .16s,
+        transform .7s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+}
+
+
+.destination-story.is-visible
+.destination-story-second {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   EMOTIONAL LINE
+--------------------------------------------------------- */
+
+.destination-story-emotional {
+
+    margin-top:
+        18px !important;
+
+    padding-top:
+        15px;
+
+    border-top:
+        1px solid
+        rgba(216,120,152,.16);
+
+    font-family:
+        'Great Vibes',
+        cursive !important;
+
+    font-size:
+        21px !important;
+
+    line-height:
+        1.45 !important;
+
+    color:
+        var(--rose) !important;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity .7s ease .32s,
+        transform .8s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+}
+
+
+.destination-story.is-visible
+.destination-story-emotional {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   KEYBOARD FOCUS
+--------------------------------------------------------- */
+
+.place-card:focus-visible {
+
+    outline:
+        2px solid
+        rgba(216,120,152,.45);
+
+    outline-offset:
+        5px;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .place-card.destination-open {
+
+        min-height:
+            380px;
+
+        transform:
+            scale(1.008);
+
+    }
+
+
+    .places-row.has-destination-active
+    .place-card:not(.destination-open) {
+
+        opacity:
+            .65;
+
+    }
+
+
+    .destination-story {
+
+        padding:
+            18px 12px 2px;
+
+    }
+
+
+    .destination-story p {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .destination-story-emotional {
+
+        font-size:
+            19px !important;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   VERY SMALL PHONES
+--------------------------------------------------------- */
+
+@media (max-width: 380px) {
+
+    .place-card.destination-open {
+
+        min-height:
+            400px;
+
+    }
+
+
+    .destination-story {
+
+        padding:
+            16px 8px 0;
+
+    }
+
+
+    .destination-story p {
+
+        font-size:
+            13px;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    .place-card,
+    .place-card::before,
+    .place-card::after,
+    .destination-story,
+    .destination-story-second,
+    .destination-story-emotional,
+    .place-card > span,
+    .place-card > p {
+
+        transition:
+            none !important;
+
+    }
+
+
+    .place-card.destination-open {
+
+        transform:
+            none;
+
+    }
+
+
+    .destination-story {
+
+        transform:
+            none;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4.6 PART 2
+   DREAM DESTINATION CINEMATIC ATMOSPHERE
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   DESTINATION VARIABLES
+--------------------------------------------------------- */
+
+.place-card {
+
+    --destination-x:
+        50%;
+
+    --destination-y:
+        50%;
+
+    --destination-rotate-x:
+        0deg;
+
+    --destination-rotate-y:
+        0deg;
+
+    transform-style:
+        preserve-3d;
+
+    perspective:
+        900px;
+
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC DEPTH
+--------------------------------------------------------- */
+
+@media (
+    hover: hover
+) and (
+    pointer: fine
+) {
+
+    .place-card:not(.destination-open) {
+
+        transform:
+            perspective(900px)
+            rotateX(
+                var(--destination-rotate-x)
+            )
+            rotateY(
+                var(--destination-rotate-y)
+            )
+            translateY(0);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   AMBIENT LIGHT
+--------------------------------------------------------- */
+
+.place-card::before {
+
+    background:
+        radial-gradient(
+            circle at
+            var(--destination-x)
+            var(--destination-y),
+
+            rgba(255,255,255,.36),
+
+            transparent 48%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   DESTINATION TYPE LIGHT
+--------------------------------------------------------- */
+
+
+/* 🌊 SEA */
+
+.place-card[data-destination="sea"]::before {
+
+    background:
+        radial-gradient(
+            circle at
+            var(--destination-x)
+            var(--destination-y),
+
+            rgba(170,215,230,.28),
+
+            transparent 52%
+        );
+
+}
+
+
+.place-card[data-destination="sea"].destination-open {
+
+    box-shadow:
+        0 30px 75px
+        rgba(70,95,110,.14),
+        0 0 65px
+        rgba(150,210,225,.20);
+
+}
+
+
+/* 🏔️ MOUNTAINS */
+
+.place-card[data-destination="mountains"]::before {
+
+    background:
+        radial-gradient(
+            circle at
+            var(--destination-x)
+            var(--destination-y),
+
+            rgba(205,215,235,.30),
+
+            transparent 52%
+        );
+
+}
+
+
+.place-card[data-destination="mountains"].destination-open {
+
+    box-shadow:
+        0 30px 75px
+        rgba(75,80,105,.14),
+        0 0 65px
+        rgba(190,200,230,.20);
+
+}
+
+
+/* 🌆 UNKNOWN CITY */
+
+.place-card[data-destination="unknown"]::before {
+
+    background:
+        radial-gradient(
+            circle at
+            var(--destination-x)
+            var(--destination-y),
+
+            rgba(240,195,175,.30),
+
+            transparent 52%
+        );
+
+}
+
+
+.place-card[data-destination="unknown"].destination-open {
+
+    box-shadow:
+        0 30px 75px
+        rgba(95,70,70,.15),
+        0 0 65px
+        rgba(240,190,170,.20);
+
+}
+
+
+/* ---------------------------------------------------------
+   ICON CINEMATIC FLOAT
+--------------------------------------------------------- */
+
+.place-card > span {
+
+    transform:
+        translateZ(18px);
+
+    will-change:
+        transform;
+
+}
+
+
+@media (
+    hover: hover
+) and (
+    pointer: fine
+) {
+
+    .place-card:not(.destination-open):hover
+    > span {
+
+        transform:
+            translateZ(24px)
+            translateY(-4px)
+            scale(1.05);
+
+    }
+
+}
+
+
+.place-card.destination-open
+> span {
+
+    transform:
+        translateZ(22px)
+        translateY(-5px)
+        scale(1.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   TITLE DEPTH
+--------------------------------------------------------- */
+
+.place-card > p {
+
+    transform:
+        translateZ(10px);
+
+}
+
+
+/* ---------------------------------------------------------
+   LIGHT SWEEP
+--------------------------------------------------------- */
+
+.place-card::after {
+
+    width:
+        240px;
+
+    height:
+        240px;
+
+    top:
+        -120px;
+
+    right:
+        -120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.25),
+            transparent 68%
+        );
+
+    filter:
+        blur(20px);
+
+}
+
+
+/* ---------------------------------------------------------
+   OPEN LIGHT SWEEP
+--------------------------------------------------------- */
+
+.place-card.destination-open::after {
+
+    opacity:
+        .9;
+
+    transform:
+        translate(
+            -45px,
+            45px
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   STORY LABEL REVEAL
+--------------------------------------------------------- */
+
+.destination-story-label {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        opacity .55s ease .05s,
+        transform .65s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+}
+
+
+.destination-story.is-visible
+.destination-story-label {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   MAIN STORY REVEAL
+--------------------------------------------------------- */
+
+.destination-story-main {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity .65s ease .10s,
+        transform .75s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+}
+
+
+.destination-story.is-visible
+.destination-story-main {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE CARD GLOW PULSE
+--------------------------------------------------------- */
+
+@keyframes destinationGlow {
+
+    0% {
+
+        box-shadow:
+            0 28px 70px
+            rgba(70,45,65,.17),
+            0 0 45px
+            rgba(255,190,210,.12);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 30px 75px
+            rgba(70,45,65,.18),
+            0 0 65px
+            rgba(255,190,210,.20);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 28px 70px
+            rgba(70,45,65,.17),
+            0 0 45px
+            rgba(255,190,210,.12);
+
+    }
+
+}
+
+
+.place-card.destination-open {
+
+    animation:
+        destinationGlow
+        3.5s ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .place-card {
+
+        transform:
+            none !important;
+
+        perspective:
+            none;
+
+    }
+
+
+    .place-card > span {
+
+        transform:
+            translateZ(0);
+
+    }
+
+
+    .place-card.destination-open
+    > span {
+
+        transform:
+            translateY(-4px)
+            scale(1.06);
+
+    }
+
+
+    .place-card.destination-open {
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    .place-card {
+
+        transform:
+            none !important;
+
+        animation:
+            none !important;
+
+    }
+
+
+    .place-card > span,
+    .place-card.destination-open > span {
+
+        transform:
+            none;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 7 — STEP 4.7
+   FINAL RESPONSIVE + PERFORMANCE AUDIT
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   GLOBAL SAFETY
+--------------------------------------------------------- */
+
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   MEDIA SAFETY
+--------------------------------------------------------- */
+
+img,
+video,
+canvas {
+    max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   DREAM CONTENT SAFETY
+--------------------------------------------------------- */
+
+.dream-grid,
+.places-row {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   DESTINATION CARDS
+--------------------------------------------------------- */
+
+.place-card {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   MEMORY CONTENT
+--------------------------------------------------------- */
+
+.dream-memory-frame,
+.memory-spotlight-image-wrap {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   DESTINATION TEXT SAFETY
+--------------------------------------------------------- */
+
+.destination-story,
+.destination-story p,
+.dream-memory-caption,
+.memory-spotlight-caption {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+    .places-row {
+        gap: 16px;
+    }
+
+
+    .place-card {
+        min-height: 200px;
+    }
+
+
+    .destination-story {
+        width: 100%;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 820px) {
+
+    .places-row {
+        grid-template-columns: 1fr;
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .place-card {
+        width: 100%;
+    }
+
+
+    .place-card.destination-open {
+        transform:
+            translateY(-4px)
+            scale(1.008);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .places-row {
+        width: calc(100% - 28px);
+        max-width: 100%;
+    }
+
+
+    .place-card {
+        min-height: 190px;
+        padding: 22px;
+    }
+
+
+    .place-card.destination-open {
+        min-height: 370px;
+    }
+
+
+    .destination-story {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .destination-story p {
+        max-width: 100%;
+    }
+
+
+    .dream-memory-frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+    .memory-spotlight {
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+
+    .memory-spotlight-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL PHONES
+--------------------------------------------------------- */
+
+@media (max-width: 380px) {
+
+    .places-row {
+        width: calc(100% - 20px);
+    }
+
+
+    .place-card {
+        padding: 18px;
+    }
+
+
+    .place-card.destination-open {
+        min-height: 390px;
+    }
+
+
+    .destination-story p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+
+    .destination-story-emotional {
+        font-size: 18px !important;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   LARGE DESKTOP
+--------------------------------------------------------- */
+
+@media (min-width: 1600px) {
+
+    .places-row {
+        max-width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   TOUCH DEVICES
+--------------------------------------------------------- */
+
+@media (
+    hover: none
+) and (
+    pointer: coarse
+) {
+
+    .place-card,
+    .dream-card,
+    .dream-memory-frame {
+        will-change: auto;
+    }
+
+
+    .place-card:hover,
+    .dream-card:hover {
+        transform: none;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    html {
+        scroll-behavior: auto !important;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+
+    .place-card,
+    .dream-card,
+    .dream-memory-frame {
+        transform: none !important;
+        will-change: auto !important;
+    }
+
+}
+
+/* =========================================================
+   STEP 4.7 — BACKGROUND TAB OPTIMIZATION
+========================================================= */
+
+body.l7-page-hidden
+.dream-burst,
+body.l7-page-hidden
+.garden-firefly,
+body.l7-page-hidden
+.garden-particle,
+body.l7-page-hidden
+.floating-heart {
+
+    animation-play-state:
+        paused;
+}

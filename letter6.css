@@ -1,0 +1,4256 @@
+/* =========================================================
+   LETTER 6 — GRATITUDE
+   MIDNIGHT ROSE / LAVENDER CINEMATIC THEME
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --rose:
+        #d96b8a;
+
+    --soft-rose:
+        #f1a8bb;
+
+    --lavender:
+        #a996d8;
+
+    --soft-lavender:
+        #d6c8f2;
+
+    --cream:
+        #fff9f5;
+
+    --warm-white:
+        #fffdfb;
+
+    --brown:
+        #59484a;
+
+    --muted:
+        #806f73;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    color:
+        var(--brown);
+
+    overflow-x:
+        hidden;
+
+    background:
+        #0d0a18;
+
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+========================================================= */
+
+.l6-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -20;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(169,150,216,.24),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(217,107,138,.18),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(145,117,190,.15),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #090716 0%,
+            #120d22 45%,
+            #170e20 100%
+        );
+
+}
+
+
+/* =========================================================
+   AMBIENT GLOWS
+========================================================= */
+
+.l6-glow {
+
+    position: fixed;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    pointer-events:
+        none;
+
+    filter:
+        blur(80px);
+
+    z-index: -10;
+
+}
+
+
+.glow-one {
+
+    top: -220px;
+    left: -180px;
+
+    background:
+        rgba(217,107,138,.16);
+
+    animation:
+        glowFloat 9s ease-in-out infinite alternate;
+
+}
+
+
+.glow-two {
+
+    right: -220px;
+    bottom: -180px;
+
+    background:
+        rgba(169,150,216,.18);
+
+    animation:
+        glowFloat 11s ease-in-out infinite alternate-reverse;
+
+}
+
+
+@keyframes glowFloat {
+
+    from {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .55;
+
+    }
+
+    to {
+
+        transform:
+            scale(1.18);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+#l6Stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events:
+        none;
+
+    z-index: -5;
+
+}
+
+
+.l6-star {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 8px
+        rgba(255,255,255,.8);
+
+    animation:
+        starPulse
+        var(--duration)
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .15;
+
+        transform:
+            scale(.7);
+
+    }
+
+    50% {
+
+        opacity:
+            .9;
+
+        transform:
+            scale(1.25);
+
+    }
+
+}
+
+
+/* =========================================================
+   PETALS
+========================================================= */
+
+#l6Petals {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    z-index: 2;
+
+}
+
+
+.l6-petal {
+
+    position: absolute;
+
+    top: -50px;
+
+    animation:
+        petalFall
+        var(--duration)
+        linear
+        forwards;
+
+    filter:
+        drop-shadow(
+            0 4px 8px
+            rgba(0,0,0,.25)
+        );
+
+}
+
+
+@keyframes petalFall {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                -40px,
+                0
+            )
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                var(--drift),
+                50vh,
+                0
+            )
+            rotate(180deg);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                calc(var(--drift) * -1),
+                115vh,
+                0
+            )
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+#floatingHearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    z-index: 3;
+
+}
+
+
+.l6-heart {
+
+    position: absolute;
+
+    bottom: -40px;
+
+    animation:
+        heartRise
+        var(--duration)
+        linear
+        forwards;
+
+}
+
+
+@keyframes heartRise {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(.7);
+
+        opacity:
+            0;
+
+    }
+
+    15% {
+
+        opacity:
+            .5;
+
+    }
+
+    80% {
+
+        opacity:
+            .25;
+
+    }
+
+    100% {
+
+        transform:
+            translate(
+                var(--drift),
+                -110vh
+            )
+            scale(1.15);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.letter6-container {
+
+    width:
+        min(92%, 1000px);
+
+    margin:
+        0 auto;
+
+    position:
+        relative;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.reveal.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.gratitude-hero {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        80px 20px;
+
+}
+
+
+.hero-symbol {
+
+    width:
+        100px;
+
+    height:
+        100px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    font-size:
+        46px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    box-shadow:
+
+        0 0 40px
+        rgba(217,107,138,.22),
+
+        inset 0 0 25px
+        rgba(255,255,255,.04);
+
+    backdrop-filter:
+        blur(15px);
+
+    animation:
+        symbolFloat
+        4s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes symbolFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+.hero-small {
+
+    margin-top:
+        34px;
+
+    font-size:
+        15px;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(255,255,255,.55);
+
+}
+
+
+.gratitude-hero h1 {
+
+    margin-top:
+        18px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(58px, 9vw, 100px);
+
+    font-weight:
+        400;
+
+    color:
+        #f1c8d5;
+
+    text-shadow:
+        0 0 35px
+        rgba(217,107,138,.25);
+
+}
+
+
+.hero-text {
+
+    margin-top:
+        20px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(19px, 3vw, 28px);
+
+    line-height:
+        1.8;
+
+    color:
+        rgba(255,255,255,.78);
+
+}
+
+
+.scroll-hint {
+
+    margin-top:
+        70px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.scroll-hint span {
+
+    font-size:
+        26px;
+
+    animation:
+        scrollArrow
+        1.8s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(8px);
+
+    }
+
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.gratitude-letter,
+.grateful-things,
+.gratitude-reflection,
+.final-gratitude {
+
+    margin-bottom:
+        120px;
+
+}
+
+
+/* =========================================================
+   MAIN LETTER
+========================================================= */
+
+.gratitude-letter {
+
+    padding:
+        70px;
+
+    border-radius:
+        32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(255,248,250,.94)
+        );
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0,0,0,.28),
+
+        0 0 70px
+        rgba(217,107,138,.10);
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.gratitude-letter::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    top:
+        -160px;
+
+    right:
+        -120px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(169,150,216,.18),
+            transparent 70%
+        );
+
+}
+
+
+.section-label {
+
+    display:
+        inline-block;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        var(--rose);
+
+    font-weight:
+        600;
+
+}
+
+
+.gratitude-letter h2,
+.grateful-things h2 {
+
+    margin-top:
+        22px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(38px, 6vw, 64px);
+
+    line-height:
+        1.2;
+
+    color:
+        #44383a;
+
+}
+
+
+.gold-divider {
+
+    width:
+        90px;
+
+    height:
+        2px;
+
+    margin:
+        30px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rose),
+            var(--lavender)
+        );
+
+}
+
+
+.gratitude-text {
+
+    max-width:
+        760px;
+
+}
+
+
+.gratitude-text p {
+
+    font-size:
+        18px;
+
+    line-height:
+        2;
+
+    margin-bottom:
+        20px;
+
+    color:
+        #65575a;
+
+}
+
+
+.gratitude-text .highlight {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        29px;
+
+    color:
+        var(--rose);
+
+    font-style:
+        italic;
+
+}
+
+
+.gratitude-heart {
+
+    margin-top:
+        30px;
+
+    text-align:
+        center;
+
+    font-size:
+        42px;
+
+    animation:
+        heartBeat
+        1.8s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.18);
+
+    }
+
+}
+
+
+/* =========================================================
+   GRATITUDE CARDS
+========================================================= */
+
+.grateful-things {
+
+    padding:
+        20px 0;
+
+}
+
+
+.grateful-things h2 {
+
+    color:
+        #f4eaf1;
+
+}
+
+
+.gratitude-grid {
+
+    margin-top:
+        45px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        22px;
+
+}
+
+
+.gratitude-card {
+
+    position:
+        relative;
+
+    padding:
+        36px;
+
+    min-height:
+        270px;
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(255,255,255,.065);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter:
+        blur(18px);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+    overflow:
+        hidden;
+
+}
+
+
+.gratitude-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        160px;
+
+    height:
+        160px;
+
+    right:
+        -80px;
+
+    bottom:
+        -80px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(217,107,138,.12);
+
+    filter:
+        blur(20px);
+
+}
+
+
+.gratitude-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(241,168,187,.35);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.22);
+
+}
+
+
+.card-icon {
+
+    font-size:
+        38px;
+
+}
+
+
+.card-number {
+
+    position:
+        absolute;
+
+    top:
+        30px;
+
+    right:
+        30px;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        rgba(255,255,255,.35);
+
+}
+
+
+.gratitude-card h3 {
+
+    margin-top:
+        22px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        28px;
+
+    color:
+        #f5e7ed;
+
+}
+
+
+.gratitude-card p {
+
+    margin-top:
+        14px;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.9;
+
+    color:
+        rgba(255,255,255,.62);
+
+}
+
+
+/* =========================================================
+   REFLECTION
+========================================================= */
+
+.gratitude-reflection {
+
+    min-height:
+        620px;
+
+    padding:
+        90px 60px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border-radius:
+        35px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,150,216,.12),
+            rgba(217,107,138,.08)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+}
+
+
+.reflection-glow {
+
+    position:
+        absolute;
+
+    width:
+        420px;
+
+    height:
+        420px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(169,150,216,.14);
+
+    filter:
+        blur(80px);
+
+    pointer-events:
+        none;
+
+}
+
+
+.gratitude-reflection h2 {
+
+    margin-top:
+        20px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(55px, 8vw, 82px);
+
+    font-weight:
+        400;
+
+    color:
+        #f2d9e4;
+
+}
+
+
+.reflection-line {
+
+    width:
+        80px;
+
+    height:
+        1px;
+
+    margin:
+        30px 0;
+
+    background:
+        rgba(255,255,255,.4);
+
+}
+
+
+.gratitude-reflection p {
+
+    margin:
+        7px 0;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(20px, 3vw, 28px);
+
+    color:
+        rgba(255,255,255,.72);
+
+}
+
+
+.gratitude-reflection .reflection-highlight {
+
+    margin-top:
+        35px;
+
+    font-size:
+        clamp(23px, 4vw, 34px);
+
+    color:
+        #f1a8bb;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   FINAL GRATITUDE
+========================================================= */
+
+.final-gratitude {
+
+    min-height:
+        850px;
+
+    padding:
+        90px 50px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border-radius:
+        38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf7,
+            #fff2f5
+        );
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.3);
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.final-gratitude::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    border-radius:
+        50%;
+
+    top:
+        -280px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(169,150,216,.18),
+            transparent 70%
+        );
+
+}
+
+
+.final-orbit {
+
+    position:
+        relative;
+
+    width:
+        170px;
+
+    height:
+        170px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.final-heart {
+
+    font-size:
+        58px;
+
+    z-index:
+        3;
+
+    animation:
+        finalHeart
+        2s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes finalHeart {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+
+    }
+
+}
+
+
+.orbit-ring {
+
+    position:
+        absolute;
+
+    inset:
+        10px;
+
+    border:
+        1px solid
+        rgba(217,107,138,.25);
+
+    border-radius:
+        50%;
+
+    animation:
+        orbitSpin
+        12s linear
+        infinite;
+
+}
+
+
+.ring-two {
+
+    inset:
+        28px;
+
+    border-color:
+        rgba(169,150,216,.28);
+
+    animation-direction:
+        reverse;
+
+    animation-duration:
+        8s;
+
+}
+
+
+@keyframes orbitSpin {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+.final-gratitude .section-label {
+
+    margin-top:
+        35px;
+
+}
+
+
+.final-gratitude h2 {
+
+    margin-top:
+        20px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(60px, 9vw, 95px);
+
+    font-weight:
+        400;
+
+    line-height:
+        1.1;
+
+    color:
+        var(--rose);
+
+}
+
+
+.final-gratitude .gold-divider {
+
+    margin:
+        30px auto;
+
+}
+
+
+.final-message {
+
+    max-width:
+        680px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(20px, 3vw, 28px);
+
+    line-height:
+        1.7;
+
+    color:
+        #65575a;
+
+}
+
+
+.forever-line {
+
+    margin-top:
+        40px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(28px, 4vw, 42px);
+
+    line-height:
+        1.5;
+
+    color:
+        #806f73;
+
+}
+
+
+.signature {
+
+    margin-top:
+        50px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        17px;
+
+    color:
+        #806f73;
+
+}
+
+
+.signature span {
+
+    display:
+        block;
+
+    margin-top:
+        8px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        42px;
+
+    color:
+        var(--rose);
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+#nextLetterBtn {
+
+    margin-top:
+        45px;
+
+    padding:
+        15px 42px;
+
+    border:
+        none;
+
+    border-radius:
+        50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d96b8a,
+            #9c82ca
+        );
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 15px 35px
+        rgba(217,107,138,.28);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+#nextLetterBtn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 45px
+        rgba(217,107,138,.38);
+
+}
+
+
+#nextLetterBtn:disabled {
+
+    cursor:
+        default;
+
+    opacity:
+        .7;
+
+}
+
+
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
+
+#pageTransition {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        10000;
+
+    background:
+        rgba(10,7,18,.55);
+
+    backdrop-filter:
+        blur(0);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity .8s ease,
+        backdrop-filter .8s ease;
+
+}
+
+
+#pageTransition.active {
+
+    opacity:
+        1;
+
+    backdrop-filter:
+        blur(14px);
+
+}
+
+
+/* =========================================================
+   BODY EXIT
+========================================================= */
+
+body {
+
+    transition:
+        transform .9s ease,
+        opacity .9s ease;
+
+}
+
+
+body.leaving {
+
+    transform:
+        scale(1.025);
+
+    opacity:
+        0;
+
+}
+
+
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.music-player {
+
+    position:
+        fixed;
+
+    right:
+        28px;
+
+    bottom:
+        28px;
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.88);
+
+    border:
+        1px solid
+        rgba(217,107,138,.35);
+
+    box-shadow:
+
+        0 12px 35px
+        rgba(0,0,0,.18),
+
+        0 0 35px
+        rgba(217,107,138,.16);
+
+    backdrop-filter:
+        blur(12px);
+
+    cursor:
+        pointer;
+
+    z-index:
+        9999;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.music-player:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+}
+
+
+.music-disc {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #f5dce5
+        );
+
+    font-size:
+        21px;
+
+}
+
+
+.music-player.playing
+.music-disc {
+
+    animation:
+        musicSpin
+        3s linear
+        infinite;
+
+}
+
+
+@keyframes musicSpin {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    .letter6-container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .gratitude-hero {
+
+        min-height:
+            100svh;
+
+        padding:
+            70px 12px;
+
+    }
+
+
+    .hero-symbol {
+
+        width:
+            82px;
+
+        height:
+            82px;
+
+        font-size:
+            38px;
+
+    }
+
+
+    .hero-small {
+
+        font-size:
+            11px;
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    .gratitude-hero h1 {
+
+        font-size:
+            62px;
+
+    }
+
+
+    .hero-text {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .gratitude-letter {
+
+        padding:
+            35px 24px;
+
+        border-radius:
+            24px;
+
+    }
+
+
+    .gratitude-letter h2,
+    .grateful-things h2 {
+
+        font-size:
+            39px;
+
+    }
+
+
+    .gratitude-text p {
+
+        font-size:
+            16px;
+
+        line-height:
+            1.9;
+
+    }
+
+
+    .gratitude-text .highlight {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .gratitude-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            16px;
+
+    }
+
+
+    .gratitude-card {
+
+        min-height:
+            auto;
+
+        padding:
+            28px;
+
+    }
+
+
+    .gratitude-reflection {
+
+        min-height:
+            520px;
+
+        padding:
+            55px 24px;
+
+        border-radius:
+            26px;
+
+    }
+
+
+    .gratitude-reflection h2 {
+
+        font-size:
+            58px;
+
+    }
+
+
+    .gratitude-reflection p {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .gratitude-reflection
+    .reflection-highlight {
+
+        font-size:
+            23px;
+
+    }
+
+
+    .final-gratitude {
+
+        min-height:
+            720px;
+
+        padding:
+            60px 22px;
+
+        border-radius:
+            26px;
+
+    }
+
+
+    .final-gratitude h2 {
+
+        font-size:
+            64px;
+
+    }
+
+
+    .final-message {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .forever-line {
+
+        font-size:
+            31px;
+
+    }
+
+
+    .signature span {
+
+        font-size:
+            37px;
+
+    }
+
+
+    #nextLetterBtn {
+
+        width:
+            min(100%, 280px);
+
+        padding:
+            14px 20px;
+
+    }
+
+
+    .music-player {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        right:
+            16px;
+
+        bottom:
+            16px;
+
+    }
+
+
+    .music-disc {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        font-size:
+            18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 6 — STEP 2
+   CINEMATIC POLISH
+========================================================= */
+
+
+/* =========================================================
+   FILM GRAIN
+========================================================= */
+
+.letter6-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    pointer-events: none;
+
+    z-index: 9990;
+
+    opacity: .045;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+
+    animation:
+        filmGrain
+        .18s
+        steps(2)
+        infinite;
+
+}
+
+
+@keyframes filmGrain {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(2%, -2%);
+    }
+
+    50% {
+        transform: translate(-2%, 1%);
+    }
+
+    75% {
+        transform: translate(1%, 2%);
+    }
+
+    100% {
+        transform: translate(-1%, -1%);
+    }
+
+}
+
+
+/* =========================================================
+   CINEMATIC VIGNETTE
+========================================================= */
+
+.letter6-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9989;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 48%,
+            rgba(3, 2, 8, .30) 100%
+        );
+
+}
+
+
+/* =========================================================
+   MOUSE AMBIENT LIGHT
+========================================================= */
+
+.letter6-page {
+
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+
+}
+
+
+.letter6-page .l6-background {
+
+    overflow: hidden;
+
+}
+
+
+.letter6-page .l6-background::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(242, 181, 202, .075),
+            transparent 68%
+        );
+
+    pointer-events: none;
+
+    transition:
+        left .7s cubic-bezier(.22,1,.36,1),
+        top .7s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* =========================================================
+   CINEMATIC SECTION DIVIDER
+========================================================= */
+
+.gratitude-letter::after,
+.gratitude-reflection::after,
+.final-gratitude::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(217,107,138,.65),
+            rgba(169,150,216,.65),
+            transparent
+        );
+
+    transition:
+        width 1.4s ease;
+
+}
+
+
+.gratitude-letter.show::after,
+.gratitude-reflection.show::after,
+.final-gratitude.show::after {
+
+    width: 70%;
+
+}
+
+
+/* =========================================================
+   HERO CINEMATIC ENTRANCE
+========================================================= */
+
+.gratitude-hero .hero-symbol {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px)
+        scale(.75);
+
+}
+
+
+.gratitude-hero.show .hero-symbol {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.3s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+
+.gratitude-hero .hero-small {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+}
+
+
+.gratitude-hero.show .hero-small {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .25s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) .25s;
+
+}
+
+
+.gratitude-hero h1 {
+
+    opacity: 0;
+
+    transform:
+        translateY(28px)
+        scale(.96);
+
+}
+
+
+.gratitude-hero.show h1 {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        opacity 1.2s ease .4s,
+        transform 1.3s
+        cubic-bezier(.16,1,.3,1) .4s;
+
+}
+
+
+.gratitude-hero .hero-text {
+
+    opacity: 0;
+
+    transform:
+        translateY(22px);
+
+}
+
+
+.gratitude-hero.show .hero-text {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .7s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) .7s;
+
+}
+
+
+/* =========================================================
+   HERO SYMBOL GLOW
+========================================================= */
+
+.hero-symbol {
+
+    position: relative;
+
+}
+
+
+.hero-symbol::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -16px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(241,168,187,.18);
+
+    box-shadow:
+        0 0 40px
+        rgba(217,107,138,.18);
+
+    animation:
+        symbolRing
+        3.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes symbolRing {
+
+    0%,
+    100% {
+
+        transform: scale(.88);
+
+        opacity: .35;
+
+    }
+
+    50% {
+
+        transform: scale(1.12);
+
+        opacity: .85;
+
+    }
+
+}
+
+
+/* =========================================================
+   TEXT SHIMMER
+========================================================= */
+
+.gratitude-hero h1,
+.final-gratitude h2 {
+
+    background:
+        linear-gradient(
+            110deg,
+            #d98ba2 20%,
+            #ffe0e8 45%,
+            #d7c5f3 60%,
+            #d98ba2 80%
+        );
+
+    background-size:
+        220% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        textShimmer
+        7s
+        linear
+        infinite;
+
+}
+
+
+@keyframes textShimmer {
+
+    0% {
+        background-position: 200% center;
+    }
+
+    100% {
+        background-position: -20% center;
+    }
+
+}
+
+
+/* =========================================================
+   LETTER PAPER DEPTH
+========================================================= */
+
+.gratitude-letter {
+
+    transform-style:
+        preserve-3d;
+
+    will-change:
+        transform;
+
+}
+
+
+.gratitude-letter::before {
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+.gratitude-letter:hover::before {
+
+    transform:
+        scale(1.2);
+
+}
+
+
+/* =========================================================
+   GRATITUDE TEXT STAGGER
+========================================================= */
+
+.gratitude-text p {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+}
+
+
+.gratitude-letter.show
+.gratitude-text p {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .9s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.gratitude-letter.show
+.gratitude-text p:nth-child(1) {
+
+    transition-delay: .15s;
+
+}
+
+
+.gratitude-letter.show
+.gratitude-text p:nth-child(2) {
+
+    transition-delay: .30s;
+
+}
+
+
+.gratitude-letter.show
+.gratitude-text p:nth-child(3) {
+
+    transition-delay: .45s;
+
+}
+
+
+.gratitude-letter.show
+.gratitude-text p:nth-child(4) {
+
+    transition-delay: .60s;
+
+}
+
+
+.gratitude-letter.show
+.gratitude-text p:nth-child(5) {
+
+    transition-delay: .75s;
+
+}
+
+
+.gratitude-letter.show
+.gratitude-text p:nth-child(6) {
+
+    transition-delay: .90s;
+
+}
+
+
+/* =========================================================
+   CARD CINEMATIC SPOTLIGHT
+========================================================= */
+
+.gratitude-card {
+
+    --card-x: 50%;
+    --card-y: 50%;
+
+}
+
+
+.gratitude-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            260px circle at
+            var(--card-x)
+            var(--card-y),
+            rgba(255,255,255,.13),
+            transparent 65%
+        );
+
+    transition:
+        opacity .35s ease;
+
+}
+
+
+.gratitude-card:hover::before {
+
+    opacity: 1;
+
+}
+
+
+/* =========================================================
+   CARD CONTENT DEPTH
+========================================================= */
+
+.gratitude-card .card-icon,
+.gratitude-card .card-number,
+.gratitude-card h3,
+.gratitude-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.gratitude-card .card-icon {
+
+    transition:
+        transform .45s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.gratitude-card:hover .card-icon {
+
+    transform:
+        translateY(-5px)
+        scale(1.12)
+        rotate(-4deg);
+
+}
+
+
+/* =========================================================
+   CARD BORDER SHINE
+========================================================= */
+
+.gratitude-card {
+
+    isolation: isolate;
+
+}
+
+
+.gratitude-card::after {
+
+    transition:
+        transform .8s ease;
+
+}
+
+
+.gratitude-card:hover::after {
+
+    transform:
+        scale(1.7);
+
+}
+
+
+/* =========================================================
+   REFLECTION CINEMATIC TEXT
+========================================================= */
+
+.gratitude-reflection .section-label,
+.gratitude-reflection h2,
+.gratitude-reflection .reflection-line,
+.gratitude-reflection p {
+
+    opacity: 0;
+
+    transform:
+        translateY(24px);
+
+}
+
+
+.gratitude-reflection.show
+.section-label {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.gratitude-reflection.show h2 {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .15s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) .15s;
+
+}
+
+
+.gratitude-reflection.show
+.reflection-line {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .35s,
+        transform .8s ease .35s;
+
+}
+
+
+.gratitude-reflection.show p:nth-of-type(1) {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .5s,
+        transform .8s ease .5s;
+
+}
+
+
+.gratitude-reflection.show p:nth-of-type(2) {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .65s,
+        transform .8s ease .65s;
+
+}
+
+
+.gratitude-reflection.show p:nth-of-type(3) {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .8s,
+        transform .8s ease .8s;
+
+}
+
+
+.gratitude-reflection.show
+.reflection-highlight {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) 1s;
+
+}
+
+
+/* =========================================================
+   FINAL SECTION CINEMATIC ENTRANCE
+========================================================= */
+
+.final-orbit {
+
+    opacity: 0;
+
+    transform:
+        scale(.65);
+
+}
+
+
+.final-gratitude.show
+.final-orbit {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.4s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+
+.final-gratitude .section-label,
+.final-gratitude h2,
+.final-gratitude .gold-divider,
+.final-gratitude .final-message,
+.final-gratitude .forever-line,
+.final-gratitude .signature,
+.final-gratitude #nextLetterBtn {
+
+    opacity: 0;
+
+    transform:
+        translateY(22px);
+
+}
+
+
+.final-gratitude.show .section-label {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .35s,
+        transform .8s ease .35s;
+
+}
+
+
+.final-gratitude.show h2 {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .5s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) .5s;
+
+}
+
+
+.final-gratitude.show .gold-divider {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .7s,
+        transform .8s ease .7s;
+
+}
+
+
+.final-gratitude.show .final-message {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease .85s,
+        transform 1s ease .85s;
+
+}
+
+
+.final-gratitude.show .forever-line {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1s,
+        transform 1s ease 1s;
+
+}
+
+
+.final-gratitude.show .signature {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1.2s,
+        transform 1s ease 1.2s;
+
+}
+
+
+.final-gratitude.show #nextLetterBtn {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1.4s,
+        transform .8s
+        cubic-bezier(.22,1,.36,1) 1.4s;
+
+}
+
+
+/* =========================================================
+   FINAL HEART AURA
+========================================================= */
+
+.final-heart {
+
+    position: relative;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(217,107,138,.45)
+        );
+
+}
+
+
+.final-heart::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -22px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(217,107,138,.20),
+            transparent 68%
+        );
+
+    z-index: -1;
+
+    animation:
+        heartAura
+        2.4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes heartAura {
+
+    0%,
+    100% {
+
+        transform:
+            scale(.75);
+
+        opacity:
+            .35;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.35);
+
+        opacity:
+            .9;
+
+    }
+
+}
+
+
+/* =========================================================
+   BUTTON PREMIUM GLOW
+========================================================= */
+
+#nextLetterBtn {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+#nextLetterBtn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    transform:
+        skewX(-20deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.30),
+            transparent
+        );
+
+}
+
+
+#nextLetterBtn:hover::before {
+
+    left: 140%;
+
+    transition:
+        left .8s ease;
+
+}
+
+
+#nextLetterBtn::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -4px;
+
+    border-radius: inherit;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    opacity: 0;
+
+    transform:
+        scale(.92);
+
+}
+
+
+#nextLetterBtn:hover::after {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+#l6ScrollProgress {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0%;
+
+    height: 2px;
+
+    z-index: 10001;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d96b8a,
+            #d6c8f2,
+            #f1a8bb
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(217,107,138,.55);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   MOBILE POLISH
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .letter6-page::before {
+
+        opacity: .025;
+
+    }
+
+
+    .letter6-page .l6-background::after {
+
+        display: none;
+
+    }
+
+
+    .gratitude-card::before {
+
+        display: none;
+
+    }
+
+
+    .gratitude-hero h1,
+    .final-gratitude h2 {
+
+        animation-duration:
+            10s;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .letter6-page::before,
+    .gratitude-hero h1,
+    .final-gratitude h2,
+    .final-heart::after,
+    .hero-symbol::before {
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 6 — STEP 3
+   GRATITUDE STORY EXPERIENCE
+========================================================= */
+
+
+/* =========================================================
+   GRATITUDE CARDS — CINEMATIC REVEAL
+========================================================= */
+
+.gratitude-card {
+
+    opacity: 0;
+
+    transform:
+        translateY(55px)
+        scale(.96);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.22,1,.36,1),
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+/* Cards become visible when section appears */
+
+.grateful-things.show
+.gratitude-card {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* Individual timing */
+
+.grateful-things.show
+.gratitude-card:nth-child(1) {
+
+    transition-delay: .10s;
+
+}
+
+
+.grateful-things.show
+.gratitude-card:nth-child(2) {
+
+    transition-delay: .25s;
+
+}
+
+
+.grateful-things.show
+.gratitude-card:nth-child(3) {
+
+    transition-delay: .40s;
+
+}
+
+
+.grateful-things.show
+.gratitude-card:nth-child(4) {
+
+    transition-delay: .55s;
+
+}
+
+
+/* =========================================================
+   CARD ICON CINEMATIC ENTRY
+========================================================= */
+
+.gratitude-card .card-icon {
+
+    opacity: 0;
+
+    transform:
+        scale(.65)
+        rotate(-12deg);
+
+}
+
+
+.grateful-things.show
+.gratitude-card .card-icon {
+
+    opacity: 1;
+
+    transform:
+        scale(1)
+        rotate(0);
+
+    transition:
+        opacity .7s ease .45s,
+        transform .8s
+        cubic-bezier(.16,1,.3,1) .45s;
+
+}
+
+
+/* =========================================================
+   CARD TITLE + TEXT REVEAL
+========================================================= */
+
+.gratitude-card h3,
+.gratitude-card p {
+
+    opacity: 0;
+
+    transform:
+        translateY(14px);
+
+}
+
+
+.grateful-things.show
+.gratitude-card h3 {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .7s ease .55s,
+        transform .8s
+        cubic-bezier(.22,1,.36,1) .55s;
+
+}
+
+
+.grateful-things.show
+.gratitude-card p {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity .8s ease .70s,
+        transform .9s
+        cubic-bezier(.22,1,.36,1) .70s;
+
+}
+
+
+/* =========================================================
+   NUMBER FADE
+========================================================= */
+
+.gratitude-card .card-number {
+
+    opacity: 0;
+
+}
+
+
+.grateful-things.show
+.gratitude-card .card-number {
+
+    opacity: .35;
+
+    transition:
+        opacity .8s ease .35s;
+
+}
+
+
+/* =========================================================
+   REFLECTION — EMOTIONAL FOCUS
+========================================================= */
+
+.gratitude-reflection {
+
+    transition:
+        box-shadow 1.2s ease,
+        transform 1.2s ease;
+
+}
+
+
+.gratitude-reflection.show {
+
+    box-shadow:
+        0 30px 90px
+        rgba(169,150,216,.12);
+
+}
+
+
+/* Soft breathing glow */
+
+.reflection-glow {
+
+    animation:
+        reflectionBreath
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes reflectionBreath {
+
+    0%,
+    100% {
+
+        transform:
+            scale(.85);
+
+        opacity:
+            .45;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.12);
+
+        opacity:
+            .85;
+
+    }
+
+}
+
+
+/* =========================================================
+   REFLECTION HIGHLIGHT
+========================================================= */
+
+.reflection-highlight {
+
+    position: relative;
+
+}
+
+
+.reflection-highlight::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -12px;
+
+    width: 0;
+
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--soft-rose),
+            transparent
+        );
+
+    transition:
+        width 1.4s ease 1.2s;
+
+}
+
+
+.gratitude-reflection.show
+.reflection-highlight::after {
+
+    width: 85%;
+
+}
+
+
+/* =========================================================
+   FINAL GRATITUDE — EMOTIONAL PAUSE
+========================================================= */
+
+.final-gratitude {
+
+    transition:
+        box-shadow 1.2s ease;
+
+}
+
+
+.final-gratitude.show {
+
+    box-shadow:
+        0 35px 110px
+        rgba(217,107,138,.18),
+        0 0 70px
+        rgba(169,150,216,.10);
+
+}
+
+
+/* =========================================================
+   FINAL HEART — SLOW EMOTIONAL PULSE
+========================================================= */
+
+.final-gratitude.show
+.final-heart {
+
+    animation:
+        finalHeartStory
+        2.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes finalHeartStory {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        filter:
+            drop-shadow(
+                0 0 10px
+                rgba(217,107,138,.25)
+            );
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.18);
+
+        filter:
+            drop-shadow(
+                0 0 30px
+                rgba(217,107,138,.65)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   FINAL MESSAGE — LETTER-LIKE REVEAL
+========================================================= */
+
+.final-message {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+}
+
+
+.final-gratitude.show
+.final-message {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1.2s ease .75s,
+        transform 1.2s
+        cubic-bezier(.22,1,.36,1) .75s;
+
+}
+
+
+/* =========================================================
+   FOREVER LINE
+========================================================= */
+
+.forever-line {
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.final-gratitude.show
+.forever-line {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1.2s ease 1.15s,
+        transform 1.2s
+        cubic-bezier(.22,1,.36,1) 1.15s;
+
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.final-gratitude .signature {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+}
+
+
+.final-gratitude.show
+.signature {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 1s ease 1.45s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) 1.45s;
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON — FINAL REVEAL
+========================================================= */
+
+.final-gratitude #nextLetterBtn {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px)
+        scale(.96);
+
+}
+
+
+.final-gratitude.show
+#nextLetterBtn {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        opacity 1s ease 1.75s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) 1.75s;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .gratitude-card {
+
+        transform:
+            translateY(35px)
+            scale(.98);
+
+    }
+
+
+    .gratitude-card .card-icon {
+
+        transform:
+            scale(.8);
+
+    }
+
+
+    .reflection-highlight::after {
+
+        width: 70%;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gratitude-card,
+    .gratitude-card .card-icon,
+    .gratitude-card h3,
+    .gratitude-card p,
+    .final-message,
+    .forever-line,
+    .final-gratitude .signature,
+    .final-gratitude #nextLetterBtn {
+
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        transition: none !important;
+
+    }
+
+    .reflection-glow,
+    .final-heart {
+
+        animation: none !important;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER 6 — STEP 4
+   EMOTIONAL MICRO-INTERACTIONS
+========================================================= */
+
+
+/* =========================================================
+   FINAL ORBIT — DEEPER ATMOSPHERE
+========================================================= */
+
+.final-orbit {
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.final-orbit:hover {
+
+    transform:
+        scale(1.035);
+
+}
+
+
+/* =========================================================
+   FINAL HEART — INTERACTIVE
+========================================================= */
+
+.final-heart {
+
+    cursor:
+        pointer;
+
+    user-select:
+        none;
+
+    transition:
+        transform .45s
+        cubic-bezier(.16,1,.3,1),
+        filter .45s ease;
+
+}
+
+
+.final-heart:hover {
+
+    transform:
+        scale(1.14);
+
+    filter:
+        drop-shadow(
+            0 0 32px
+            rgba(217,107,138,.72)
+        );
+
+}
+
+
+/* =========================================================
+   HEART CLICK MOMENT
+========================================================= */
+
+.final-heart.heart-touched {
+
+    animation:
+        heartTouched
+        .9s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+
+@keyframes heartTouched {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    35% {
+
+        transform:
+            scale(1.28);
+
+    }
+
+    65% {
+
+        transform:
+            scale(.94);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   HEART PARTICLE
+========================================================= */
+
+.heart-particle {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    pointer-events:
+        none;
+
+    font-size:
+        11px;
+
+    opacity:
+        0;
+
+    animation:
+        heartParticleRise
+        1.4s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes heartParticleRise {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(.5);
+
+    }
+
+    15% {
+
+        opacity:
+            .9;
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                var(--particle-x),
+                var(--particle-y)
+            )
+            scale(.9);
+
+    }
+
+}
+
+
+/* =========================================================
+   SIGNATURE — HANDWRITTEN REVEAL
+========================================================= */
+
+.signature {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.signature::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        -7px;
+
+    width:
+        0;
+
+    height:
+        1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(217,107,138,.65),
+            transparent
+        );
+
+    transition:
+        width
+        1.2s
+        cubic-bezier(.22,1,.36,1)
+        1.8s;
+
+}
+
+
+.final-gratitude.show
+.signature::after {
+
+    width:
+        115px;
+
+}
+
+
+/* =========================================================
+   SIGNATURE NAME
+========================================================= */
+
+.signature span {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(15px)
+        scale(.94);
+
+    filter:
+        blur(3px);
+
+}
+
+
+.final-gratitude.show
+.signature span {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+
+    transition:
+        opacity
+        1s
+        ease
+        1.55s,
+
+        transform
+        1.1s
+        cubic-bezier(.16,1,.3,1)
+        1.55s,
+
+        filter
+        1s
+        ease
+        1.55s;
+
+}
+
+
+/* =========================================================
+   SIGNATURE GLOW
+========================================================= */
+
+.final-gratitude.show
+.signature span {
+
+    text-shadow:
+        0 0 18px
+        rgba(217,107,138,.20);
+
+}
+
+
+.final-gratitude.show
+.signature span::after {
+
+    content:
+        "";
+
+}
+
+
+/* =========================================================
+   BUTTON WAITING MOMENT
+========================================================= */
+
+.final-gratitude
+#nextLetterBtn {
+
+    transition:
+        opacity 1s ease 2s,
+        transform 1s
+        cubic-bezier(.22,1,.36,1) 2s,
+        box-shadow .35s ease;
+
+}
+
+
+/* =========================================================
+   FINAL SECTION HOVER DEPTH
+========================================================= */
+
+.final-gratitude:hover {
+
+    box-shadow:
+        0 40px 120px
+        rgba(217,107,138,.20),
+        0 0 90px
+        rgba(169,150,216,.12);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .final-orbit:hover {
+
+        transform:
+            none;
+
+    }
+
+
+    .final-heart:hover {
+
+        transform:
+            none;
+
+    }
+
+
+    .final-gratitude:hover {
+
+        box-shadow:
+            0 35px 110px
+            rgba(217,107,138,.18),
+            0 0 70px
+            rgba(169,150,216,.10);
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .final-heart,
+    .final-heart.heart-touched {
+
+        animation:
+            none !important;
+
+    }
+
+    .signature span {
+
+        opacity:
+            1 !important;
+
+        transform:
+            none !important;
+
+        filter:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+}

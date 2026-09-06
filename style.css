@@ -1,0 +1,3082 @@
+/*======================================================
+GOOGLE FONT
+======================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*======================================================
+RESET
+======================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#05070d;
+
+    color:white;
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+/*======================================================
+BACKGROUND
+======================================================*/
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-10;
+
+    background:
+
+    radial-gradient(circle at top,
+
+    #16213e 0%,
+
+    #0b1120 35%,
+
+    #05070d 100%);
+
+}
+
+/*======================================================
+STARS
+======================================================*/
+
+.stars{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    opacity:.35;
+
+}
+
+/*======================================================
+TWINKLING
+======================================================*/
+
+.twinkling{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background-image:
+
+    radial-gradient(#ffffff 1px,transparent 1px);
+
+    background-size:90px 90px;
+
+    opacity:.2;
+
+    animation:twinkle 7s linear infinite;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.15;
+
+transform:translateY(0);
+
+}
+
+50%{
+
+opacity:.35;
+
+}
+
+100%{
+
+opacity:.15;
+
+transform:translateY(-25px);
+
+}
+
+}
+
+/*======================================================
+AURORA
+======================================================*/
+
+.aurora{
+
+    position:absolute;
+
+    width:140%;
+
+    height:140%;
+
+    left:-20%;
+
+    top:-20%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(255,0,140,.35),
+
+    transparent 60%),
+
+    radial-gradient(circle at right,
+
+    rgba(0,170,255,.30),
+
+    transparent 55%),
+
+    radial-gradient(circle at bottom,
+
+    rgba(130,90,255,.30),
+
+    transparent 50%);
+
+    animation:auroraMove 18s linear infinite;
+
+}
+
+@keyframes auroraMove{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+50%{
+
+transform:rotate(180deg) scale(1.15);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/*======================================================
+PASSWORD PAGE
+======================================================*/
+
+#lockScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:100;
+
+}
+
+/*======================================================
+GLASS BOX
+======================================================*/
+
+.glass-box{
+
+    width:430px;
+
+    max-width:92%;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    backdrop-filter:blur(30px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+    0 0 60px rgba(255,0,120,.18);
+
+    animation:boxFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes boxFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/*======================================================
+MOON
+======================================================*/
+
+.moon{
+
+    width:110px;
+
+    height:110px;
+
+    margin:auto;
+
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:48px;
+
+    background:
+
+    radial-gradient(circle,
+
+    #fff,
+
+    #ececec);
+
+    color:#111;
+
+    box-shadow:
+
+    0 0 45px white,
+
+    0 0 80px rgba(255,255,255,.5);
+
+}
+
+/*======================================================
+TITLE
+======================================================*/
+
+.glass-box h1{
+
+    font-size:52px;
+
+    line-height:1.15;
+
+    font-family:'Great Vibes',cursive;
+
+    margin-bottom:18px;
+
+}
+
+.glass-box span{
+
+    color:#ff5c8d;
+
+}
+
+/*======================================================
+DESCRIPTION
+======================================================*/
+
+.glass-box p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+/*======================================================
+PASSWORD
+======================================================*/
+
+#password{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.10);
+
+    color:white;
+
+    font-size:16px;
+
+    margin-bottom:18px;
+
+}
+
+#password::placeholder{
+
+    color:#bbb;
+
+}
+
+/*======================================================
+BUTTON
+======================================================*/
+
+#unlockBtn{
+
+    width:100%;
+
+    padding:17px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:15px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(135deg,
+
+    #ff3c8f,
+
+    #8a4dff);
+
+    transition:.35s;
+
+}
+
+#unlockBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 0 35px rgba(255,0,120,.5);
+
+}
+
+/*======================================================
+WRONG PASSWORD
+======================================================*/
+
+#wrongPassword{
+
+    margin-top:18px;
+
+    color:#ff6b6b;
+
+    display:none;
+
+    font-size:14px;
+
+}
+
+/*======================================================
+LOADER
+======================================================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#05070d;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+.loader-heart{
+
+    font-size:70px;
+
+    animation:heartbeat 1.2s infinite;
+
+    filter:drop-shadow(0 0 25px #ff3b8d);
+
+}
+
+#loader p{
+
+    margin-top:25px;
+
+    color:#ddd;
+
+    letter-spacing:2px;
+
+    font-size:15px;
+
+}
+
+@keyframes heartbeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+20%{
+
+transform:scale(1.25);
+
+}
+
+40%{
+
+transform:scale(1);
+
+}
+
+60%{
+
+transform:scale(1.18);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/*======================================================
+NETFLIX INTRO
+======================================================*/
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:black;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    z-index:9998;
+
+}
+
+.intro-text{
+
+    font-size:72px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-transform:uppercase;
+
+    letter-spacing:10px;
+
+    text-align:center;
+
+    transform:scale(.7);
+
+    opacity:0;
+
+}
+
+/*======================================================
+INTRO ANIMATION
+======================================================*/
+
+#intro.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    animation:introFade 5s forwards;
+
+}
+
+#intro.show .intro-text{
+
+    animation:introZoom 4s ease forwards;
+
+}
+
+@keyframes introFade{
+
+0%{
+
+opacity:1;
+
+}
+
+80%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+}
+
+@keyframes introZoom{
+
+0%{
+
+opacity:0;
+
+transform:scale(.6);
+
+letter-spacing:20px;
+
+}
+
+25%{
+
+opacity:1;
+
+}
+
+50%{
+
+transform:scale(1);
+
+letter-spacing:8px;
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1.08);
+
+}
+
+}
+
+/*======================================================
+BACKGROUND GLOW
+======================================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(circle at top,
+
+    rgba(255,255,255,.08),
+
+    transparent 45%);
+
+    animation:moonGlow 6s ease-in-out infinite;
+
+}
+
+@keyframes moonGlow{
+
+0%{
+
+opacity:.25;
+
+}
+
+50%{
+
+opacity:.6;
+
+}
+
+100%{
+
+opacity:.25;
+
+}
+
+}
+
+/*======================================================
+FLOATING PARTICLES
+======================================================*/
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);
+
+    background-size:130px 130px;
+
+    opacity:.08;
+
+    animation:particlesMove 25s linear infinite;
+
+}
+
+@keyframes particlesMove{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-220px);
+
+}
+
+}
+
+/*======================================================
+BUTTON EFFECT
+======================================================*/
+
+#unlockBtn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#unlockBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.55),
+
+    transparent);
+
+    transition:.8s;
+
+}
+
+#unlockBtn:hover::before{
+
+    left:150%;
+
+}
+
+/*======================================================
+INPUT GLOW
+======================================================*/
+
+#password:focus{
+
+    border:1px solid #ff4c95;
+
+    box-shadow:
+
+    0 0 20px rgba(255,80,150,.4);
+
+}
+
+/*======================================================
+SHAKE ANIMATION
+======================================================*/
+
+.shake{
+
+    animation:shake .45s;
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+
+20%{transform:translateX(-8px);}
+
+40%{transform:translateX(8px);}
+
+60%{transform:translateX(-6px);}
+
+80%{transform:translateX(6px);}
+
+100%{transform:translateX(0);}
+
+}
+
+/*======================================================
+FADE CLASS
+======================================================*/
+
+.fade-out{
+
+    animation:fadeOut 1s forwards;
+
+}
+
+@keyframes fadeOut{
+
+to{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+}
+
+/*======================================================
+UTILITY CLASSES
+======================================================*/
+
+.hidden{
+    display:none !important;
+}
+
+.flex{
+    display:flex;
+}
+
+.center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.fade{
+    opacity:0;
+    transition:.5s;
+}
+
+.show{
+    opacity:1;
+}
+
+/*======================================================
+CUSTOM SCROLLBAR
+======================================================*/
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0b0f18;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff4d94;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff2f83;
+}
+
+/*======================================================
+SELECTION
+======================================================*/
+
+::selection{
+    background:#ff4d94;
+    color:white;
+}
+
+/*======================================================
+REMOVE TAP HIGHLIGHT
+======================================================*/
+
+*{
+    -webkit-tap-highlight-color:transparent;
+}
+
+/*======================================================
+IMAGES
+======================================================*/
+
+img{
+    max-width:100%;
+    display:block;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/*======================================================
+BUTTONS
+======================================================*/
+
+button{
+    font-family:'Poppins',sans-serif;
+}
+
+input{
+    font-family:'Poppins',sans-serif;
+}
+
+/*======================================================
+RESPONSIVE
+======================================================*/
+
+@media (max-width:992px){
+
+.glass-box{
+
+width:90%;
+
+padding:35px;
+
+}
+
+.glass-box h1{
+
+font-size:42px;
+
+}
+
+.moon{
+
+width:90px;
+
+height:90px;
+
+font-size:40px;
+
+}
+
+.intro-text{
+
+font-size:54px;
+
+letter-spacing:6px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.glass-box{
+
+padding:28px;
+
+}
+
+.glass-box h1{
+
+font-size:36px;
+
+}
+
+.glass-box p{
+
+font-size:14px;
+
+}
+
+#password{
+
+padding:14px;
+
+font-size:15px;
+
+}
+
+#unlockBtn{
+
+padding:15px;
+
+font-size:16px;
+
+}
+
+.loader-heart{
+
+font-size:60px;
+
+}
+
+.intro-text{
+
+font-size:42px;
+
+letter-spacing:4px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.glass-box{
+
+padding:24px;
+
+border-radius:22px;
+
+}
+
+.glass-box h1{
+
+font-size:30px;
+
+}
+
+.moon{
+
+width:75px;
+
+height:75px;
+
+font-size:34px;
+
+}
+
+#password{
+
+font-size:14px;
+
+}
+
+#unlockBtn{
+
+font-size:15px;
+
+}
+
+.loader-heart{
+
+font-size:48px;
+
+}
+
+.intro-text{
+
+font-size:30px;
+
+letter-spacing:2px;
+
+}
+
+}
+
+/*======================================================
+PHASE 2
+MOON WORLD
+======================================================*/
+
+#moonWorld{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,
+    #1d2951 0%,
+    #0b1224 40%,
+    #05070d 100%);
+
+    z-index:80;
+
+}
+
+/*======================================================
+MOON CONTENT
+======================================================*/
+
+.moonContent{
+
+    position:relative;
+
+    z-index:20;
+
+    text-align:center;
+
+}
+
+.moonContent h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 30px rgba(255,255,255,.4);
+
+}
+
+.moonContent p{
+
+    color:#d8d8d8;
+
+    font-size:20px;
+
+    margin-bottom:40px;
+
+    letter-spacing:2px;
+
+}
+
+/*======================================================
+REAL MOON
+======================================================*/
+
+.moon-wrapper{
+
+    position:absolute;
+
+    top:12%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:10;
+
+}
+
+.realMoon{
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at 35% 35%,
+    #ffffff,
+    #ececec 55%,
+    #d7d7d7 100%);
+
+    box-shadow:
+
+    0 0 50px rgba(255,255,255,.7),
+
+    0 0 120px rgba(255,255,255,.3),
+
+    0 0 220px rgba(255,255,255,.15);
+
+    animation:moonFloat 6s ease-in-out infinite;
+
+}
+
+/*======================================================
+MOON GLOW
+======================================================*/
+
+.moonGlow{
+
+    position:absolute;
+
+    inset:-35px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(255,255,255,.25),
+    transparent 70%);
+
+    filter:blur(25px);
+
+    animation:moonPulse 4s ease-in-out infinite;
+
+}
+
+@keyframes moonPulse{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:.4;
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+opacity:.8;
+
+}
+
+}
+
+/*======================================================
+MOON FLOAT
+======================================================*/
+
+@keyframes moonFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*======================================================
+CRATERS
+======================================================*/
+
+.crater{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:#d8d8d8;
+
+    opacity:.45;
+
+}
+
+.crater1{
+
+    width:36px;
+
+    height:36px;
+
+    top:45px;
+
+    left:60px;
+
+}
+
+.crater2{
+
+    width:28px;
+
+    height:28px;
+
+    top:120px;
+
+    left:135px;
+
+}
+
+.crater3{
+
+    width:18px;
+
+    height:18px;
+
+    top:75px;
+
+    left:160px;
+
+}
+
+.crater4{
+
+    width:24px;
+
+    height:24px;
+
+    top:155px;
+
+    left:70px;
+
+}
+
+/*======================================================
+TOUCH BUTTON
+======================================================*/
+
+#touchMoon{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    background:
+    linear-gradient(135deg,
+    #ff4d94,
+    #7b61ff);
+
+    transition:.4s;
+
+}
+
+#touchMoon:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 0 30px rgba(255,80,150,.5);
+
+}
+
+/*======================================================
+CLOUD LAYER
+======================================================*/
+
+#cloudLayer{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+/*======================================================
+COMMON CLOUD
+======================================================*/
+
+.cloud{
+
+    position:absolute;
+
+    background:rgba(255,255,255,.08);
+
+    filter:blur(22px);
+
+    border-radius:100px;
+
+    animation-timing-function:linear;
+
+    animation-iteration-count:infinite;
+
+}
+
+/*======================================================
+CLOUD 1
+======================================================*/
+
+.cloud1{
+
+    width:340px;
+
+    height:90px;
+
+    top:15%;
+
+    left:-380px;
+
+    animation:cloudMove1 80s linear infinite;
+
+}
+
+/*======================================================
+CLOUD 2
+======================================================*/
+
+.cloud2{
+
+    width:270px;
+
+    height:70px;
+
+    top:42%;
+
+    left:-250px;
+
+    animation:cloudMove2 110s linear infinite;
+
+}
+
+/*======================================================
+CLOUD 3
+======================================================*/
+
+.cloud3{
+
+    width:390px;
+
+    height:110px;
+
+    top:68%;
+
+    left:-420px;
+
+    animation:cloudMove3 95s linear infinite;
+
+}
+
+/*======================================================
+ANIMATION
+======================================================*/
+
+@keyframes cloudMove1{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(1800px);
+
+}
+
+}
+
+@keyframes cloudMove2{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(1900px);
+
+}
+
+}
+
+@keyframes cloudMove3{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(1850px);
+
+}
+
+}
+
+/*======================================================
+FIREFLIES CONTAINER
+======================================================*/
+
+#fireflies{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:5;
+
+}
+
+/*======================================================
+FIREFLY
+======================================================*/
+
+.firefly{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#fff8b5;
+
+    box-shadow:
+
+    0 0 8px #fff6a0,
+
+    0 0 18px #ffe66d,
+
+    0 0 35px rgba(255,230,109,.8);
+
+    animation:fireflyBlink 2.5s ease-in-out infinite;
+
+}
+
+/*======================================================
+FIREFLY GLOW
+======================================================*/
+
+.firefly::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-6px;
+
+    border-radius:50%;
+
+    background:rgba(255,240,150,.18);
+
+    filter:blur(6px);
+
+}
+
+/*======================================================
+BLINK ANIMATION
+======================================================*/
+
+@keyframes fireflyBlink{
+
+0%{
+
+opacity:.2;
+
+transform:scale(.8);
+
+}
+
+25%{
+
+opacity:1;
+
+transform:scale(1.2);
+
+}
+
+50%{
+
+opacity:.4;
+
+transform:scale(.9);
+
+}
+
+75%{
+
+opacity:1;
+
+transform:scale(1.1);
+
+}
+
+100%{
+
+opacity:.25;
+
+transform:scale(.8);
+
+}
+
+}
+
+/*======================================================
+FLOAT ANIMATIONS
+======================================================*/
+
+@keyframes fireflyFloat1{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+25%{
+
+transform:translate(35px,-25px);
+
+}
+
+50%{
+
+transform:translate(-20px,-60px);
+
+}
+
+75%{
+
+transform:translate(25px,-90px);
+
+}
+
+100%{
+
+transform:translate(0,-120px);
+
+}
+
+}
+
+@keyframes fireflyFloat2{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+30%{
+
+transform:translate(-40px,-20px);
+
+}
+
+60%{
+
+transform:translate(30px,-70px);
+
+}
+
+100%{
+
+transform:translate(-15px,-130px);
+
+}
+
+}
+
+@keyframes fireflyFloat3{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+20%{
+
+transform:translate(25px,-35px);
+
+}
+
+40%{
+
+transform:translate(-25px,-65px);
+
+}
+
+70%{
+
+transform:translate(40px,-110px);
+
+}
+
+100%{
+
+transform:translate(10px,-150px);
+
+}
+
+}
+
+/*======================================================
+SHOOTING STARS
+======================================================*/
+
+#shootingStars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:6;
+
+}
+
+/*======================================================
+STAR
+======================================================*/
+
+.shooting-star{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+
+        0 0 8px #fff,
+
+        0 0 20px #fff;
+
+}
+
+/*======================================================
+TAIL
+======================================================*/
+
+.shooting-star::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-180px;
+
+    width:180px;
+
+    height:2px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        rgba(255,255,255,0),
+
+        rgba(255,255,255,.8)
+
+    );
+
+}
+
+/*======================================================
+ANIMATION
+======================================================*/
+
+@keyframes shootingStar{
+
+0%{
+
+    transform:
+
+        translate(0,0)
+
+        rotate(-35deg);
+
+    opacity:0;
+
+}
+
+10%{
+
+    opacity:1;
+
+}
+
+100%{
+
+    transform:
+
+        translate(-1200px,700px)
+
+        rotate(-35deg);
+
+    opacity:0;
+
+}
+
+}
+
+/*======================================================
+PETALS
+======================================================*/
+
+#petals{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:7;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    font-size:22px;
+
+    animation:petalFall linear infinite;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+
+translateY(-100px)
+
+rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(120vh)
+
+rotate(360deg);
+
+opacity:.3;
+
+}
+
+}
+
+/*======================================================
+MOON CLICK EFFECT
+======================================================*/
+
+.realMoon{
+
+    cursor:pointer;
+
+    transition:2s;
+
+}
+
+.realMoon:hover{
+
+    transform:scale(1.08);
+
+}
+
+#touchMoon{
+
+    transition:.6s;
+
+}
+
+/*======================================================
+PHASE 3
+ENVELOPE SCENE
+======================================================*/
+
+#envelopeScene{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at center,
+    #231b39 0%,
+    #151022 55%,
+    #08070d 100%);
+
+    z-index:90;
+
+}
+
+/*======================================================
+WRAPPER
+======================================================*/
+
+.envelope-wrapper{
+
+    perspective:1800px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/*======================================================
+ENVELOPE
+======================================================*/
+
+.envelope{
+
+    position:relative;
+
+    width:420px;
+
+    height:280px;
+
+    transform-style:preserve-3d;
+
+}
+
+/*======================================================
+BACK
+======================================================*/
+
+.envelope-back{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    145deg,
+    #ff8db8,
+    #ff6ea5);
+
+    border-radius:14px;
+
+    box-shadow:
+
+    0 35px 70px rgba(0,0,0,.45),
+
+    0 0 40px rgba(255,120,180,.25);
+
+}
+
+/*======================================================
+LETTER
+======================================================*/
+
+.letter-paper{
+
+   position:absolute;
+
+    left:50%;
+
+    top:20px;
+
+    width:min(340px,90vw);
+
+    height:min(600px,82vh);
+
+    min-height:520px;
+
+    transform:translateX(-50%);
+
+
+    background:linear-gradient(
+        180deg,
+        #fffdf8 0%,
+        #fffaf2 100%
+    );
+
+    border-radius:18px;
+    border:1px solid rgba(0,0,0,.05);
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:2;
+
+    transition:
+        transform 1.6s cubic-bezier(.22,1,.36,1),
+        box-shadow .8s;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25),
+        inset 0 0 35px rgba(255,255,255,.7);
+}
+
+.letter-paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        120deg,
+        rgba(255,255,255,.75),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events:none;
+
+    opacity: .55;
+mix-blend-mode: screen;
+
+}
+
+.envelope.open .letter-paper{
+
+     transform:
+    translate(-50%,-260px);
+
+    z-index:60;
+
+    box-shadow:
+
+        0 40px 90px rgba(0,0,0,.35),
+
+        0 0 40px rgba(255,255,255,.18);
+
+
+
+}
+
+
+/*======================================================
+LETTER CONTENT
+======================================================*/
+
+.letter-content{
+
+    height: 100%;
+
+    padding:32px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+}
+
+.letter-content h2{
+
+    font-family:'Great Vibes',cursive;
+
+    color:#ff3d8d;
+
+    font-size:44px;
+
+    margin-bottom:10px;
+
+     text-shadow:
+
+    0 0 10px rgba(255,80,150,.2);
+
+
+}
+
+.letter-body{
+
+    flex:1;
+
+    width:100%;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    scroll-behavior:smooth;
+
+    padding-right:10px;
+
+}
+
+.letter-content p{
+
+    color:#444;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+}
+
+/*======================================================
+COMMON FOLD
+======================================================*/
+
+.fold{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+/*======================================================
+TOP FOLD
+======================================================*/
+
+.top-flap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:140px;
+
+    background:#ffb4d2;
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin:top center;
+
+    transition:transform 1.3s cubic-bezier(.22,1,.36,1);
+
+    z-index:25;
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.15);
+
+}
+
+.envelope.open .top-flap{
+
+    transform:rotateX(-180deg);
+
+}
+
+/*======================================================
+LEFT
+======================================================*/
+
+.fold-left{
+
+    clip-path:polygon(
+    0 0,
+    50% 50%,
+    0 100%
+    );
+
+    background:#ff9fc3;
+
+    z-index:4;
+
+}
+
+/*======================================================
+RIGHT
+======================================================*/
+
+.fold-right{
+
+    clip-path:polygon(
+    100% 0,
+    100% 100%,
+    50% 50%
+    );
+
+    background:#ff9fc3;
+
+    z-index:4;
+
+}
+
+/*======================================================
+BOTTOM
+======================================================*/
+
+.fold-bottom{
+
+    clip-path:polygon(
+    0 100%,
+    50% 52%,
+    100% 100%
+    );
+
+    background:#ff84b4;
+
+    z-index:5;
+
+}
+
+/*======================================================
+HOVER
+======================================================*/
+
+.envelope:hover{
+
+    transform:
+
+    rotateX(6deg)
+
+    scale(1.03);
+
+    transition:.5s;
+
+}
+
+/*======================================================
+ENVELOPE APPEAR
+======================================================*/
+
+.envelope{
+
+    animation:
+
+    floatingEnvelope 4s ease-in-out infinite;
+
+}
+
+@keyframes floatingEnvelope{
+
+0%{
+
+transform:
+
+translateY(0);
+
+}
+
+50%{
+
+transform:
+
+translateY(-12px);
+
+}
+
+100%{
+
+transform:
+
+translateY(0);
+
+}
+
+}
+
+
+.envelope{
+
+    transition:
+
+    transform .8s ease;
+
+}
+
+.envelope.open{
+
+    animation:none;
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.02);
+
+}
+
+#typeLetter{
+
+     color:#555;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    letter-spacing:.3px;
+
+    white-space:pre-wrap;
+}
+
+/*======================================================
+PHASE 3D.2
+TYPEWRITER
+======================================================*/
+
+#typeLetter::after{
+
+    content:"|";
+
+    display:inline-block;
+
+    margin-left:2px;
+
+    color:#ff3d8d;
+
+    animation:blinkCursor .8s infinite;
+
+}
+
+@keyframes blinkCursor{
+
+    0%,50%{
+
+        opacity:1;
+
+    }
+
+    51%,100%{
+
+        opacity:0;
+
+    }
+
+}
+
+/*======================================================
+PHASE 3D.3
+LETTER FOCUS
+======================================================*/
+
+.envelope.focus{
+
+    transform:
+translateY(-20px)
+scale(1.12);
+
+transition:
+transform 1.3s cubic-bezier(.22,1,.36,1);
+
+}
+
+/*======================================================
+PHASE 3D.4
+CONTINUE BUTTON
+======================================================*/
+
+#continueBtn{
+
+    margin-top:10px;
+
+    padding-top:10px;
+
+    flex-shrink:0;
+
+    align-self:center;
+
+    padding:15px 36px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d94,
+        #8b5cff
+    );
+
+    box-shadow:
+        0 15px 35px rgba(255,70,150,.35);
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    pointer-events:none;
+
+   transition:
+    opacity .6s ease,
+    transform .6s ease,
+    box-shadow .3s ease;
+}
+
+#continueBtn.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+}
+
+#continueBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 45px rgba(255,70,150,.55);
+
+}
+
+#typeLetter.finished::after{
+    display:none;
+}
+
+/*======================================================*
+RESPONSIVE LETTER
+======================================================*/
+
+@media (max-width:768px){
+
+   .letter-paper{
+
+        width:min(88vw,420px);
+
+        height:min(78vh,600px);
+
+    }
+
+    .letter-content{
+
+        padding:26px;
+
+        gap:14px;
+
+    }
+
+    .letter-content h2{
+
+        font-size:38px;
+
+    }
+
+    #typeLetter{
+
+        font-size:18px;
+
+        line-height:1.8;
+
+    }
+
+    #continueBtn{
+
+        width:190px;
+
+        height:56px;
+
+        font-size:18px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+   .letter-paper{
+
+        width:92vw;
+
+        height:82vh;
+
+    }
+
+    .letter-content{
+
+        padding:22px;
+
+        gap:8px;
+
+    }
+
+    .letter-content h2{
+
+        font-size:26px;
+
+    }
+
+    #typeLetter{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    #continueBtn{
+
+        width:170px;
+
+        height:52px;
+
+        font-size:17px;
+
+    }
+
+}
+
+/*======================================================
+LETTER BODY SCROLLBAR
+======================================================*/
+
+.letter-body::-webkit-scrollbar{
+    width:5px;
+}
+
+.letter-body::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.letter-body::-webkit-scrollbar-thumb{
+    background:#ff5b9d;
+    border-radius:30px;
+}
+
+.letter-body::-webkit-scrollbar-thumb:hover{
+    background:#ff2c82;
+}
+
+/*======================================================
+PHASE 3D.5
+CONTINUE CLICK
+======================================================*/
+
+#continueBtn.clicked{
+
+    transform:scale(.94);
+
+    opacity:.92;
+
+}
+
+.letter-paper.glow{
+
+    box-shadow:
+
+        0 0 40px rgba(255,255,255,.18),
+
+        0 0 80px rgba(255,120,180,.25),
+
+        0 35px 80px rgba(0,0,0,.35);
+
+}
+
+.envelope.transition{
+
+    animation:none;
+
+}
+
+/*======================================================
+PHASE 3D.5 PART 2
+CAMERA ZOOM
+======================================================*/
+
+#envelopeScene.zooming{
+
+    transition:
+        transform 1.8s cubic-bezier(.22,1,.36,1);
+
+    transform:scale(1.08);
+
+}
+
+.envelope.zoom{
+
+    transform:
+    translateY(-20px)
+    scale(1.08);
+
+    transition:
+        transform 1.8s cubic-bezier(.22,1,.36,1);
+
+}
+
+.letter-paper.zoom{
+
+    transform:
+    translate(-50%,-270px);
+
+    transition:
+        transform 1.8s cubic-bezier(.22,1,.36,1),
+        box-shadow .8s;
+
+}
+
+/*======================================================*
+PHASE 3D.5
+PAGE FADE
+*======================================================*/
+
+#pageFade{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#090612;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 1.2s ease;
+
+    z-index:99999;
+
+}
+
+#pageFade.show{
+
+    opacity:1;
+
+}
+
+/*======================================================
+PHASE 4.0
+LETTER PAGE
+======================================================*/
+
+.letter-page{
+
+    margin:0;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    background:
+    radial-gradient(circle at top,
+    #26193d 0%,
+    #120d22 55%,
+    #09070f 100%);
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding:40px 0;
+
+    font-family:Poppins,sans-serif;
+
+}
+
+/*==============================*/
+
+.letter-wrapper{
+
+    width:min(92vw,720px);
+
+    padding:20px;
+
+     position:relative;
+
+    z-index:5;
+
+}
+
+/*==============================*/
+
+.paper{
+
+    background:#fffdf8;
+
+    border-radius:22px;
+
+    min-height:auto;
+
+    height: auto;
+
+    box-shadow:
+
+    0 40px 90px rgba(0,0,0,.45),
+
+    inset 0 0 40px rgba(255,255,255,.7);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+/*==============================*/
+
+.paper-header{
+
+    padding:55px 50px 25px;
+
+    font-size:50px;
+
+    font-family:cursive;
+
+    color:#ff5b9d;
+
+}
+
+/*==============================*/
+
+.paper-body{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:0 50px 50px;
+
+    font-size:26px;
+
+    line-height:2;
+
+    color:#555;
+
+}
+
+/*======================================
+PREMIUM PAPER
+======================================*/
+
+.paper{
+
+    position:relative;
+
+}
+
+.paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        rgba(255,255,255,.55),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events:none;
+
+}
+
+.paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.05;
+
+    background-image:
+
+    radial-gradient(#000 0.6px,transparent .6px);
+
+    background-size:12px 12px;
+
+    pointer-events:none;
+
+}
+
+/*======================================
+AMBIENT GLOW
+======================================*/
+
+.ambient-glow{
+
+    position:fixed;
+
+    width:700px;
+
+    height:700px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(255,100,180,.12),
+    transparent 70%);
+
+    filter:blur(40px);
+
+    z-index:0;
+
+    animation:glowPulse 6s ease-in-out infinite;
+
+}
+
+/*======================================
+PARTICLES
+======================================*/
+
+.particles,
+.particles2{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    opacity:.4;
+
+}
+
+.particles{
+
+    background-image:
+
+    radial-gradient(#ffffff 1px,transparent 1px);
+
+    background-size:120px 120px;
+
+    animation:particleMove 25s linear infinite;
+
+}
+
+.particles2{
+
+    background-image:
+
+    radial-gradient(#ff8fc0 1px,transparent 1px);
+
+    background-size:180px 180px;
+
+    animation:particleMoveReverse 35s linear infinite;
+
+}
+
+@keyframes glowPulse{
+
+    0%,100%{
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,-50%) scale(1.08);
+
+    }
+
+}
+
+@keyframes particleMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-120px);
+
+    }
+
+}
+
+@keyframes particleMoveReverse{
+
+    from{
+
+        transform:translateY(-80px);
+
+    }
+
+    to{
+
+        transform:translateY(80px);
+
+    }
+
+}
+
+#letterText{
+
+    white-space:pre-wrap;
+
+    color:#555;
+
+    font-size:22px;
+
+    line-height:2;
+
+}
+
+/*=========================================
+NEXT LETTER BUTTON
+=========================================*/
+
+#nextLetterBtn{
+
+    margin:45px auto 10px;
+
+    display:block;
+
+    border:none;
+
+    padding:16px 38px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #ff5b9d,
+        #9b5cff
+    );
+
+    box-shadow:
+        0 15px 35px rgba(255,90,150,.35);
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    pointer-events:none;
+
+    transition:.6s;
+}
+
+#nextLetterBtn.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+}
+
+#nextLetterBtn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.signature-heart{
+
+    text-align:center;
+
+    font-size:34px;
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+
+}
+
+@media (max-width:768px){
+
+    .letter-page{
+
+        padding:20px 0;
+
+    }
+
+    .paper-header{
+
+        padding:35px 25px 20px;
+
+        font-size:40px;
+
+    }
+
+    .paper-body{
+
+        padding:0 25px 35px;
+
+    }
+
+}

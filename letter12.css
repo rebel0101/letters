@@ -1,0 +1,5427 @@
+ /* =========================================================
+    LETTER XII — FOREVER TOGETHER
+    12.3 — PREMIUM FINALE VISUAL CSS
+    ========================================================= */
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.letter12-page {
+    background: #09070a;
+    color: #f2e4df;
+    overflow-x: hidden;
+}
+
+#letter12Main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.l12-hero {
+    position: relative;
+    min-height: 100svh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(130, 57, 70, 0.24),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(194, 119, 72, 0.12),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            #070609 0%,
+            #0d080c 52%,
+            #160d10 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   HERO GLOW
+   --------------------------------------------------------- */
+
+.l12-hero-glow {
+    position: absolute;
+    inset: -20%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(215, 119, 126, 0.17),
+            transparent 26%
+        );
+
+    filter: blur(25px);
+    pointer-events: none;
+}
+
+
+.l12-hero-dawn {
+    position: absolute;
+    left: 50%;
+    bottom: -18%;
+
+    width: 90%;
+    height: 55%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(216, 137, 91, 0.16),
+            transparent 65%
+        );
+
+    filter: blur(18px);
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO STARS
+   ========================================================= */
+
+.l12-hero-stars,
+.l12-hero-particles {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.l12-hero-stars span {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 231, 224, 0.7);
+
+    box-shadow:
+        0 0 8px
+        rgba(255, 219, 211, 0.45);
+
+    animation:
+        l12StarPulse
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.l12-hero-stars span:nth-child(1) {
+    top: 15%;
+    left: 12%;
+}
+
+.l12-hero-stars span:nth-child(2) {
+    top: 24%;
+    left: 27%;
+    animation-delay: 1s;
+}
+
+.l12-hero-stars span:nth-child(3) {
+    top: 12%;
+    left: 49%;
+    animation-delay: 2s;
+}
+
+.l12-hero-stars span:nth-child(4) {
+    top: 31%;
+    left: 68%;
+    animation-delay: 0.5s;
+}
+
+.l12-hero-stars span:nth-child(5) {
+    top: 18%;
+    left: 84%;
+    animation-delay: 1.7s;
+}
+
+.l12-hero-stars span:nth-child(6) {
+    top: 46%;
+    left: 8%;
+    animation-delay: 2.3s;
+}
+
+.l12-hero-stars span:nth-child(7) {
+    top: 39%;
+    left: 91%;
+    animation-delay: 0.8s;
+}
+
+.l12-hero-stars span:nth-child(8) {
+    top: 61%;
+    left: 19%;
+    animation-delay: 1.4s;
+}
+
+.l12-hero-stars span:nth-child(9) {
+    top: 54%;
+    left: 78%;
+    animation-delay: 2.5s;
+}
+
+.l12-hero-stars span:nth-child(10) {
+    top: 72%;
+    left: 48%;
+    animation-delay: 0.3s;
+}
+
+
+@keyframes l12StarPulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.75);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.35);
+    }
+}
+
+
+/* =========================================================
+   HERO PARTICLES
+   ========================================================= */
+
+.l12-hero-particles span {
+    position: absolute;
+
+    bottom: -20px;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: rgba(221, 145, 137, 0.5);
+
+    animation:
+        l12ParticleRise
+        9s
+        linear
+        infinite;
+}
+
+
+.l12-hero-particles span:nth-child(1) {
+    left: 17%;
+    animation-delay: 0s;
+}
+
+.l12-hero-particles span:nth-child(2) {
+    left: 32%;
+    animation-delay: 2s;
+}
+
+.l12-hero-particles span:nth-child(3) {
+    left: 48%;
+    animation-delay: 4s;
+}
+
+.l12-hero-particles span:nth-child(4) {
+    left: 63%;
+    animation-delay: 1s;
+}
+
+.l12-hero-particles span:nth-child(5) {
+    left: 78%;
+    animation-delay: 5s;
+}
+
+.l12-hero-particles span:nth-child(6) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+
+@keyframes l12ParticleRise {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(0)
+            scale(0.6);
+    }
+
+    15% {
+        opacity: 0.65;
+    }
+
+    85% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-100vh)
+            scale(1.1);
+    }
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.l12-hero-content {
+    position: relative;
+    z-index: 5;
+
+    width: min(900px, 90%);
+
+    padding: 100px 20px 70px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HERO IDENTITY
+   ========================================================= */
+
+.l12-hero-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.l12-hero-number {
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.48em;
+
+    color:
+        rgba(226, 190, 179, 0.72);
+
+    text-transform: uppercase;
+}
+
+
+.l12-hero-divider {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    width: min(260px, 60vw);
+
+    margin: 20px auto 16px;
+}
+
+
+.l12-hero-divider span {
+    flex: 1;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(210, 155, 145, 0.45)
+        );
+}
+
+
+.l12-hero-divider span:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(210, 155, 145, 0.45),
+            transparent
+        );
+}
+
+
+.l12-hero-divider i {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 19px;
+
+    font-style: normal;
+
+    color:
+        rgba(224, 161, 158, 0.82);
+}
+
+
+.l12-hero-kicker {
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.36em;
+
+    color:
+        rgba(207, 167, 157, 0.5);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.l12-hero h1 {
+    margin:
+        38px
+        0
+        35px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(58px, 10vw, 118px);
+
+    line-height: 0.84;
+
+    font-weight: 500;
+
+    letter-spacing: 0.025em;
+
+    color:
+        #f4e4de;
+
+    text-shadow:
+        0 0 35px
+        rgba(207, 105, 120, 0.18);
+}
+
+
+.l12-hero h1 span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-style: italic;
+
+    color:
+        #dca8a4;
+}
+
+
+/* =========================================================
+   HERO OPENING
+   ========================================================= */
+
+.l12-hero-opening {
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+
+.l12-hero-opening p {
+    margin: 7px 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(18px, 2.2vw, 24px);
+
+    line-height: 1.5;
+
+    color:
+        rgba(232, 211, 204, 0.7);
+}
+
+
+.l12-hero-pause {
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin: 28px auto;
+}
+
+
+.l12-hero-pause span {
+    width: 65px;
+    height: 1px;
+
+    background:
+        rgba(205, 147, 140, 0.32);
+}
+
+
+.l12-hero-pause i {
+    font-style: normal;
+
+    color:
+        rgba(218, 130, 137, 0.78);
+
+    font-size: 17px;
+}
+
+
+.l12-hero-final-opening {
+    margin-top: 30px !important;
+
+    font-style: italic;
+
+    color:
+        rgba(239, 220, 214, 0.82) !important;
+}
+
+
+.l12-hero-opening strong {
+    display: block;
+
+    margin-top: 15px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size:
+        clamp(35px, 5vw, 54px);
+
+    font-weight: 500;
+
+    color:
+        #e2b0a9;
+
+    text-shadow:
+        0 0 24px
+        rgba(213, 116, 126, 0.25);
+}
+
+
+/* =========================================================
+   HERO SCROLL
+   ========================================================= */
+
+.l12-hero-scroll {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 70px;
+
+    opacity: 0.58;
+}
+
+
+.l12-hero-scroll span {
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 0.35em;
+}
+
+
+.l12-hero-scroll i {
+    font-size: 19px;
+
+    font-style: normal;
+
+    animation:
+        l12ScrollFloat
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes l12ScrollFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* =========================================================
+   FINAL LETTER SECTION
+   ========================================================= */
+
+.l12-letter-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        150px
+        24px
+        170px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(136, 59, 73, 0.14),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #160d11 0%,
+            #100a0d 50%,
+            #09070a 100%
+        );
+}
+
+
+.l12-letter-glow {
+    position: absolute;
+
+    top: 8%;
+    left: 50%;
+
+    width: min(800px, 90vw);
+    height: 500px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(192, 94, 108, 0.10),
+            transparent 65%
+        );
+
+    filter: blur(40px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LETTER HEADING
+   ========================================================= */
+
+.l12-letter-heading {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+
+.l12-letter-heading > span {
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.38em;
+
+    color:
+        rgba(217, 177, 166, 0.58);
+
+    text-transform: uppercase;
+}
+
+
+.l12-letter-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: min(300px, 70vw);
+
+    margin: 21px auto 24px;
+}
+
+
+.l12-letter-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(207, 151, 142, 0.25);
+}
+
+
+.l12-letter-divider i {
+    font-style: normal;
+
+    font-size: 18px;
+
+    color:
+        rgba(216, 139, 143, 0.65);
+}
+
+
+.l12-letter-heading h2 {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(31px, 5vw, 48px);
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    color:
+        #ead9d3;
+}
+
+
+/* =========================================================
+   PAPER
+   ========================================================= */
+
+.l12-paper-wrap {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(880px, 94vw);
+
+    margin: 0 auto;
+}
+
+
+.l12-paper {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        clamp(45px, 7vw, 85px)
+        clamp(27px, 7vw, 90px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #211719,
+            #171012 50%,
+            #1d1416
+        );
+
+    border:
+        1px solid
+        rgba(222, 185, 174, 0.14);
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 35px 90px
+        rgba(0, 0, 0, 0.45),
+
+        0 0 70px
+        rgba(113, 43, 59, 0.08);
+}
+
+
+.l12-paper::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.28;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 3px,
+            rgba(255,255,255,0.012) 4px
+        );
+}
+
+
+.l12-paper-glow {
+    position: absolute;
+
+    top: -100px;
+    left: 50%;
+
+    width: 600px;
+    height: 300px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(221, 139, 132, 0.09),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PAPER CONTENT
+   ========================================================= */
+
+.l12-paper-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 680px;
+
+    margin: 0 auto;
+}
+
+
+.l12-paper-content > p {
+    margin:
+        0
+        0
+        29px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(18px, 2.1vw, 22px);
+
+    line-height: 1.85;
+
+    color:
+        rgba(239, 221, 214, 0.84);
+}
+
+
+.l12-letter-opening {
+    font-style: italic;
+
+    color:
+        rgba(242, 222, 214, 0.92) !important;
+}
+
+
+.l12-letter-highlight {
+    padding:
+        25px
+        28px;
+
+    border-left:
+        1px solid
+        rgba(211, 130, 133, 0.42);
+
+    background:
+        rgba(255,255,255,0.018);
+
+    color:
+        #ead1cb !important;
+
+    font-style: italic;
+}
+
+
+.l12-letter-soft {
+    color:
+        rgba(227, 205, 198, 0.68) !important;
+}
+
+
+.l12-letter-final {
+    margin-top: 42px !important;
+
+    font-size:
+        clamp(22px, 3vw, 29px) !important;
+
+    text-align: center;
+
+    color:
+        #edd8d1 !important;
+}
+
+
+.l12-paper-content em {
+    color:
+        #e3aaa5;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   SHAYARI
+   ========================================================= */
+
+.l12-shayari,
+.l12-urdu {
+    position: relative;
+
+    margin:
+        65px
+        0;
+
+    padding:
+        35px
+        35px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(210, 150, 143, 0.15);
+
+    border-bottom:
+        1px solid
+        rgba(210, 150, 143, 0.15);
+}
+
+
+.l12-shayari p,
+.l12-urdu p {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(20px, 2.6vw, 28px);
+
+    line-height: 1.85;
+
+    font-style: italic;
+
+    color:
+        rgba(239, 211, 204, 0.9);
+}
+
+
+.l12-urdu {
+    background:
+        rgba(119, 48, 65, 0.055);
+}
+
+
+.l12-shayari-mark,
+.l12-urdu-mark {
+    position: absolute;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    color:
+        rgba(212, 128, 130, 0.25);
+}
+
+
+.l12-shayari-mark {
+    top: 18px;
+    left: 8px;
+}
+
+
+.l12-urdu-mark {
+    top: 18px;
+    left: 8px;
+}
+
+
+.l12-shayari-mark.closing,
+.l12-urdu-mark.closing {
+    top: auto;
+    left: auto;
+
+    right: 8px;
+    bottom: 5px;
+}
+
+
+/* =========================================================
+   JOURNEY CARD
+   ========================================================= */
+
+.l12-journey-card {
+    position: relative;
+
+    margin:
+        75px
+        0;
+
+    padding:
+        40px
+        30px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(214, 163, 153, 0.14);
+
+    background:
+        rgba(255,255,255,0.018);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.18);
+
+    overflow: hidden;
+}
+
+
+.l12-journey-card-glow {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 400px;
+    height: 250px;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(188, 83, 104, 0.09),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+.l12-journey-label,
+.l12-promise-label {
+    position: relative;
+
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.34em;
+
+    color:
+        rgba(218, 176, 166, 0.62);
+
+    text-transform: uppercase;
+}
+
+
+.l12-journey-divider,
+.l12-promise-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: min(240px, 70%);
+
+    margin: 19px auto 32px;
+}
+
+
+.l12-journey-divider span,
+.l12-promise-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(208, 151, 142, 0.22);
+}
+
+
+.l12-journey-divider i,
+.l12-promise-divider i {
+    font-style: normal;
+
+    color:
+        rgba(216, 132, 136, 0.68);
+}
+
+
+.l12-journey-items {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.l12-journey-item {
+    padding: 18px 10px;
+}
+
+
+.l12-journey-item span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+
+    color:
+        #d9a3a0;
+}
+
+
+.l12-journey-item p {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    color:
+        rgba(233, 209, 202, 0.67);
+}
+
+
+.l12-journey-card small {
+    display: block;
+
+    margin-top: 27px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 22px;
+
+    color:
+        rgba(220, 163, 157, 0.68);
+}
+
+
+/* =========================================================
+   FOREVER PROMISE
+   ========================================================= */
+
+.l12-forever-promise {
+    margin:
+        80px
+        0;
+
+    text-align: center;
+}
+
+
+.l12-forever-promise > p {
+    margin:
+        0
+        auto
+        24px;
+
+    max-width: 610px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(18px, 2.2vw, 22px);
+
+    line-height: 1.8;
+
+    color:
+        rgba(234, 213, 207, 0.75);
+}
+
+
+.l12-forever-promise strong {
+    display: block;
+
+    max-width: 600px;
+
+    margin:
+        35px
+        auto;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(29px, 4vw, 43px);
+
+    line-height: 1.25;
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    color:
+        #e5b1ac;
+
+    text-shadow:
+        0 0 25px
+        rgba(208, 103, 117, 0.15);
+}
+
+
+/* =========================================================
+   FINAL LOVE QUOTE
+   ========================================================= */
+
+.l12-love-quote {
+    position: relative;
+
+    margin:
+        85px
+        auto;
+
+    padding:
+        50px
+        25px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(213, 155, 147, 0.16);
+
+    border-bottom:
+        1px solid
+        rgba(213, 155, 147, 0.16);
+}
+
+
+.l12-quote-mark {
+    display: block;
+
+    height: 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 70px;
+
+    line-height: 0.5;
+
+    color:
+        rgba(211, 130, 132, 0.27);
+}
+
+
+.l12-love-quote blockquote {
+    margin: 25px auto;
+
+    max-width: 650px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(24px, 3.5vw, 38px);
+
+    line-height: 1.45;
+
+    font-style: italic;
+
+    color:
+        #ead7d0;
+}
+
+
+.l12-quote-heart {
+    display: block;
+
+    margin-top: 24px;
+
+    font-size: 21px;
+
+    color:
+        rgba(219, 128, 137, 0.8);
+
+    animation:
+        l12QuoteHeart
+        2.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes l12QuoteHeart {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   LETTER CLOSING
+   ========================================================= */
+
+.l12-letter-closing {
+    margin:
+        90px
+        auto
+        10px;
+
+    text-align: center;
+}
+
+
+.l12-closing-line {
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(19px, 2.4vw, 25px);
+
+    line-height: 1.75;
+
+    font-style: italic;
+
+    color:
+        rgba(235, 211, 204, 0.72);
+}
+
+
+.l12-closing-final {
+    margin:
+        32px
+        0
+        35px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(25px, 4vw, 38px);
+
+    line-height: 1.4;
+
+    color:
+        #e9d0c9;
+}
+
+
+.l12-closing-final strong {
+    display: inline-block;
+
+    font-style: italic;
+
+    color:
+        #e1aaa5;
+
+    font-weight: 500;
+}
+
+
+.l12-closing-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: min(280px, 70vw);
+
+    margin: 0 auto 28px;
+}
+
+
+.l12-closing-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(208, 148, 141, 0.22);
+}
+
+
+.l12-closing-divider i {
+    font-style: normal;
+
+    font-size: 17px;
+
+    color:
+        rgba(220, 132, 137, 0.72);
+}
+
+
+.l12-closing-signoff {
+    display: block;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 25px;
+
+    color:
+        rgba(222, 169, 162, 0.72);
+}
+
+
+.l12-signature {
+    display: block;
+
+    margin-top: 6px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size:
+        clamp(38px, 6vw, 55px);
+
+    font-weight: 500;
+
+    color:
+        #e0aaa5;
+
+    transform: rotate(-3deg);
+
+    text-shadow:
+        0 0 20px
+        rgba(208, 105, 118, 0.15);
+}
+
+
+/* =========================================================
+   GRAND FINALE
+   ========================================================= */
+
+.l12-finale-section {
+    position: relative;
+
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(133, 53, 70, 0.23),
+            transparent 33%
+        ),
+        linear-gradient(
+            180deg,
+            #09070a,
+            #13090e 55%,
+            #070608
+        );
+}
+
+
+.l12-finale-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 800px;
+    height: 800px;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214, 105, 121, 0.13),
+            transparent 65%
+        );
+
+    filter: blur(35px);
+}
+
+
+/* =========================================================
+   FINALE STARS
+   ========================================================= */
+
+.l12-finale-stars {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.l12-finale-stars span {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 228, 220, 0.65);
+
+    animation:
+        l12FinalStar
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.l12-finale-stars span:nth-child(1) {
+    top: 12%;
+    left: 15%;
+}
+
+.l12-finale-stars span:nth-child(2) {
+    top: 20%;
+    left: 31%;
+    animation-delay: 1s;
+}
+
+.l12-finale-stars span:nth-child(3) {
+    top: 10%;
+    left: 51%;
+    animation-delay: 2s;
+}
+
+.l12-finale-stars span:nth-child(4) {
+    top: 27%;
+    left: 70%;
+    animation-delay: 0.5s;
+}
+
+.l12-finale-stars span:nth-child(5) {
+    top: 15%;
+    left: 87%;
+    animation-delay: 1.8s;
+}
+
+.l12-finale-stars span:nth-child(6) {
+    top: 47%;
+    left: 8%;
+    animation-delay: 2.4s;
+}
+
+.l12-finale-stars span:nth-child(7) {
+    top: 42%;
+    left: 93%;
+    animation-delay: 0.8s;
+}
+
+.l12-finale-stars span:nth-child(8) {
+    top: 67%;
+    left: 17%;
+    animation-delay: 1.4s;
+}
+
+.l12-finale-stars span:nth-child(9) {
+    top: 62%;
+    left: 82%;
+    animation-delay: 2.7s;
+}
+
+.l12-finale-stars span:nth-child(10) {
+    top: 80%;
+    left: 47%;
+    animation-delay: 0.2s;
+}
+
+.l12-finale-stars span:nth-child(11) {
+    top: 72%;
+    left: 65%;
+    animation-delay: 3s;
+}
+
+.l12-finale-stars span:nth-child(12) {
+    top: 35%;
+    left: 43%;
+    animation-delay: 1.1s;
+}
+
+
+@keyframes l12FinalStar {
+
+    0%,
+    100% {
+        opacity: 0.18;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.4);
+    }
+}
+
+
+/* =========================================================
+   FINALE HEARTS
+   ========================================================= */
+
+.l12-finale-hearts {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.l12-finale-hearts span {
+    position: absolute;
+
+    bottom: -30px;
+
+    font-size:
+        clamp(18px, 3vw, 30px);
+
+    color:
+        rgba(213, 111, 127, 0.5);
+
+    animation:
+        l12FinalHeart
+        9s
+        linear
+        infinite;
+}
+
+
+.l12-finale-hearts span:nth-child(1) {
+    left: 12%;
+}
+
+.l12-finale-hearts span:nth-child(2) {
+    left: 29%;
+    animation-delay: 2s;
+}
+
+.l12-finale-hearts span:nth-child(3) {
+    left: 46%;
+    animation-delay: 4s;
+}
+
+.l12-finale-hearts span:nth-child(4) {
+    left: 63%;
+    animation-delay: 1s;
+}
+
+.l12-finale-hearts span:nth-child(5) {
+    left: 79%;
+    animation-delay: 5s;
+}
+
+.l12-finale-hearts span:nth-child(6) {
+    left: 91%;
+    animation-delay: 3s;
+}
+
+
+@keyframes l12FinalHeart {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(0)
+            scale(0.7);
+    }
+
+    15% {
+        opacity: 0.55;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-100vh)
+            scale(1.2)
+            rotate(20deg);
+    }
+}
+
+
+/* =========================================================
+   FINALE CONTENT
+   ========================================================= */
+
+.l12-finale-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(800px, 90%);
+
+    text-align: center;
+}
+
+
+.l12-finale-label,
+.l12-ending-label {
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.4em;
+
+    color:
+        rgba(220, 177, 168, 0.58);
+
+    text-transform: uppercase;
+}
+
+
+.l12-finale-divider,
+.l12-ending-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: min(280px, 70vw);
+
+    margin: 22px auto 32px;
+}
+
+
+.l12-finale-divider span,
+.l12-ending-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(210, 150, 143, 0.22);
+}
+
+
+.l12-finale-divider i,
+.l12-ending-divider i {
+    font-style: normal;
+
+    font-size: 18px;
+
+    color:
+        rgba(220, 133, 139, 0.72);
+}
+
+
+.l12-finale-intro {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(19px, 2.5vw, 27px);
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    color:
+        rgba(234, 210, 203, 0.68);
+}
+
+
+.l12-finale-content h2 {
+    margin:
+        35px
+        0
+        25px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(65px, 12vw, 135px);
+
+    line-height: 0.82;
+
+    font-weight: 500;
+
+    letter-spacing: 0.025em;
+
+    color:
+        #f0ded8;
+
+    text-shadow:
+        0 0 40px
+        rgba(211, 103, 119, 0.2);
+}
+
+
+.l12-finale-content h2 span {
+    display: block;
+
+    margin-top: 15px;
+
+    font-style: italic;
+
+    color:
+        #dba6a2;
+}
+
+
+.l12-finale-heart {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 35px auto;
+}
+
+
+.l12-finale-heart span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    border:
+        1px solid
+        rgba(221, 137, 139, 0.3);
+
+    border-radius: 50%;
+
+    color:
+        #dfaaa6;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 0 35px
+        rgba(209, 104, 119, 0.15);
+
+    animation:
+        l12FinaleHeartPulse
+        2.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes l12FinaleHeartPulse {
+
+    0%,
+    100% {
+        transform: scale(0.92);
+        box-shadow:
+            0 0 25px
+            rgba(209, 104, 119, 0.1);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow:
+            0 0 50px
+            rgba(209, 104, 119, 0.25);
+    }
+}
+
+
+.l12-finale-message {
+    margin:
+        35px
+        auto
+        28px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(20px, 2.8vw, 29px);
+
+    line-height: 1.7;
+
+    color:
+        rgba(238, 215, 209, 0.76);
+}
+
+
+.l12-finale-names {
+    display: block;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size:
+        clamp(32px, 5vw, 48px);
+
+    font-weight: 500;
+
+    color:
+        #e0aaa5;
+}
+
+
+.l12-finale-names span {
+    display: inline-block;
+
+    margin:
+        0
+        12px;
+
+    font-size: 23px;
+}
+
+
+/* =========================================================
+   FINAL ENDING
+   ========================================================= */
+
+.l12-ending-section {
+    position: relative;
+
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        100px
+        25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(130, 50, 67, 0.12),
+            transparent 35%
+        ),
+        #070608;
+}
+
+
+.l12-ending-content {
+    width: min(700px, 90vw);
+}
+
+
+.l12-ending-message {
+    margin:
+        35px
+        0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(23px, 3.2vw, 34px);
+
+    line-height: 1.65;
+
+    color:
+        rgba(237, 216, 210, 0.76);
+}
+
+
+.l12-ending-heart {
+    margin: 30px 0;
+
+    font-size: 25px;
+
+    color:
+        rgba(220, 127, 136, 0.78);
+
+    animation:
+        l12EndingHeart
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes l12EndingHeart {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+
+.l12-ending-final {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(20px, 2.7vw, 29px);
+
+    line-height: 1.75;
+
+    font-style: italic;
+
+    color:
+        rgba(231, 207, 201, 0.68);
+}
+
+
+.l12-ending-signature {
+    display: block;
+
+    margin-top: 38px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size:
+        clamp(35px, 5vw, 52px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    color:
+        #dda9a4;
+}
+
+
+.l12-ending-complete {
+    display: block;
+
+    margin-top: 75px;
+
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 0.4em;
+
+    color:
+        rgba(208, 164, 155, 0.38);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .l12-letter-section {
+        padding-top: 120px;
+    }
+
+    .l12-paper {
+        padding:
+            60px
+            55px;
+    }
+
+    .l12-journey-items {
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .l12-hero-content {
+        padding:
+            90px
+            18px
+            55px;
+    }
+
+
+    .l12-hero h1 {
+        margin:
+            30px
+            0
+            28px;
+    }
+
+
+    .l12-hero-scroll {
+        margin-top: 50px;
+    }
+
+
+    .l12-letter-section {
+        padding:
+            100px
+            15px
+            120px;
+    }
+
+
+    .l12-letter-heading {
+        margin-bottom: 45px;
+    }
+
+
+    .l12-paper {
+        padding:
+            42px
+            25px;
+    }
+
+
+    .l12-paper-content > p {
+        font-size: 19px;
+
+        line-height: 1.78;
+    }
+
+
+    .l12-shayari,
+    .l12-urdu {
+        margin:
+            50px
+            0;
+
+        padding:
+            30px
+            18px;
+    }
+
+
+    .l12-shayari p,
+    .l12-urdu p {
+        font-size: 20px;
+
+        line-height: 1.8;
+    }
+
+
+    .l12-journey-card {
+        margin:
+            55px
+            0;
+
+        padding:
+            35px
+            18px;
+    }
+
+
+    .l12-journey-items {
+        grid-template-columns: 1fr;
+    }
+
+
+    .l12-forever-promise {
+        margin:
+            60px
+            0;
+    }
+
+
+    .l12-love-quote {
+        margin:
+            60px
+            0;
+
+        padding:
+            40px
+            10px;
+    }
+
+
+    .l12-letter-closing {
+        margin-top: 65px;
+    }
+
+
+    .l12-finale-content h2 {
+        font-size:
+            clamp(57px, 17vw, 92px);
+    }
+
+
+    .l12-finale-message {
+        font-size: 20px;
+    }
+
+
+    .l12-ending-section {
+        padding:
+            80px
+            20px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .l12-hero-number {
+        font-size: 8px;
+        letter-spacing: 0.36em;
+    }
+
+
+    .l12-hero-kicker {
+        font-size: 8px;
+    }
+
+
+    .l12-hero h1 {
+        font-size:
+            clamp(49px, 16vw, 70px);
+    }
+
+
+    .l12-paper {
+        padding:
+            35px
+            19px;
+    }
+
+
+    .l12-paper-content > p {
+        font-size: 18px;
+    }
+
+
+    .l12-shayari p,
+    .l12-urdu p {
+        font-size: 19px;
+    }
+
+
+    .l12-finale-content h2 {
+        font-size:
+            clamp(49px, 16vw, 73px);
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+
+    .l12-hero-scroll i {
+        animation-duration: 2.5s;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    .l12-hero-stars span,
+    .l12-hero-particles span,
+    .l12-hero-scroll i,
+    .l12-quote-heart,
+    .l12-finale-stars span,
+    .l12-finale-hearts span,
+    .l12-finale-heart span,
+    .l12-ending-heart {
+        animation: none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER XII — 12.4
+   CINEMATIC OPENING REVEAL
+   ========================================================= */
+
+
+/* =========================================================
+   HERO INITIAL STATE
+   ========================================================= */
+
+.l12-hero-ready .l12-hero-content {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(8px);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.l12-hero-content {
+    transition:
+        opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.l12-hero-content-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    filter: blur(0) !important;
+}
+
+
+/* =========================================================
+   HERO IDENTITY
+   ========================================================= */
+
+.l12-hero-identity {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(5px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1s ease;
+}
+
+
+.l12-hero-identity-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.l12-hero h1 {
+    opacity: 0;
+    transform:
+        translateY(25px)
+        scale(0.97);
+
+    filter: blur(7px);
+
+    transition:
+        opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.35s ease;
+}
+
+
+.l12-hero-title-visible {
+    opacity: 1 !important;
+
+    transform:
+        translateY(0)
+        scale(1) !important;
+
+    filter: blur(0) !important;
+}
+
+
+/* =========================================================
+   TITLE SECOND WORD
+   ========================================================= */
+
+.l12-hero h1 span {
+    opacity: 0.72;
+
+    transition:
+        opacity 1.5s ease 0.25s;
+}
+
+
+.l12-hero-title-visible span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   OPENING TEXT
+   ========================================================= */
+
+.l12-hero-opening {
+    opacity: 0;
+
+    transform:
+        translateY(22px);
+
+    filter: blur(5px);
+
+    transition:
+        opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.35s ease;
+}
+
+
+.l12-hero-opening-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter: blur(0);
+}
+
+
+/* =========================================================
+   OPENING PARAGRAPHS
+   ========================================================= */
+
+.l12-hero-opening > p {
+    opacity: 0;
+
+    transform:
+        translateY(12px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+.l12-hero-opening-visible > p {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+.l12-hero-opening-visible > p:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+
+.l12-hero-opening-visible > p:nth-child(2) {
+    transition-delay: 0.35s;
+}
+
+
+.l12-hero-opening-visible > p:nth-child(3) {
+    transition-delay: 0.55s;
+}
+
+
+.l12-hero-opening-visible
+.l12-hero-final-opening {
+    transition-delay: 1s !important;
+}
+
+
+/* =========================================================
+   HERO PAUSE HEART
+   ========================================================= */
+
+.l12-hero-pause {
+    opacity: 0;
+
+    transform:
+        scale(0.85);
+
+    transition:
+        opacity 1s ease 0.75s,
+        transform 1s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.75s;
+}
+
+
+.l12-hero-opening-visible .l12-hero-pause {
+    opacity: 1;
+
+    transform:
+        scale(1);
+}
+
+
+/* =========================================================
+   FINAL "WITH YOU"
+   ========================================================= */
+
+.l12-hero-opening strong {
+    opacity: 0;
+
+    transform:
+        translateY(18px)
+        scale(0.94);
+
+    filter: blur(4px);
+
+    transition:
+        opacity 1.4s ease 1.45s,
+        transform 1.4s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1.45s,
+        filter 1.4s ease 1.45s;
+}
+
+
+.l12-hero-opening-visible strong {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter: blur(0);
+}
+
+
+/* =========================================================
+   KEEP READING
+   ========================================================= */
+
+.l12-hero-scroll {
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+.l12-hero-scroll-visible {
+    opacity: 0.58;
+
+    transform:
+        translateY(0);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-hero-ready .l12-hero-content,
+    .l12-hero-content,
+    .l12-hero-identity,
+    .l12-hero h1,
+    .l12-hero-opening,
+    .l12-hero-opening > p,
+    .l12-hero-pause,
+    .l12-hero-opening strong,
+    .l12-hero-scroll,
+    .l12-hero-ready .l12-hero-glow {
+        opacity: 1 !important;
+
+        transform:
+            none !important;
+
+        filter:
+            none !important;
+
+        transition:
+            none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER XII — PAGE SCROLL FIX
+   ========================================================= */
+
+html,
+body {
+    height: auto !important;
+    min-height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+body.letter12-page {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+#letter12Main {
+    height: auto !important;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   LETTER XII — 12.5
+   GRAND FINALE CINEMATIC REVEAL
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   INITIAL STATE
+   --------------------------------------------------------- */
+
+.l12-finale-section {
+    opacity: 0;
+    transform: scale(1.015);
+    filter: blur(8px);
+
+    transition:
+        opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.8s ease;
+}
+
+
+/* ---------------------------------------------------------
+   VISIBLE STATE
+   --------------------------------------------------------- */
+
+.l12-finale-visible {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   FINALE CONTENT
+   --------------------------------------------------------- */
+
+.l12-finale-content {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(6px);
+
+    transition:
+        opacity 1.4s ease 0.25s,
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+        filter 1.4s ease 0.25s;
+}
+
+.l12-finale-visible .l12-finale-content {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   FINALE LABEL
+   --------------------------------------------------------- */
+
+.l12-finale-visible .l12-finale-label {
+    animation:
+        l12FinaleFadeUp
+        1s
+        ease
+        0.35s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   FINALE TITLE
+   --------------------------------------------------------- */
+
+.l12-finale-visible .l12-finale-content h2 {
+    animation:
+        l12FinaleTitle
+        1.6s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.55s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   FINALE HEART
+   --------------------------------------------------------- */
+
+.l12-finale-visible .l12-finale-heart {
+    animation:
+        l12FinaleHeartReveal
+        1.2s
+        ease
+        1s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   FINALE MESSAGE
+   --------------------------------------------------------- */
+
+.l12-finale-visible .l12-finale-message {
+    animation:
+        l12FinaleFadeUp
+        1.2s
+        ease
+        1.2s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   FINALE NAMES
+   --------------------------------------------------------- */
+
+.l12-finale-visible .l12-finale-names {
+    animation:
+        l12FinaleFadeUp
+        1.3s
+        ease
+        1.5s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+   --------------------------------------------------------- */
+
+@keyframes l12FinaleFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes l12FinaleTitle {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.94);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+
+}
+
+
+@keyframes l12FinaleHeartReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-finale-section,
+    .l12-finale-content,
+    .l12-finale-label,
+    .l12-finale-content h2,
+    .l12-finale-heart,
+    .l12-finale-message,
+    .l12-finale-names {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER XII — 12.5
+   GRAND FINALE CINEMATIC REVEAL
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   FINALE INITIAL STATE
+   --------------------------------------------------------- */
+
+.l12-finale-section {
+    opacity: 0;
+
+    transform:
+        scale(1.015);
+
+    filter:
+        blur(8px);
+
+    transition:
+        opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.8s ease;
+}
+
+
+/* ---------------------------------------------------------
+   FINALE VISIBLE STATE
+   --------------------------------------------------------- */
+
+.l12-finale-visible {
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    filter:
+        blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   FINALE CONTENT REVEAL
+   --------------------------------------------------------- */
+
+.l12-finale-content {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    filter:
+        blur(6px);
+
+    transition:
+        opacity 1.4s ease 0.25s,
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+        filter 1.4s ease 0.25s;
+}
+
+
+.l12-finale-visible
+.l12-finale-content {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   FINALE LABEL
+   --------------------------------------------------------- */
+
+.l12-finale-visible
+.l12-finale-label {
+
+    animation:
+        l12FinaleFadeUp
+        1s
+        ease
+        0.35s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   FOREVER TOGETHER TITLE
+   --------------------------------------------------------- */
+
+.l12-finale-visible
+.l12-finale-content h2 {
+
+    animation:
+        l12FinaleTitle
+        1.6s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.55s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   CENTER HEART
+   --------------------------------------------------------- */
+
+.l12-finale-visible
+.l12-finale-heart {
+
+    animation:
+        l12FinaleHeartReveal
+        1.2s
+        ease
+        1s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   EMOTIONAL MESSAGE
+   --------------------------------------------------------- */
+
+.l12-finale-visible
+.l12-finale-message {
+
+    animation:
+        l12FinaleFadeUp
+        1.2s
+        ease
+        1.2s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   AKKI ♥ GULABO
+   --------------------------------------------------------- */
+
+.l12-finale-visible
+.l12-finale-names {
+
+    animation:
+        l12FinaleFadeUp
+        1.3s
+        ease
+        1.5s
+        both;
+}
+
+
+/* =========================================================
+   KEYFRAME — SOFT FADE + RISE
+   ========================================================= */
+
+@keyframes l12FinaleFadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   KEYFRAME — TITLE REVEAL
+   ========================================================= */
+
+@keyframes l12FinaleTitle {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.94);
+
+        filter:
+            blur(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* =========================================================
+   KEYFRAME — HEART REVEAL
+   ========================================================= */
+
+@keyframes l12FinaleHeartReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-finale-section,
+    .l12-finale-content,
+    .l12-finale-label,
+    .l12-finale-content h2,
+    .l12-finale-heart,
+    .l12-finale-message,
+    .l12-finale-names {
+
+        opacity: 1 !important;
+
+        transform:
+            none !important;
+
+        filter:
+            none !important;
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER XII — 12.6
+   FINAL LETTER CINEMATIC SCROLL REVEAL
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   LETTER SECTION — INITIAL STATE
+   --------------------------------------------------------- */
+
+.l12-letter-section {
+
+    opacity: 0;
+
+    transform:
+        translateY(45px);
+
+    filter:
+        blur(5px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.5s ease;
+}
+
+
+/* ---------------------------------------------------------
+   LETTER SECTION — VISIBLE
+   --------------------------------------------------------- */
+
+.l12-letter-visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   LETTER HEADING
+   --------------------------------------------------------- */
+
+.l12-letter-heading {
+
+    opacity: 0;
+
+    transform:
+        translateY(28px);
+
+    transition:
+        opacity 1s ease 0.25s,
+        transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+}
+
+
+.l12-letter-visible
+.l12-letter-heading {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   LETTER PAPER
+   --------------------------------------------------------- */
+
+.l12-paper-wrap {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.985);
+
+    filter:
+        blur(4px);
+
+    transition:
+        opacity 1.4s ease 0.45s,
+        transform 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.45s,
+        filter 1.4s ease 0.45s;
+}
+
+
+.l12-letter-visible
+.l12-paper-wrap {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   PAPER CONTENT — SOFT REVEAL
+   --------------------------------------------------------- */
+
+.l12-paper-content {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity 1.2s ease 0.8s,
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.8s;
+}
+
+
+.l12-letter-visible
+.l12-paper-content {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   SHAYARI
+   --------------------------------------------------------- */
+
+.l12-letter-visible
+.l12-shayari {
+
+    animation:
+        l12ShayariReveal
+        1.3s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1.1s
+        both;
+}
+
+
+@keyframes l12ShayariReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(24px)
+            scale(0.98);
+
+        filter:
+            blur(5px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   URDU ROMANTIC LINES
+   --------------------------------------------------------- */
+
+.l12-letter-visible
+.l12-urdu {
+
+    animation:
+        l12UrduReveal
+        1.3s
+        ease
+        1.35s
+        both;
+}
+
+
+@keyframes l12UrduReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(22px);
+
+        filter:
+            blur(4px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   JOURNEY CARD
+   --------------------------------------------------------- */
+
+.l12-letter-visible
+.l12-journey-card {
+
+    animation:
+        l12JourneyReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1.6s
+        both;
+}
+
+
+@keyframes l12JourneyReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.97);
+
+        filter:
+            blur(5px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   FOREVER PROMISE
+   --------------------------------------------------------- */
+
+.l12-letter-visible
+.l12-forever-promise {
+
+    animation:
+        l12PromiseReveal
+        1.4s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1.9s
+        both;
+}
+
+
+@keyframes l12PromiseReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(28px);
+
+        filter:
+            blur(4px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   LOVE QUOTE
+   --------------------------------------------------------- */
+
+.l12-letter-visible
+.l12-love-quote {
+
+    animation:
+        l12QuoteReveal
+        1.4s
+        ease
+        2.2s
+        both;
+}
+
+
+@keyframes l12QuoteReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.98);
+
+        filter:
+            blur(4px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   LETTER CLOSING / SIGNATURE
+   --------------------------------------------------------- */
+
+.l12-letter-visible
+.l12-letter-closing {
+
+    animation:
+        l12ClosingReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        2.5s
+        both;
+}
+
+
+@keyframes l12ClosingReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+        filter:
+            blur(5px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-letter-section,
+    .l12-letter-heading,
+    .l12-paper-wrap,
+    .l12-paper-content,
+    .l12-shayari,
+    .l12-urdu,
+    .l12-journey-card,
+    .l12-forever-promise,
+    .l12-love-quote,
+    .l12-letter-closing {
+
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        filter: none !important;
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER XII — 12.7
+   URDU-STYLE ROMANTIC LINES
+   CINEMATIC REVEAL
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   INITIAL STATE
+   --------------------------------------------------------- */
+
+.l12-urdu {
+    opacity: 0;
+
+    transform:
+        translateY(28px)
+        scale(0.985);
+
+    filter:
+        blur(6px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.4s ease;
+
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   VISIBLE STATE
+   --------------------------------------------------------- */
+
+.l12-urdu-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   OPENING QUOTATION MARK
+   --------------------------------------------------------- */
+
+.l12-urdu-visible
+.l12-urdu-mark:not(.closing) {
+
+    animation:
+        l12UrduMarkReveal
+        1.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.25s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   URDU TEXT
+   --------------------------------------------------------- */
+
+.l12-urdu-visible
+.l12-urdu p {
+
+    animation:
+        l12UrduTextReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.45s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   CLOSING QUOTATION MARK
+   --------------------------------------------------------- */
+
+.l12-urdu-visible
+.l12-urdu-mark.closing {
+
+    animation:
+        l12UrduClosingMark
+        1.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1s
+        both;
+}
+
+
+/* =========================================================
+   TEXT REVEAL
+   ========================================================= */
+
+@keyframes l12UrduTextReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+
+        filter:
+            blur(5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* =========================================================
+   OPENING MARK REVEAL
+   ========================================================= */
+
+@keyframes l12UrduMarkReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.75)
+            rotate(-8deg);
+
+        filter:
+            blur(4px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* =========================================================
+   CLOSING MARK REVEAL
+   ========================================================= */
+
+@keyframes l12UrduClosingMark {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-10px)
+            scale(0.75)
+            rotate(8deg);
+
+        filter:
+            blur(4px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE ROMANTIC AFTER-GLOW
+   --------------------------------------------------------- */
+
+.l12-urdu-visible::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -18px;
+
+    width: 45%;
+    height: 1px;
+
+    transform:
+        translateX(-50%)
+        scaleX(0);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 105, 118, 0.45),
+            transparent
+        );
+
+    opacity: 0;
+
+    animation:
+        l12UrduDividerReveal
+        1.5s
+        ease
+        1.15s
+        forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes l12UrduDividerReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scaleX(0);
+    }
+
+    to {
+        opacity: 0.8;
+
+        transform:
+            translateX(-50%)
+            scaleX(1);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-urdu,
+    .l12-urdu p,
+    .l12-urdu-mark,
+    .l12-urdu-visible::after {
+
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        filter: none !important;
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER XII — 12.7
+   URDU-STYLE ROMANTIC LINES
+   CINEMATIC REVEAL
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   INITIAL STATE
+   --------------------------------------------------------- */
+
+.l12-urdu {
+    opacity: 0;
+
+    transform:
+        translateY(28px)
+        scale(0.985);
+
+    filter:
+        blur(6px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.4s ease;
+
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   VISIBLE STATE
+   --------------------------------------------------------- */
+
+.l12-urdu-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   OPENING QUOTATION MARK
+   --------------------------------------------------------- */
+
+.l12-urdu-visible
+.l12-urdu-mark:not(.closing) {
+
+    animation:
+        l12UrduMarkReveal
+        1.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.25s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   URDU TEXT
+   --------------------------------------------------------- */
+
+.l12-urdu-visible
+.l12-urdu p {
+
+    animation:
+        l12UrduTextReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.45s
+        both;
+}
+
+
+/* ---------------------------------------------------------
+   CLOSING QUOTATION MARK
+   --------------------------------------------------------- */
+
+.l12-urdu-visible
+.l12-urdu-mark.closing {
+
+    animation:
+        l12UrduClosingMark
+        1.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1s
+        both;
+}
+
+
+/* =========================================================
+   TEXT REVEAL
+   ========================================================= */
+
+@keyframes l12UrduTextReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+
+        filter:
+            blur(5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* =========================================================
+   OPENING MARK REVEAL
+   ========================================================= */
+
+@keyframes l12UrduMarkReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.75)
+            rotate(-8deg);
+
+        filter:
+            blur(4px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* =========================================================
+   CLOSING MARK REVEAL
+   ========================================================= */
+
+@keyframes l12UrduClosingMark {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-10px)
+            scale(0.75)
+            rotate(8deg);
+
+        filter:
+            blur(4px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE ROMANTIC AFTER-GLOW
+   --------------------------------------------------------- */
+
+.l12-urdu-visible::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -18px;
+
+    width: 45%;
+    height: 1px;
+
+    transform:
+        translateX(-50%)
+        scaleX(0);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 105, 118, 0.45),
+            transparent
+        );
+
+    opacity: 0;
+
+    animation:
+        l12UrduDividerReveal
+        1.5s
+        ease
+        1.15s
+        forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes l12UrduDividerReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scaleX(0);
+    }
+
+    to {
+        opacity: 0.8;
+
+        transform:
+            translateX(-50%)
+            scaleX(1);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-urdu,
+    .l12-urdu p,
+    .l12-urdu-mark,
+    .l12-urdu-visible::after {
+
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        filter: none !important;
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+
+/* =========================================================
+   LETTER XII — 12.8
+   JOURNEY MEMORY CARD
+   CINEMATIC REVEAL
+   ========================================================= */
+
+.l12-journey-visible .l12-journey-label {
+    animation:
+        l12JourneyLabelReveal
+        1s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.1s
+        both;
+}
+
+.l12-journey-visible .l12-journey-divider {
+    animation:
+        l12JourneyDividerReveal
+        1.1s
+        ease
+        0.3s
+        both;
+}
+
+.l12-journey-visible .l12-journey-item {
+    animation:
+        l12JourneyItemReveal
+        1.1s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+/* stagger */
+
+.l12-journey-visible .l12-journey-item:nth-child(1) {
+    animation-delay: 0.45s;
+}
+
+.l12-journey-visible .l12-journey-item:nth-child(2) {
+    animation-delay: 0.65s;
+}
+
+.l12-journey-visible .l12-journey-item:nth-child(3) {
+    animation-delay: 0.85s;
+}
+
+.l12-journey-visible .l12-journey-item:nth-child(4) {
+    animation-delay: 1.05s;
+}
+
+.l12-journey-visible .l12-journey-item:nth-child(5) {
+    animation-delay: 1.25s;
+}
+
+.l12-journey-visible .l12-journey-item:nth-child(6) {
+    animation-delay: 1.45s;
+}
+
+.l12-journey-visible .l12-journey-card-glow {
+    animation:
+        l12JourneyGlowPulse
+        4s
+        ease-in-out
+        0.6s
+        infinite;
+}
+
+.l12-journey-visible .l12-journey-card > small {
+    animation:
+        l12JourneyClosingReveal
+        1.2s
+        ease
+        1.65s
+        both;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes l12JourneyLabelReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(14px)
+            scale(0.96);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12JourneyDividerReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            scaleX(0);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scaleX(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12JourneyItemReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(22px)
+            scale(0.97);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12JourneyClosingReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 0.8;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12JourneyGlowPulse {
+
+    0% {
+        opacity: 0.45;
+        transform: scale(0.98);
+    }
+
+    50% {
+        opacity: 0.75;
+        transform: scale(1.02);
+    }
+
+    100% {
+        opacity: 0.45;
+        transform: scale(0.98);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-journey-card,
+    .l12-journey-label,
+    .l12-journey-divider,
+    .l12-journey-item,
+    .l12-journey-card-glow,
+    .l12-journey-card > small {
+
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =========================================================
+   LETTER XII — 12.9
+   FOREVER PROMISE
+   CINEMATIC REVEAL
+   ========================================================= */
+
+.l12-promise-visible {
+    animation:
+        l12PromiseSectionReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* =========================================================
+   PROMISE CONTENT REVEAL
+   ========================================================= */
+
+.l12-promise-visible
+.l12-forever-promise > * {
+    opacity: 0;
+    animation:
+        l12PromiseContentReveal
+        1.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* stagger */
+
+.l12-promise-visible
+.l12-forever-promise > *:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+.l12-promise-visible
+.l12-forever-promise > *:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+.l12-promise-visible
+.l12-forever-promise > *:nth-child(3) {
+    animation-delay: 0.65s;
+}
+
+.l12-promise-visible
+.l12-forever-promise > *:nth-child(4) {
+    animation-delay: 0.85s;
+}
+
+.l12-promise-visible
+.l12-forever-promise > *:nth-child(5) {
+    animation-delay: 1.05s;
+}
+
+
+/* =========================================================
+   SOFT EMOTIONAL GLOW
+   ========================================================= */
+
+.l12-promise-visible::before {
+    animation:
+        l12PromiseGlow
+        4.5s
+        ease-in-out
+        0.6s
+        infinite;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes l12PromiseSectionReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(38px)
+            scale(0.985);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12PromiseContentReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12PromiseGlow {
+
+    0% {
+        opacity: 0.25;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 0.55;
+        transform: scale(1.04);
+    }
+
+    100% {
+        opacity: 0.25;
+        transform: scale(0.96);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-promise-visible,
+    .l12-promise-visible
+    .l12-forever-promise > *,
+    .l12-promise-visible::before {
+
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =========================================================
+   LETTER XII — 12.10
+   FINAL LOVE QUOTE
+   CINEMATIC REVEAL
+   ========================================================= */
+
+.l12-quote-visible {
+    animation:
+        l12FinalQuoteReveal
+        1.6s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* =========================================================
+   QUOTE CONTENT
+   ========================================================= */
+
+.l12-quote-visible > * {
+    opacity: 0;
+    animation:
+        l12FinalQuoteContent
+        1.25s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* Label */
+
+.l12-quote-visible > *:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+
+/* Divider */
+
+.l12-quote-visible > *:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+
+/* Main quote */
+
+.l12-quote-visible > *:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+
+/* Heart / closing element */
+
+.l12-quote-visible > *:nth-child(4) {
+    animation-delay: 1.15s;
+}
+
+
+/* =========================================================
+   QUOTE EMPHASIS
+   ========================================================= */
+
+.l12-quote-visible blockquote {
+    animation:
+        l12FinalQuoteText
+        1.7s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.7s
+        both;
+}
+
+
+/* =========================================================
+   SOFT HEART GLOW
+   ========================================================= */
+
+.l12-quote-visible
+.l12-love-quote-heart {
+    animation:
+        l12FinalQuoteHeart
+        2.2s
+        ease-in-out
+        1.2s
+        both,
+        l12FinalQuoteHeartPulse
+        3.5s
+        ease-in-out
+        3.4s
+        infinite;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes l12FinalQuoteReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(32px)
+            scale(0.985);
+        filter: blur(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12FinalQuoteContent {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12FinalQuoteText {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(24px)
+            scale(0.97);
+        filter: blur(6px);
+        letter-spacing: 0.015em;
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+        letter-spacing: normal;
+    }
+}
+
+
+@keyframes l12FinalQuoteHeart {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(0.45)
+            rotate(-12deg);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1)
+            rotate(0deg);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12FinalQuoteHeartPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-quote-visible,
+    .l12-quote-visible > *,
+    .l12-quote-visible blockquote,
+    .l12-quote-visible
+    .l12-love-quote-heart {
+
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+        letter-spacing: normal !important;
+    }
+}
+
+/* =========================================================
+   LETTER XII — 12.11
+   SIGNATURE
+   CINEMATIC EMOTIONAL REVEAL
+   ========================================================= */
+
+.l12-signature-visible {
+    animation:
+        l12SignatureSectionReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* =========================================================
+   CLOSING CONTENT
+   ========================================================= */
+
+.l12-signature-visible > * {
+    opacity: 0;
+    animation:
+        l12SignatureContentReveal
+        1.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* Emotional closing line */
+
+.l12-signature-visible
+.l12-closing-line {
+    animation-delay: 0.25s;
+}
+
+
+/* Final emotional sentence */
+
+.l12-signature-visible
+.l12-closing-final {
+    animation:
+        l12SignatureFinalLine
+        1.4s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.55s
+        both;
+}
+
+
+/* Divider */
+
+.l12-signature-visible
+.l12-closing-divider {
+    animation-delay: 0.9s;
+}
+
+
+/* Sign-off */
+
+.l12-signature-visible
+.l12-closing-signoff {
+    animation-delay: 1.15s;
+}
+
+
+/* Signature */
+
+.l12-signature-visible
+.l12-closing-signature {
+    animation:
+        l12HandwrittenSignature
+        1.8s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1.45s
+        both;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes l12SignatureSectionReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.985);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12SignatureContentReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12SignatureFinalLine {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px)
+            scale(0.97);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12HandwrittenSignature {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(16px)
+            scale(0.9)
+            rotate(-3deg);
+        filter: blur(5px);
+    }
+
+    65% {
+        opacity: 1;
+        transform:
+            translateY(-2px)
+            scale(1.03)
+            rotate(1deg);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   SUBTLE HEART EMPHASIS
+   ========================================================= */
+
+.l12-signature-visible
+.l12-closing-signature::first-letter {
+    text-shadow:
+        0 0 12px rgba(255, 120, 145, 0.45);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-signature-visible,
+    .l12-signature-visible > *,
+    .l12-signature-visible
+    .l12-closing-final,
+    .l12-signature-visible
+    .l12-closing-signature {
+
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =========================================================
+   LETTER XII — 12.12
+   GRAND FINALE
+   PREMIUM CINEMATIC REVEAL
+   ========================================================= */
+
+.l12-grand-finale-visible {
+    animation:
+        l12GrandFinaleSectionReveal
+        2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* =========================================================
+   FINALE CONTENT STAGGER
+   ========================================================= */
+
+.l12-grand-finale-visible
+.l12-finale-content > * {
+    opacity: 0;
+    animation:
+        l12GrandFinaleContentReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* Label */
+
+.l12-grand-finale-visible
+.l12-finale-content > *:nth-child(1) {
+    animation-delay: 0.35s;
+}
+
+
+/* Main title */
+
+.l12-grand-finale-visible
+.l12-finale-content > h2 {
+    animation:
+        l12GrandFinaleTitleReveal
+        1.8s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.65s
+        both;
+}
+
+
+/* Heart */
+
+.l12-grand-finale-visible
+.l12-finale-heart {
+    animation:
+        l12GrandFinaleHeartReveal
+        1.8s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        1.15s
+        both;
+}
+
+
+/* Final message */
+
+.l12-grand-finale-visible
+.l12-finale-message {
+    animation-delay: 1.65s;
+}
+
+
+/* Names */
+
+.l12-grand-finale-visible
+.l12-finale-names {
+    animation:
+        l12GrandFinaleNamesReveal
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        2s
+        both;
+}
+
+
+/* =========================================================
+   FINALE GLOW
+   ========================================================= */
+
+.l12-grand-finale-visible
+.l12-finale-glow {
+    animation:
+        l12GrandFinaleGlow
+        5s
+        ease-in-out
+        0.5s
+        infinite;
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+   ========================================================= */
+
+.l12-grand-finale-visible
+.l12-finale-hearts span {
+    animation:
+        l12FinaleHeartFloat
+        6s
+        ease-in-out
+        infinite;
+}
+
+.l12-grand-finale-visible
+.l12-finale-hearts span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.l12-grand-finale-visible
+.l12-finale-hearts span:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.l12-grand-finale-visible
+.l12-finale-hearts span:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+.l12-grand-finale-visible
+.l12-finale-hearts span:nth-child(4) {
+    animation-delay: 2.4s;
+}
+
+.l12-grand-finale-visible
+.l12-finale-hearts span:nth-child(5) {
+    animation-delay: 3.2s;
+}
+
+.l12-grand-finale-visible
+.l12-finale-hearts span:nth-child(6) {
+    animation-delay: 4s;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes l12GrandFinaleSectionReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(0.975);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12GrandFinaleContentReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12GrandFinaleTitleReveal {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.94);
+        filter: blur(8px);
+        letter-spacing: 0.08em;
+    }
+
+    70% {
+        opacity: 1;
+        transform:
+            translateY(-3px)
+            scale(1.015);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+        letter-spacing: normal;
+    }
+}
+
+
+@keyframes l12GrandFinaleHeartReveal {
+
+    0% {
+        opacity: 0;
+        transform:
+            scale(0.35)
+            rotate(-15deg);
+        filter: blur(8px);
+    }
+
+    65% {
+        opacity: 1;
+        transform:
+            scale(1.12)
+            rotate(4deg);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            scale(1)
+            rotate(0deg);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12GrandFinaleNamesReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px)
+            scale(0.96);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12GrandFinaleGlow {
+
+    0% {
+        opacity: 0.35;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.04);
+    }
+
+    100% {
+        opacity: 0.35;
+        transform: scale(0.96);
+    }
+}
+
+
+@keyframes l12FinaleHeartFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-16px)
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-grand-finale-visible,
+    .l12-grand-finale-visible
+    .l12-finale-content > *,
+    .l12-grand-finale-visible
+    .l12-finale-content > h2,
+    .l12-grand-finale-visible
+    .l12-finale-heart,
+    .l12-grand-finale-visible
+    .l12-finale-names,
+    .l12-grand-finale-visible
+    .l12-finale-glow,
+    .l12-grand-finale-visible
+    .l12-finale-hearts span {
+
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+        letter-spacing: normal !important;
+    }
+}
+
+/* =========================================================
+   LETTER XII — 12.13
+   FINAL CLOSING SCREEN
+   CINEMATIC ENDING
+   ========================================================= */
+
+.l12-ending-visible {
+    animation:
+        l12EndingSectionReveal
+        2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* =========================================================
+   CLOSING CONTENT STAGGER
+   ========================================================= */
+
+.l12-ending-visible
+.l12-ending-content > * {
+    opacity: 0;
+    animation:
+        l12EndingContentReveal
+        1.35s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+/* Completion label */
+
+.l12-ending-visible
+.l12-ending-content > *:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+
+/* Main message */
+
+.l12-ending-visible
+.l12-ending-content > *:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+
+/* Emotional closing line */
+
+.l12-ending-visible
+.l12-ending-content > *:nth-child(3) {
+    animation:
+        l12EndingFinalLine
+        1.6s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.95s
+        both;
+}
+
+
+/* Story continues */
+
+.l12-ending-visible
+.l12-ending-content > *:nth-child(4) {
+    animation-delay: 1.65s;
+}
+
+
+/* =========================================================
+   SUBTLE ENDING GLOW
+   ========================================================= */
+
+.l12-ending-visible::before {
+    animation:
+        l12EndingGlow
+        6s
+        ease-in-out
+        0.5s
+        infinite;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes l12EndingSectionReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.985);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12EndingContentReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12EndingFinalLine {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.97);
+        filter: blur(7px);
+    }
+
+    70% {
+        opacity: 1;
+        transform:
+            translateY(-2px)
+            scale(1.01);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes l12EndingGlow {
+
+    0% {
+        opacity: 0.18;
+        transform: scale(0.97);
+    }
+
+    50% {
+        opacity: 0.42;
+        transform: scale(1.03);
+    }
+
+    100% {
+        opacity: 0.18;
+        transform: scale(0.97);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .l12-ending-visible,
+    .l12-ending-visible
+    .l12-ending-content > *,
+    .l12-ending-visible
+    .l12-ending-content > *:nth-child(3),
+    .l12-ending-visible::before {
+
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
